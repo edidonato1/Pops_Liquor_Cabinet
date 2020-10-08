@@ -1,0 +1,31 @@
+Liquor Cabinet
+
+MVP
+
+- You have a pre-existing list of bottles in your liquor cabinet
+- You want to cost out cocktails based on what you have
+- You can add bottles to the liquor cabinet by filling out a form
+- Can add bottles to the cabinet by filling out the form.
+- You can fill out another form that updates how much of a bottle you have used, and the reason for use
+-
+
+
+
+Post
+- Personal cocktail database
+	- can add or create new drinks
+	- each item searches through bottle list and gives indicator if you're able to make the cocktail 
+		- as long as you have all the ingredients to make the drinks, you'll get a green light
+
+
+- Adjust current amount of each spirit you have in inventory
+- Ability to cost out cocktails using data in the API (i.e. cost/ounce)
+
+- OnChange will automatically calculate/update cost/oz. in the input field
+- Be able to change bottle color in api
+
+
+
+
+
+
