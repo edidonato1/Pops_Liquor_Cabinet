@@ -61,7 +61,7 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/tree/main/src/wireframes
 ---
 ## Component Hierarchy
 
-https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/plc-component-flowchart.png
+
 
 ---
 ## MVP/PostMVP
@@ -88,6 +88,7 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 - Additional form, connected to additional Airtable API for user to create a personal cocktail directory -[]
 - Graphic that reflects the amount of product in the current bottle on "grab bottle" page -[]
 - Cocktail costing sheet for professional bartenders -[]
+- About page and *help* modals for certain input fields -[]
 
 ---
 
@@ -135,7 +136,7 @@ const Eddie() => isTired ? doThisLater : stayUpAllNight
 
 ```
 
----
+
 ## SWOT Analysis
 
 ### Strengths:
