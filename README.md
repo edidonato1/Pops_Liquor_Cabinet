@@ -56,15 +56,32 @@ The application doubles as an experimental playground for your cocktail endeavor
 
 ## Wireframes
 
-
+https://github.com/edidonato1/Pops_Liquor_Cabinet/tree/main/src/wireframes
 
 ### MVP/PostMVP
 
 #### MVP
 
----
+- Render a multi-page application -[]
+- Synchronize Airtable API to get and post data to and from UI -[]
+  - Ability to add new bottles -[]
+  - Ability to update current inventory -[]
+  - Ability to delete inventory -[]
+- React Router is used for nagivation between pages and components 
+- Data-dependent components are responsive to user input -[]
+- Data-dependent components render accurate information when applicable -[]
+- Application is tastefully styled with at least three query breakpoints -[]
+- Code is clean and linted to industry standards -[]
+- Application is delployed via Netlify -[]
+
 
 #### PostMVP  
+
+- Import component library for CSS styling -[]
+- Bottles are automatically deleted from inventory when % full reaches zero -[] 
+- Additional form, connected to additional Airtable API for user to create a personal cocktail directory -[]
+- Graphic that reflects the amount of product in the current bottle on "grab bottle" page -[]
+- Cocktail costing sheet for professional bartenders -[]
 
 ---
 
@@ -74,13 +91,13 @@ The application doubles as an experimental playground for your cocktail endeavor
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|July 10-12| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|July 13| Project Approval | Incomplete
-|July 13| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|July 14| Pseudocode / actual code | Incomplete
-|July 15| Initial Clickable Model  | Incomplete
-|July 16| MVP | Incomplete
-|July 17| Presentations | Incomplete
+|Oct 8-9| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|Oct 9| Project Approval | Incomplete
+|Oct 12| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|Oct 12| Pseudocode / actual code | Incomplete
+|Oct 13| MVP | Incomplete
+|Oct 15| Post-MVP | Incomplete
+|Oct 16| Presentations | Incomplete
 
 
 ## Priority Matrix
@@ -91,19 +108,17 @@ The application doubles as an experimental playground for your cocktail endeavor
 
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
-| Add Form | H | 3hrs| 1hr |
-| Grab Data | H | 3hrs| 1hr |
-| Base HTML | M | 2.5hrs| 1hr |
-| Assign /Compare Scores | H | 8hrs| 3hrs |
-| Append Results | H | 2.5hrs| 1hr  |
-| Append Data | M | 2hrs| 1hr  |
-| Flexbox Manipulation  | H | 4hrs| 5hrs  |
-| Responsive Design  | H | 4hrs| 4hrs  |
-| Additional CSS | L | 6hrs| 14hrs  |
-| Total | - -  | 35hrs| 31hrs  |
+| Build Airtable API | H | 2hrs| - - |
+| Base Component Structure | H | 8hrs| - - |
+| Establish Axios Get, Post & Delete Requests | H | 6hrs| - - |
+| CSS Layout & Styling  | H | 10hrs| -  |
+| Responsive Design  | H | 4hrs| - -  |
+| *Bring in Rolodex API* *| L | 1hr| - -  |
+| *Rolodex Form Component* *| L | 4hr| - -  |
+| *Bottle Amount Graphic* *| L | 6hr| - -  |
+| Total | - -  | 41hrs| - -  |
 
-
-
+/* Post-MVP 
 
 ## Code Snippet
 
