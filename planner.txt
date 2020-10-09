@@ -29,9 +29,19 @@ Post
 
 ![]( <image relative path> )
 <img src="images/github-small.png"width="100" >
+50
 
-- create a new file called .env.development.local
-- from here, use key value pairs
-  - Syntax: KEY=value
-  - REACT_APP_AIRTABLE_BASE=< airtable base >
-  - REACT_APP_AIRTABLE_KEY=< airtable key>
+
+
+constructor(props){
+   super(props);
+   this.goBack = this.goBack.bind(this); // i think you are missing this
+}
+
+goBack(){
+    this.props.history.goBack();
+}
+
+.....
+
+<button onClick={this.goBack}>Go Back</button>

@@ -115,7 +115,7 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
-| Build Airtable API | H | 2hrs| - - |
+| Build Airtable API | H | 2hrs| 1hr |
 | Base Component Structure | H | 8hrs| - - |
 | Establish Axios Get, Post & Delete Requests | H | 6hrs| - - |
 | CSS Layout & Styling  | H | 10hrs| - - |
