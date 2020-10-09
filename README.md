@@ -61,7 +61,7 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/tree/main/src/wireframes
 ---
 ## Component Hierarchy
 
-
+https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/component-flowchart.png
 
 ---
 ## MVP/PostMVP
