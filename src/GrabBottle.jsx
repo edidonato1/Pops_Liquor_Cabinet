@@ -5,7 +5,7 @@ import Inventory from './Inventory';
 
 function GrabBottle(props) {
   const [data, setData] = useState([])
-  const [options, setOptions] = useState([])
+  // const [options, setOptions] = useState([])
 
   useEffect(() => {
 
@@ -17,10 +17,10 @@ function GrabBottle(props) {
         },
       });
       setData(response.data.records)
+      // setOptions(response.data.records && response.data.records.fields)
 
     };
     getInventory();
-
 
   }, [])
 
@@ -37,7 +37,12 @@ function GrabBottle(props) {
   //   })
   // }
 
-
+  // alphabetical sorting function from StackOverflow.com
+  data.sort(function (a, b) {
+    let textA = a.fields.bottle.toUpperCase();
+    let textB = b.fields.bottle.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+  })
 
   return (
     <div>
@@ -45,7 +50,7 @@ function GrabBottle(props) {
         <h1>Grab a Bottle</h1>
         <select>{
           data.map((item) =>
-            <option value={item.fields.bottle}>{item.fields.bottle}</option>
+            <option key={item.id} value={item.fields.bottle}>{item.fields.bottle}</option>
           )}
         </select>
       </Route>
