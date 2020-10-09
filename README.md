@@ -1,11 +1,11 @@
 # Pop's Liquor Cabinet
 
-# Project Overview
-
-## Sunset Oracle
 
 ## Project Description
 
+Pop's Liquor Cabinet is an interactive inventory manager for the at-home bartender. The app allows you to keep track of the bottles in your liquor cabinet, and keep track of how much liquor is in each bottle, so you'll know when your sneaky 16-year-old and their friends have dipped into your stash.  The app remotely stores your inventory, which you can add to and to, remove items from, and update the current amounts in each bottle.  
+
+The application doubles as an experimental playground for your cocktail endeavors offering a cocktail recipe creator that will serve as a Rolodex for all of your cocktail recipes.
 
 
 ## API and Data Sample
@@ -13,7 +13,44 @@
 
 
 ```
-
+{
+    "records": [
+        {
+            "id": "recKxrzZqBx3MBEg5",
+            "fields": {
+                "bottle": "Elijah Craig Bourbon",
+                "category": "whiskey",
+                "price": "25",
+                "amountFull": "1",
+                "bottleSizes": "750"
+            },
+            "createdTime": "2020-10-08T23:29:56.000Z"
+        },
+        {
+            "id": "recC1y1ElcdDlK3yN",
+            "fields": {
+                "bottle": "Campari",
+                "category": "liqueur",
+                "price": "22",
+                "amountFull": ".75",
+                "bottleSizes": "750"
+            },
+            "createdTime": "2020-10-08T23:29:56.000Z"
+        },
+        {
+            "id": "reca6FFerWqrgEJex",
+            "fields": {
+                "bottle": "Don Julio Reposado",
+                "category": "tequila",
+                "price": "48",
+                "bottleSizes": "750",
+                "amountFull": ".5"
+            },
+            "createdTime": "2020-10-08T23:29:56.000Z"
+        }
+    ],
+    "offset": "reca6FFerWqrgEJex"
+}
 ```
 
 
