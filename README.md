@@ -87,7 +87,6 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/tree/main/src/wireframes
 
 ## Project Schedule
 
-*** change dates
 
 |  Day | Deliverable | Status
 |---|---| ---|
@@ -118,21 +117,18 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/tree/main/src/wireframes
 | *Bottle Amount Graphic* *| L | 6hr| - -  |
 | Total | - -  | 41hrs| - -  |
 
-/* Post-MVP 
+ *Post-MVP * *
 
 ## Code Snippet
 
 
 ```
+const Eddie() => isTired ? doThisLater : stayUpAllNight
 
 ```
 
 
 ## SWOT Analysis
-
-
-## Change Log
- 
 
 ### Strengths:
 
@@ -141,3 +137,6 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/tree/main/src/wireframes
 ### Opportunities:
 
 ### Threats:
+
+## Change Log
+ 
