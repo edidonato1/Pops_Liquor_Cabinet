@@ -110,7 +110,7 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/tree/main/src/wireframes
 | Build Airtable API | H | 2hrs| - - |
 | Base Component Structure | H | 8hrs| - - |
 | Establish Axios Get, Post & Delete Requests | H | 6hrs| - - |
-| CSS Layout & Styling  | H | 10hrs| -  |
+| CSS Layout & Styling  | H | 10hrs| - - |
 | Responsive Design  | H | 4hrs| - -  |
 | *Bring in Rolodex API* *| L | 1hr| - -  |
 | *Rolodex Form Component* *| L | 4hr| - -  |
