@@ -53,12 +53,18 @@ The application doubles as an experimental playground for your cocktail endeavor
 }
 ```
 
-
+---
 ## Wireframes
 
 https://github.com/edidonato1/Pops_Liquor_Cabinet/tree/main/src/wireframes
 
-### MVP/PostMVP
+---
+## Component Hierarchy
+
+https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/plc-component-flowchart.png
+
+---
+## MVP/PostMVP
 
 #### MVP
 
@@ -98,11 +104,12 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/tree/main/src/wireframes
 |Oct 15| Post-MVP | Incomplete
 |Oct 16| Presentations | Incomplete
 
-
+---
 ## Priority Matrix
 
 https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/priority-matrix.png
 
+---
 ## Timeframes
 
 | Component | Priority | Estimated Time | Actual Time |
@@ -119,6 +126,7 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 
  *Post-MVP * *
 
+---
 ## Code Snippet
 
 
@@ -127,7 +135,7 @@ const Eddie() => isTired ? doThisLater : stayUpAllNight
 
 ```
 
-
+---
 ## SWOT Analysis
 
 ### Strengths:
