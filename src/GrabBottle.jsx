@@ -46,6 +46,7 @@ function GrabBottle(props) {
   }
 
   let bottleData = (data[selection] && data[selection].fields)
+  let id = (data[selection] && data[selection].id)
 
   // alphabetical sorting function from StackOverflow.com
   data.sort(function (a, b) {
@@ -63,7 +64,7 @@ function GrabBottle(props) {
             <option key={item.id} value={idx}>{item.fields.bottle}</option>
           )}
         </select>
-        <UpdateBottle bottleData={bottleData} />
+        <UpdateBottle id={id} bottleData={bottleData} />
       </Route>
     </div>
   )
