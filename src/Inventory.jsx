@@ -20,6 +20,7 @@ function Inventory(props) {
     };
     getInventory();
   }, [])
+  console.log(spirits)
 
   const price = spirits.map((spirit) => (spirit.fields.price))
   const amountFull = spirits.map((spirit) => spirit.fields.amountFull)

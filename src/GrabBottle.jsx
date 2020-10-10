@@ -44,9 +44,7 @@ function GrabBottle(props) {
     e.preventDefault();
 
     setSelection(e.target.value)
-    console.log(selection)
   }
-
 
   // alphabetical sorting function from StackOverflow.com
   data.sort(function (a, b) {
