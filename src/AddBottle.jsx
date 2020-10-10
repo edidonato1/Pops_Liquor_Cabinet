@@ -20,7 +20,7 @@ function AddBottle(props) {
       bottleSizes,
       amountFull,
     }
-    console.log(fields)
+
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits`;
     await axios.post(
       airtableURL,
@@ -37,9 +37,6 @@ function AddBottle(props) {
     setBottleSizes('');
     setAmountFull('');
   };
-
-
-
 
   return (
     <div>

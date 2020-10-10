@@ -27,13 +27,11 @@ function UpdateBottle(props) {
 
   const increment = (e) => {
     console.log(e.target.value)
-    setAmountFull(amountFull)
     setAmountFull(amountFull + .1)
     handleClick();
     console.log(amountFull)
   }
   const decrement = () => {
-    setAmountFull(amountFull)
     setAmountFull(amountFull - .1)
     handleClick();
     console.log(amountFull)
