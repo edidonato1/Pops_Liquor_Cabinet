@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Route } from 'react-router-dom';
 import axios from 'axios';
-// import UpdateBottle from './UpdateBottle'
+import UpdateBottle from './UpdateBottle'
 
 function GrabBottle(props) {
   const [data, setData] = useState([])
   const [selection, setSelection] = useState('')
-  // const [options, setOptions] = useState([])
+
 
   useEffect(() => {
 
@@ -42,9 +42,14 @@ function GrabBottle(props) {
 
   const handleChange = (e) => {
     e.preventDefault();
-
     setSelection(e.target.value)
+    // setBottleInfo(data[selection] && data[selection].fields)
+
   }
+  // console.log(bottleInfo)
+  // console.log(data[selection] && data[selection].fields)
+  let bottleData = (data[selection] && data[selection].fields)
+  console.log(bottleData)
 
   // alphabetical sorting function from StackOverflow.com
   data.sort(function (a, b) {
@@ -58,11 +63,11 @@ function GrabBottle(props) {
       <Route path="/GrabBottle">
         <h1>Grab a Bottle</h1>
         <select onChange={handleChange}>{
-          data.map((item) =>
-            <option key={item.id} value={item.fields.bottle}>{item.fields.bottle}</option>
+          data.map((item, idx) =>
+            <option key={item.id} value={idx}>{item.fields.bottle}</option>
           )}
         </select>
-        {/* <UpdateBottle bottle={selection.bottle} info={selection.notes} /> */}
+        <UpdateBottle bottleData={bottleData} />
       </Route>
     </div>
   )
