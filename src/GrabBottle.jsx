@@ -38,7 +38,7 @@ function GrabBottle(props) {
     };
     getInventory();
 
-  }, [selection])
+  }, [selection, data])
 
   const handleChange = (e) => {
     e.preventDefault();

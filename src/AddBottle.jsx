@@ -6,9 +6,9 @@ import axios from 'axios';
 function AddBottle(props) {
   const [bottle, setBottle] = useState('');
   const [category, setCategory] = useState('');
-  const [price, setPrice] = useState('');
-  const [bottleSizes, setBottleSizes] = useState('');
-  const [amountFull, setAmountFull] = useState('');
+  const [price, setPrice] = useState();
+  const [bottleSizes, setBottleSizes] = useState();
+  const [amountFull, setAmountFull] = useState();
   // const [notes, setNotes] = useState('');
 
   const handleSubmit = async (e) => {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios'
 
 function UpdateBottle(props) {
-  const [amountFull, setAmountFull] = useState()
+  const [amountFull, setAmountFull] = useState(props.bottleData && props.bottleData.amountFull)
 
   const handleClick = async () => {
     const id = props.id;
