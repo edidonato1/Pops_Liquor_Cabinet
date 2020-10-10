@@ -59,12 +59,16 @@ function GrabBottle(props) {
     <div>
       <Route path="/GrabBottle">
         <h1>Grab a Bottle</h1>
-        <select onChange={handleChange}>{
-          data.map((item, idx) =>
-            <option key={item.id} value={idx}>{item.fields.bottle}</option>
-          )}
+        <select onChange={handleChange}>
+          <option>select a bottle</option>{
+            data.map((item, idx) =>
+              <option key={item.id} value={idx}>{item.fields.bottle}</option>
+            )}
         </select>
-        <UpdateBottle id={id} bottleData={bottleData} />
+        {selection ?
+          <UpdateBottle id={id} bottleData={bottleData} />
+          :
+          null}
       </Route>
     </div>
   )

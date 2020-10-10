@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import axios from 'axios'
 
 function UpdateBottle(props) {
+
+
   const [amountFull, setAmountFull] = useState(props.bottleData && props.bottleData.amountFull)
 
+
   const handleClick = async () => {
+
     const id = props.id;
     const fields = {
-      amountFull: parseInt(amountFull)
+      amountFull,
     }
 
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${id}`;
@@ -22,14 +26,17 @@ function UpdateBottle(props) {
   }
 
   const increment = (e) => {
-    e.preventDefault();
-    setAmountFull(amountFull + .01)
+    console.log(e.target.value)
+    setAmountFull(amountFull)
+    setAmountFull(amountFull + .1)
     handleClick();
+    console.log(amountFull)
   }
-  const decrement = (e) => {
-    e.preventDefault();
-    setAmountFull(amountFull - .01)
+  const decrement = () => {
+    setAmountFull(amountFull)
+    setAmountFull(amountFull - .1)
     handleClick();
+    console.log(amountFull)
   }
 
   return (
