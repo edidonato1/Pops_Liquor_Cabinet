@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import axios from 'axios';
 import "./App.css";
 
 function Inventory(props) {
   const [spirits, setSpirits] = useState([])
-  // const [price, setPrice] = useState([])
 
   useEffect(() => {
 
@@ -20,7 +19,7 @@ function Inventory(props) {
     };
     getInventory();
   }, [])
-  console.log(spirits)
+
 
   const price = spirits.map((spirit) => (spirit.fields.price))
   const amountFull = spirits.map((spirit) => spirit.fields.amountFull)

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
 import Inventory from './Inventory';
 import Navbar from './Navbar';
-import GrabBottle from './GrabBottle'
+import GrabBottle from './GrabBottle';
+import AddBottle from './AddBottle';
 
 
 import './App.css';
@@ -15,6 +15,7 @@ function App() {
       <Navbar />
       <Inventory />
       <GrabBottle />
+      <AddBottle />
     </div>
   );
 }

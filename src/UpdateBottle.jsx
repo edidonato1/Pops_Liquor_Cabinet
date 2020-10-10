@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios'
 
 function UpdateBottle(props) {
   const [amountFull, setAmountFull] = useState()
 
-
-
   const handleClick = async () => {
     const id = props.id;
     const fields = {
-      amountFull,
+      amountFull: parseInt(amountFull)
     }
 
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${id}`;
@@ -33,7 +31,7 @@ function UpdateBottle(props) {
     setAmountFull(amountFull - .01)
     handleClick();
   }
-  console.log(amountFull)
+
   return (
     <div>
       {props.bottleData ? <h2>{props.bottleData && props.bottleData.bottle}</h2> : null}
