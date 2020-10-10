@@ -8,8 +8,10 @@ import GrabBottle from './GrabBottle'
 import './App.css';
 
 function App() {
+
   return (
     <div className="App">
+      <h1>Pop's Liquor Cabinet</h1>
       <Navbar />
       <Inventory />
       <GrabBottle />

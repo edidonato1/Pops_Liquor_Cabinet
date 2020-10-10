@@ -43,13 +43,9 @@ function GrabBottle(props) {
   const handleChange = (e) => {
     e.preventDefault();
     setSelection(e.target.value)
-    // setBottleInfo(data[selection] && data[selection].fields)
-
   }
-  // console.log(bottleInfo)
-  // console.log(data[selection] && data[selection].fields)
+
   let bottleData = (data[selection] && data[selection].fields)
-  console.log(bottleData)
 
   // alphabetical sorting function from StackOverflow.com
   data.sort(function (a, b) {
@@ -76,10 +72,4 @@ function GrabBottle(props) {
 export default GrabBottle;
 
 
-  // Searching options: 
-  //    // sort the items alphabetically by bottle name 
-  //    //     // populate drop-down with the sorted list
-  //    // use drop-down to select category
-  //    //     // create event listener for onChange that accepts change of <select>
-  //    //     // component.  set the value as the second argument for a second useEffect call
 
