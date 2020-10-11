@@ -17,39 +17,48 @@ goBack(){
 
 Friday 10.9
 -----
+
 - Established connection with API
 - Completed core function of Inventory page
 - Established navigation pathways between components
 - Created alphabetized drop-down for GrabBottle component
 - Isolated target value of GrabBottle drop-down selection
-
-
 - Started working on UpdateBottle component to be nested in GrabBottle component
 
 
 Saturday 10.10
 ----- 
 
- - Pass {GrabBottle} value through useEffect function to select bottle and update DOM render
-  
-- Grab grab props from GrabBottle to pass to UpdateBottle
-   - Can I edit the data this way, or will the UpdateBottle component need to be built in GrabBottle?
+- Passed GrabBottle to UpdateBottle through props
+  - Able to update current bottle, but State is one step behind
+  - State also keeps the value of the first bottle that was selected in the dropdown, but won't 
+    update when a new bottle is selected.  
+      - The newly selected bottle updates in the UpdateBottle component, but inherits the state of
+        the previously edited bottle.
+      - State is being passed down through props by GrabBottle, but isn't updating 
 
-- Need to establish axios post request to update Amount value of selected item
-  -  This will likely be done through a counter button in the UI
-  - props will tell UpdateBottle which bottle it is manipulating, it will pass this back into a 
-      useEffect() API post request, which will update the amount whenever the 
-      state of {amount} changes. 
-- If the state of {amount} is zero, and the user navigates away from the page, the bottle will be 
-  removed from the API
-  - A conditional delete request is needed for this to happen.  When the user navigates from the page, 
-    or in other words an  unMount() ( will need to look back into the proper method for this ), the 
-    user will receive an alert that will ask them if they would like to remove the bottle from the 
-    liquor cabinet.
+- AddBottle component seems to be in perfect working order - consider styling 
 
-- Let's also get started on the AddBottle form and put request tomorrow.
-  - Model it after the Audubon bird form.
-  - If this works well, maybe integrate the Cocktail Recipe database right away.
+- UpdateBottle also doesn't trigger a re-render for Inventory.  Page needs to be refreshed.
+  - AddBottle does however automatically update Inventory without refresh
+
+
+
+Sunday 10.11
+-----
+
+- Finish reworking UpdateBottle component. If successful: 
+  - If the state of {amount} is zero, and the user navigates away from the page, the bottle will be 
+    removed from the API
+    - A conditional delete request is needed for this to happen.  When the user navigates from the page, 
+      or in other words an  unMount() ( will need to look back into the proper method for this ), the 
+      user will receive an alert that will ask them if they would like to remove the bottle from the 
+      liquor cabinet.
+
+
+- Since Add Bottle worked pretty easily, maybe integrate the Cocktail Recipe database right away.
+  - Could be something to focus on other than styling while we work out the rest of the kinks
+    thoughout the site.  Will likely need help from Shay
   
 
       
