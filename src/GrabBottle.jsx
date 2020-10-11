@@ -6,6 +6,7 @@ import UpdateBottle from './UpdateBottle'
 function GrabBottle(props) {
   const [data, setData] = useState([])
   const [selection, setSelection] = useState('')
+  const [currentBottle, setCurrentBottle] = useState('')
 
 
   useEffect(() => {
@@ -45,8 +46,13 @@ function GrabBottle(props) {
     setSelection(e.target.value)
   }
 
+  // const handleBottleUpdate = (e) => {
+  //   e.preventDefault
+  // }
+
   let bottleData = (data[selection] && data[selection].fields)
   let id = (data[selection] && data[selection].id)
+
 
   // alphabetical sorting function from StackOverflow.com
   data.sort(function (a, b) {
@@ -66,7 +72,7 @@ function GrabBottle(props) {
             )}
         </select>
         {selection ?
-          <UpdateBottle id={id} bottleData={bottleData} />
+          <UpdateBottle id={id} bottleData={bottleData} currentBottle={currentBottle} />
           :
           null}
       </Route>

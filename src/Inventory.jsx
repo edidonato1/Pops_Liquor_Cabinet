@@ -4,71 +4,62 @@ import axios from 'axios';
 import "./App.css";
 
 function Inventory(props) {
-  const [spirits, setSpirits] = useState([])
-
-  useEffect(() => {
-
-    const getInventory = async () => {
-      const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits`;
-      const response = await axios.get(airtableURL, {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        },
-      });
-      setSpirits(response.data.records)
-    };
-    getInventory();
-  }, [])
-
+  const spirits = props.spirits
 
   const price = spirits.map((spirit) => (spirit.fields.price))
   const amountFull = spirits.map((spirit) => spirit.fields.amountFull)
   const totalInventory = (price, amountFull) => {
     let total = 0;
-    for (let i = 0; i < spirits.length; i++) {
+    for (let i = 0; i < props.spirits.length; i++) {
       total += price[i] * amountFull[i]
     }
     return total
+  }
+
+  const columnStyles = {
+    fontFamily: "avenir",
+    width: "90vw",
+    borderCollapse: 'collapse',
+    marginLeft: "20px"
+
+  }
+
+  const titleStyles = {
+    fontWeight: "bold",
+    borderBotton: "1px solid black",
+    paddingRight: "10px"
   }
 
   return (
     <div>
       <Route path="/Inventory">
         <h1>Inventory</h1>
-        <h2>
-          Total inventory: ${totalInventory(price, amountFull)}
-        </h2>
-        <div className="spreadsheet">
-          <div className="spirits-column">
-            <h3>Spirit</h3>
-            {spirits.map((spirit) => (
-              <p key={spirit.id}>{spirit.fields.bottle}</p>
+        <h2>Total inventory: ${totalInventory(price, amountFull)}</h2>
+        <div>
+          <table style={columnStyles}>
+            <tr style={titleStyles}>
+              <td >Spirit</td>
+              <td>Category</td>
+              <td>Price</td>
+              <td>Amount</td>
+            </tr>
+            {!spirits ? <h4>loading...</h4> : spirits.map((spirit) => (
+              <tr >
+                <td>
+                  {spirit.fields.bottle}
+                </td>
+                <td>
+                  {spirit.fields.category}
+                </td>
+                <td>
+                  {spirit.fields.price}
+                </td>
+                <td>
+                  {(spirit.fields.amountFull) * 100}%
+                  </td>
+              </tr>
             ))}
-          </div>
-          <div className="category-column">
-            <h3>Category</h3>
-            {spirits.map((spirit) => (
-              <p key={spirit.id}>{spirit.fields.category}</p>
-            ))}
-          </div>
-          <div className="price-column">
-            <h3>Price</h3>
-            {spirits.map((spirit) => (
-              <p key={spirit.id}>${spirit.fields.price}</p>
-            ))}
-          </div>
-          {/* <div className="size-column">
-          <h3>Bottle Size (mL)</h3>
-          {spirits.map((spirit) => (
-            <p key={spirit.id}>{spirit.fields.bottleSizes}</p>
-          ))}
-        </div> */}
-          <div className="amount-full-column">
-            <h3>Amount</h3>
-            {spirits.map((spirit) => (
-              <p key={spirit.id}>{(spirit.fields.amountFull) * 100}%</p>
-            ))}
-          </div>
+          </table>
         </div>
       </Route>
     </div>

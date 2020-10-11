@@ -5,6 +5,7 @@ function UpdateBottle(props) {
 
 
   const [amountFull, setAmountFull] = useState(props.bottleData && props.bottleData.amountFull)
+  // const [amountFull, setAmountFull] = useState(props.currentBottle)
 
 
   const handleClick = async () => {

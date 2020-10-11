@@ -1,8 +1,10 @@
 
 
 
-
-.spreadsheet {
-  display: flex;
-  flex-direction: row;
+td {
+  border-collapse: collapse;
+  border-bottom: 1px solid black; 
+  padding-top: 17px;
+  vertical-align: bottom;
 }
+
