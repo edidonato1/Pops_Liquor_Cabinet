@@ -20,13 +20,14 @@ function Inventory(props) {
     width: "90vw",
     borderCollapse: 'collapse',
     marginLeft: "20px",
+    fontSize: "14px",
 
   }
 
   const titleStyles = {
-    fontWeight: "bold",
-    borderBotton: "1px solid black",
-    paddingRight: "10px"
+    // fontWeight: "bold",
+    // borderBotton: "1px solid black",
+    // paddingRight: "10px"
   }
 
   const sortBottle = () => {
@@ -55,8 +56,10 @@ function Inventory(props) {
                 <td>Price</td>
                 <td>Amt.</td>
               </tr>
+
               {!spirits ? <h4>loading...</h4> : spirits.map((spirit) => (
-                <tr >
+
+                <tr>
                   <td key={spirit.fields.bottle}>
                     {spirit.fields.bottle}
                   </td>
@@ -68,7 +71,7 @@ function Inventory(props) {
                   </td>
                   <td key={spirit.fields.amountFull}>
                     {Math.round((spirit.fields.amountFull) * 100)}%
-                  </td>
+                    </td>
                 </tr>
               ))}
             </tbody>

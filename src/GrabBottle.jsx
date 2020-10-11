@@ -44,7 +44,6 @@ function GrabBottle(props) {
   const handleChange = (e) => {
     e.preventDefault();
     setSelection(e.target.value)
-    console.log(e.target.value)
     setSearchHistory([e.target.value, ...searchHistory])
 
     // console.log(searchHistory)

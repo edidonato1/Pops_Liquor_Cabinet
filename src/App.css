@@ -38,9 +38,10 @@ Link {
 }
 
 td {
-  border-collapse: collapse;
-  border-bottom: 1px solid black; 
+
+  border-bottom: .7px solid lightgray; 
   padding-top: 17px;
   vertical-align: bottom;
+  padding-right: 5px;
 }
 
