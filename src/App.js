@@ -4,10 +4,8 @@ import Navbar from './Navbar';
 import GrabBottle from './GrabBottle';
 import AddBottle from './AddBottle';
 import axios from 'axios'
-
-
 import './App.css';
-import UpdateBottle from './UpdateBottle';
+
 
 function App() {
 
@@ -25,12 +23,12 @@ function App() {
       setSpirits(response.data.records)
     };
     getInventory();
-  }, [UpdateBottle])
+  }, [])
 
 
   return (
     <div className="App">
-      <h1>Pop's Liquor Cabinet</h1>
+      <h1 className="title-tag">Pop's Liquor Cabinet</h1>
       <Navbar />
       <Inventory spirits={spirits} />
       <GrabBottle />

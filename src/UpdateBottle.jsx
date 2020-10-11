@@ -1,15 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import axios from 'axios'
 
-function UpdateBottle(props) {
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case "increment":
+//       return state + .05;
+//     case "decrement":
+//       return state - .05;
+//     default:
+//       return state;
+//   }
+// }
 
+
+
+function UpdateBottle(props) {
+  // const [amountFull, dispatch] = useReducer(reducer, props.bottleData && props.bottleData.amountFull)
   // console.log(props.searchHistory)
   const [amountFull, setAmountFull] = useState(props.bottleData && props.bottleData.amountFull)
   const [updateHistory, setUpdateHistory] = useState([])
 
+
   useEffect(() => {
     const handleClick = async () => {
-
       const id = props.id;
       const fields = {
         amountFull,
@@ -26,16 +39,17 @@ function UpdateBottle(props) {
         })
     }
     handleClick();
-    if (props.searchHistory) {
-      if (props.searchHistory[0] !== props.searchHistory[1] && updateHistory[0] !== updateHistory[1]) {
-        setAmountFull(props.bottleData && props.bottleData.amountFull)
-      } else if (props.searchHistory[0] !== props.searchHistory[1] && updateHistory[0] === updateHistory[1]) {
-        setAmountFull(props.bottleData && props.bottleData.amountFull)
-      }
-    } else if (!props.searchHistory) {
-      setAmountFull(props.bottleData && props.bottleData.amountFull)
-    }
+    // if (props.searchHistory) {
+    //   if (props.searchHistory[0] !== props.searchHistory[1] && updateHistory[0] !== updateHistory[1]) {
+    //     setAmountFull(props.bottleData && props.bottleData.amountFull)
+    //   } else if (props.searchHistory[0] !== props.searchHistory[1] && updateHistory[0] === updateHistory[1]) {
+    //     setAmountFull(props.bottleData && props.bottleData.amountFull)
+    //   }
+    // } else if (!props.searchHistory) {
+    //   setAmountFull(props.bottleData && props.bottleData.amountFull)
+    // }
     // setAmountFull(props.bottleData.amountFull)
+
   }, [amountFull, props.id])
 
   const increment = (e) => {
@@ -66,8 +80,13 @@ function UpdateBottle(props) {
           <h3>{(props.bottleData && props.bottleData.amountFull) * 100}% full </h3>
         </div>
         : null}
+
       <button onClick={increment}>+</button>
       <button onClick={decrement}>-</button>
+
+      {/* <button onClick={() => dispatch({ type: "increment" })}>+</button>
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+       */}
     </div>
   )
 }

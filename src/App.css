@@ -1,5 +1,41 @@
+body  {
 
+}
+.nav-bar {
+  position: fixed; 
+  bottom: 0px;
+  margin-top: 20px;
+  background: lightgray;;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
+}
+
+h1 {
+  margin-top: 90px;
+}
+
+.title-tag {
+  display: flex;
+  align-items: center;
+background: lightgray;
+position: fixed;
+top: 0;
+margin-top: 0px;
+height: 80px;
+width: 100%;
+}
+
+.inventory-table {
+  margin-bottom: 70px;
+}
+
+Link {
+  color: red;
+}
 
 td {
   border-collapse: collapse;
