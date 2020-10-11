@@ -5,6 +5,7 @@ function UpdateBottle(props) {
 
   // console.log(props.searchHistory)
   const [amountFull, setAmountFull] = useState(props.bottleData && props.bottleData.amountFull)
+  const [updateHistory, setUpdateHistory] = useState([])
 
   useEffect(() => {
     const handleClick = async () => {
@@ -26,23 +27,32 @@ function UpdateBottle(props) {
     }
     handleClick();
     if (props.searchHistory) {
-      if (props.searchHistory[0] !== props.searchHistory[1]) {
+      if (props.searchHistory[0] !== props.searchHistory[1] && updateHistory[0] !== updateHistory[1]) {
         setAmountFull(props.bottleData && props.bottleData.amountFull)
-      } else setAmountFull(amountFull)
+      } else if (props.searchHistory[0] !== props.searchHistory[1] && updateHistory[0] === updateHistory[1]) {
+        setAmountFull(props.bottleData && props.bottleData.amountFull)
+      }
+    } else if (!props.searchHistory) {
+      setAmountFull(props.bottleData && props.bottleData.amountFull)
     }
-
+    // setAmountFull(props.bottleData.amountFull)
   }, [amountFull, props.id])
 
   const increment = (e) => {
     e.preventDefault()
     setAmountFull(amountFull + .1)
-    console.log(props.searchHistory)
-
+    setUpdateHistory([props.searchHistory[0], ...updateHistory])
+    console.log("searchHistory", props.searchHistory)
+    console.log("updateHistory", updateHistory)
+    console.log("+", amountFull)
   }
   const decrement = (e) => {
     e.preventDefault()
     setAmountFull(amountFull - .1)
-    console.log(props.searchHistory)
+    setUpdateHistory([props.searchHistory[0], ...updateHistory])
+    console.log("searchHistory", props.searchHistory)
+    console.log("updateHistory", updateHistory)
+    console.log("-", amountFull)
   }
 
 
