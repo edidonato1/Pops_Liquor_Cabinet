@@ -6,8 +6,8 @@ import UpdateBottle from './UpdateBottle'
 function GrabBottle(props) {
   const [data, setData] = useState([])
   const [selection, setSelection] = useState('')
-  const [currentBottle, setCurrentBottle] = useState('')
-
+  const [searchHistory, setSearchHistory] = useState([])
+  // const searchHistory = []
 
   useEffect(() => {
 
@@ -44,6 +44,8 @@ function GrabBottle(props) {
   const handleChange = (e) => {
     e.preventDefault();
     setSelection(e.target.value)
+    setSearchHistory([e.target.value, ...searchHistory])
+    // console.log(searchHistory)
   }
 
   // const handleBottleUpdate = (e) => {
@@ -52,6 +54,7 @@ function GrabBottle(props) {
 
   let bottleData = (data[selection] && data[selection].fields)
   let id = (data[selection] && data[selection].id)
+  // let idArr = [(data[selection] && data[selection].id)]
 
 
   // alphabetical sorting function from StackOverflow.com
@@ -72,7 +75,7 @@ function GrabBottle(props) {
             )}
         </select>
         {selection ?
-          <UpdateBottle id={id} bottleData={bottleData} currentBottle={currentBottle} />
+          <UpdateBottle id={id} bottleData={bottleData} searchHistory={searchHistory} />
           :
           null}
       </Route>

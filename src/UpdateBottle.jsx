@@ -3,11 +3,10 @@ import axios from 'axios'
 
 function UpdateBottle(props) {
 
-
+  // console.log(props.searchHistory)
   const [amountFull, setAmountFull] = useState(props.bottleData && props.bottleData.amountFull)
 
   useEffect(() => {
-
     const handleClick = async () => {
 
       const id = props.id;
@@ -26,14 +25,27 @@ function UpdateBottle(props) {
         })
     }
     handleClick();
-  }, [amountFull])
+    if (props.searchHistory) {
+      if (props.searchHistory[0] !== props.searchHistory[1]) {
+        setAmountFull(props.bottleData && props.bottleData.amountFull)
+      } else setAmountFull(amountFull)
+    }
+
+  }, [amountFull, props.id])
 
   const increment = (e) => {
+    e.preventDefault()
     setAmountFull(amountFull + .1)
+    console.log(props.searchHistory)
+
   }
-  const decrement = () => {
+  const decrement = (e) => {
+    e.preventDefault()
     setAmountFull(amountFull - .1)
+    console.log(props.searchHistory)
   }
+
+
 
   return (
     <div>

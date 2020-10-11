@@ -7,6 +7,7 @@ import axios from 'axios'
 
 
 import './App.css';
+import UpdateBottle from './UpdateBottle';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
       setSpirits(response.data.records)
     };
     getInventory();
-  }, [])
+  }, [UpdateBottle])
 
 
   return (
