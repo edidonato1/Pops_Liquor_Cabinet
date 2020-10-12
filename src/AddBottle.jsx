@@ -9,7 +9,7 @@ function AddBottle(props) {
   const [price, setPrice] = useState();
   const [bottleSizes, setBottleSizes] = useState();
   const [amountFull, setAmountFull] = useState();
-  // const [notes, setNotes] = useState('');
+  const [notes, setNotes] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,13 +36,15 @@ function AddBottle(props) {
     setPrice('');
     setBottleSizes('');
     setAmountFull('');
+    setNotes('');
   };
 
   return (
     <div>
       <Route path="/AddBottle">
         <h1>Add a Bottle</h1>
-        <form onSubmit={handleSubmit}>
+        <h2>Fill out the form below</h2>
+        <form className="add-bottle" onSubmit={handleSubmit}>
           <label htmlFor="bottle">spirit </label>
           <br></br>
           <input
@@ -88,7 +90,7 @@ function AddBottle(props) {
             onChange={(e) => setAmountFull(parseInt(e.target.value))}
           />
           <br></br>
-          {/* <label htmlFor="status">notes </label>
+          <label htmlFor="status">notes </label>
           <br></br>
           <textarea
             className="textBar"
@@ -97,8 +99,8 @@ function AddBottle(props) {
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
           />
-          <br></br> */}
-          <button type="submit">Submit</button>
+          <br></br>
+          <button type="submit" className="submit">Submit</button>
         </form>
       </Route>
     </div>
