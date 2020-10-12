@@ -1,11 +1,10 @@
-body  {
 
-}
 .nav-bar {
   position: fixed; 
+  text-decoration: none;
   bottom: 0px;
   margin-top: 20px;
-  background: lightgray;;
+  background: gray;
   height: 50px;
   width: 100%;
   display: flex;
@@ -16,6 +15,11 @@ body  {
 
 h1 {
   margin-top: 90px;
+  font-size: 25px;
+}
+
+h2 {
+font-size: 22px;
 }
 
 .title-tag {
@@ -29,12 +33,17 @@ height: 80px;
 width: 100%;
 }
 
-.inventory-table {
-  margin-bottom: 70px;
+#total-inventory {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: gray;
+  color: white;
+  padding: 3px;
+  
 }
 
-Link {
-  color: red;
+.inventory-table {
+  margin-bottom: 70px;
 }
 
 td {

@@ -1,15 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // import homeIcon from './homeIcon.png'
 
+
+
 function Navbar() {
+  const linkStyles = {
+    textDecoration: "none",
+    color: "white",
+    fontWeight: "bold"
+
+  }
+
   return (
     <div>
       <div className="nav-bar">
-        <Link className="home" to="/">home</Link>
-        <Link to="/Inventory">  inv.  </Link>
-        <Link to="/GrabBottle">grab</Link>
-        <Link to="/AddBottle">add</Link>
+        <NavLink style={linkStyles} className="NavLink" to="/">home</NavLink>
+        <NavLink style={linkStyles} className="NavLink" to="/Inventory">  inv.  </NavLink>
+        <NavLink style={linkStyles} className="NavLink" to="/GrabBottle">grab</NavLink>
+        <NavLink style={linkStyles} className="NavLink" to="/AddBottle">add</NavLink>
       </div>
 
     </div>

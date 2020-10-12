@@ -29,10 +29,12 @@ function App() {
   return (
     <div className="App">
       <h1 className="title-tag">Pop's Liquor Cabinet</h1>
-      <Navbar />
-      <Inventory spirits={spirits} />
-      <GrabBottle />
-      <AddBottle />
+      <div className="links" >
+        <Navbar />
+        <Inventory spirits={spirits} />
+        <GrabBottle />
+        <AddBottle />
+      </div>
     </div>
   );
 }
