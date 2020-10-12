@@ -6,6 +6,8 @@ import "./App.css";
 
 function Inventory(props) {
   const [spirits, setSpirits] = useState([])
+  const [changeSort, setChangeSort] = useState(false)
+  const [spiritSelect, setSpiritSelect] = useState(false)
 
   useEffect(() => {
 
@@ -23,7 +25,7 @@ function Inventory(props) {
 
   useEffect(() => {
 
-    const getInventory = async () => {
+    const getInventory = async (type) => {
       const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits`;
       const response = await axios.get(airtableURL, {
         headers: {
@@ -33,7 +35,8 @@ function Inventory(props) {
       setSpirits(response.data.records)
     };
     getInventory();
-  }, [spirits])
+    // sortCategory()
+  }, [changeSort])
 
   let price = spirits.map((spirit) => (spirit.fields.price))
   let amountFull = spirits.map((spirit) => spirit.fields.amountFull)
@@ -46,14 +49,15 @@ function Inventory(props) {
   }
 
   const sortBottle = () => {
-
     spirits.sort(function (a, b) {
       let textA = a.fields.bottle.toUpperCase();
       let textB = b.fields.bottle.toUpperCase();
       return ((textA < textB) ? -1 : (textA > textB) ? 1 : 0);
     })
-    console.log(spirits)
+    setChangeSort(!changeSort)
+    setSpiritSelect(true)
   }
+
   const sortCategory = () => {
     console.log(spirits)
 
@@ -62,9 +66,7 @@ function Inventory(props) {
       let textB = b.fields.category.toUpperCase();
       return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     })
-    console.log(spirits)
-    // setSpirits(spirits)
-
+    setChangeSort(!changeSort)
   }
   const sortAmount = () => {
     console.log(spirits)
@@ -73,7 +75,7 @@ function Inventory(props) {
       let targetB = b.fields.amountFull;
       return targetA - targetB
     })
-    console.log(spirits)
+    setChangeSort(!changeSort)
   }
   const sortPrice = () => {
     spirits.sort((a, b) => {
@@ -82,13 +84,8 @@ function Inventory(props) {
       return targetA - targetB
 
     })
-    console.log(spirits)
-
+    setChangeSort(!changeSort)
   }
-
-
-  // sort((a, b) => a - b)
-
 
 
   const columnStyles = {
@@ -108,6 +105,11 @@ function Inventory(props) {
   }
 
 
+  //    spirits.sort(function (a, b) {
+  //   let textA = a.fields.bottle.toUpperCase();
+  //   let textB = b.fields.bottle.toUpperCase();
+  //   return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+  // }) 
 
 
   return (
