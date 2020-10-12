@@ -7,7 +7,7 @@ import "./App.css";
 function Inventory(props) {
   const [spirits, setSpirits] = useState([])
   const [changeSort, setChangeSort] = useState(false)
-  const [spiritSelect, setSpiritSelect] = useState(false)
+
 
   useEffect(() => {
 
@@ -22,21 +22,6 @@ function Inventory(props) {
     };
     getInventory();
   }, [])
-
-  useEffect(() => {
-
-    const getInventory = async (type) => {
-      const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits`;
-      const response = await axios.get(airtableURL, {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        },
-      });
-      setSpirits(response.data.records)
-    };
-    getInventory();
-    // sortCategory()
-  }, [changeSort])
 
   let price = spirits.map((spirit) => (spirit.fields.price))
   let amountFull = spirits.map((spirit) => spirit.fields.amountFull)
@@ -55,7 +40,6 @@ function Inventory(props) {
       return ((textA < textB) ? -1 : (textA > textB) ? 1 : 0);
     })
     setChangeSort(!changeSort)
-    setSpiritSelect(true)
   }
 
   const sortCategory = () => {
