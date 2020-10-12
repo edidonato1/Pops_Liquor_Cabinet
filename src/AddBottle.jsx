@@ -50,6 +50,7 @@ function AddBottle(props) {
           <input
             className="textBar"
             type="text"
+            placeholder="ex: Blanton's"
             value={bottle}
             onChange={(e) => setBottle(e.target.value)}
           />
@@ -59,8 +60,9 @@ function AddBottle(props) {
           <input
             className="textBar"
             type="text"
+            placeholder="ex: whiskey"
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) => setCategory((e.target.value).toLowerCase())}
           />
           <br></br>
           <label htmlFor="price">cost</label>
@@ -68,6 +70,7 @@ function AddBottle(props) {
           <input
             className="textBar"
             type="text"
+            placeholder="ex: 51"
             value={price}
             onChange={(price % 1 < 1) ? (e) => setPrice(parseInt(e.target.value)) : setPrice('')}
           />
@@ -77,6 +80,7 @@ function AddBottle(props) {
           <input
             className="textBar"
             type="text"
+            placeholder="ex: 750"
             value={bottleSizes}
             onChange={(bottleSizes % 1 < 1) ? (e) => setBottleSizes(parseInt(e.target.value)) : setBottleSizes('')}
           />
@@ -86,6 +90,7 @@ function AddBottle(props) {
           <input
             className="textBar"
             type="text"
+            placeholder="ex: 1"
             value={amountFull}
             onChange={(amountFull % 1 < 1) ? (e) => setAmountFull(parseInt(e.target.value)) : setAmountFull('')}
           />
