@@ -19,15 +19,16 @@ function Inventory(props) {
     fontFamily: "avenir",
     width: "90vw",
     borderCollapse: 'collapse',
+    background: "rgba(211, 211, 211, 0.5)",
     marginLeft: "20px",
     fontSize: "14px",
 
   }
 
   const titleStyles = {
-    // fontWeight: "bold",
-    // borderBotton: "1px solid black",
-    // paddingRight: "10px"
+    fontWeight: "bold",
+    borderBotton: "1px solid black",
+    paddingRight: "10px"
   }
 
   const sortBottle = () => {

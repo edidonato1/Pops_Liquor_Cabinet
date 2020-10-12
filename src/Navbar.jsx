@@ -8,8 +8,6 @@ function Navbar() {
   const linkStyles = {
     textDecoration: "none",
     color: "white",
-    fontWeight: "bold"
-
   }
 
   return (

@@ -23,12 +23,11 @@ function UpdateBottle(props) {
 
   useEffect(() => {
     const handleClick = async () => {
-      const id = props.id;
       const fields = {
         amountFull,
       }
 
-      const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${id}`;
+      const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
       await axios.patch(
         airtableURL,
         { fields },
@@ -74,15 +73,22 @@ function UpdateBottle(props) {
   return (
     <div>
       {props.bottleData ?
-        <div>
-          <h2>{props.bottleData && props.bottleData.bottle}</h2>
+        <div className="update-bottle">
+          <h3>{props.bottleData && props.bottleData.bottle}</h3>
           <h3> Category: {props.bottleData && props.bottleData.category}</h3>
-          <h3>{(props.bottleData && props.bottleData.amountFull) * 100}% full </h3>
+          <h3>{props.bottleData && props.bottleData.bottleSizes} mL</h3>
+          <span className="counter-container">
+            <div className="button-box">
+              <button className="plus-minus" onClick={increment}>+</button><br></br>
+              <button className="plus-minus" onClick={decrement}>-</button>
+            </div>
+            <h3><span className="percentage">{Math.round((props.bottleData && props.bottleData.amountFull) * 100)}</span> % full </h3>
+          </span>
         </div>
         : null}
 
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
+
+      {/* buttons for useReducer function  */}
 
       {/* <button onClick={() => dispatch({ type: "increment" })}>+</button>
       <button onClick={() => dispatch({ type: "decrement" })}>-</button>
