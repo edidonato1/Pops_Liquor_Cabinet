@@ -1,7 +1,8 @@
 
  body {
-  background: url(concrete.jpg);
-  background-size: 130vh;
+  background: url(brickDoor.jpg);
+  background-size: 100vh;
+  background-position: center;
 
 }
 .nav-bar {
