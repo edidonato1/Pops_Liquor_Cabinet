@@ -1,75 +1,29 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React from 'react';
 import axios from 'axios'
 
-// function reducer(state, action) {
-//   switch (action.type) {
-//     case "increment":
-//       return state + .05;
-//     case "decrement":
-//       return state - .05;
-//     default:
-//       return state;
-//   }
-// }
-
-
-
 function UpdateBottle(props) {
-  // const [amountFull, dispatch] = useReducer(reducer, props.bottleData && props.bottleData.amountFull)
-  // console.log(props.searchHistory)
-  const [amountFull, setAmountFull] = useState(props.bottleData && props.bottleData.amountFull)
-  const [updateHistory, setUpdateHistory] = useState([])
 
-
-  useEffect(() => {
-    const handleClick = async () => {
-      const fields = {
-        amountFull,
-      }
-
-      const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
-      await axios.patch(
-        airtableURL,
-        { fields },
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-          },
-        })
+  const handleClick = async (newAmount) => {
+    const fields = {
+      amountFull: newAmount
     }
-    handleClick();
-    // if (props.searchHistory) {
-    //   if (props.searchHistory[0] !== props.searchHistory[1] && updateHistory[0] !== updateHistory[1]) {
-    //     setAmountFull(props.bottleData && props.bottleData.amountFull)
-    //   } else if (props.searchHistory[0] !== props.searchHistory[1] && updateHistory[0] === updateHistory[1]) {
-    //     setAmountFull(props.bottleData && props.bottleData.amountFull)
-    //   }
-    // } else if (!props.searchHistory) {
-    //   setAmountFull(props.bottleData && props.bottleData.amountFull)
-    // }
-    // setAmountFull(props.bottleData.amountFull)
-
-  }, [amountFull, props.id])
-
-  const increment = (e) => {
-    e.preventDefault()
-    setAmountFull(amountFull + .1)
-    setUpdateHistory([props.searchHistory[0], ...updateHistory])
-    console.log("searchHistory", props.searchHistory)
-    console.log("updateHistory", updateHistory)
-    console.log("+", amountFull)
+    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
+    await axios.patch(
+      airtableURL,
+      { fields },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+        },
+      })
+    props.setUpdatedBottle(!props.updatedBottle)
   }
-  const decrement = (e) => {
-    e.preventDefault()
-    setAmountFull(amountFull - .1)
-    setUpdateHistory([props.searchHistory[0], ...updateHistory])
-    console.log("searchHistory", props.searchHistory)
-    console.log("updateHistory", updateHistory)
-    console.log("-", amountFull)
+  const increment = () => {
+    handleClick(props.bottleData.amountFull + .1)
   }
-
-
-
+  const decrement = () => {
+    handleClick(props.bottleData.amountFull - .1)
+  }
   return (
     <div>
       {props.bottleData ?
@@ -86,13 +40,6 @@ function UpdateBottle(props) {
           </span>
         </div>
         : null}
-
-
-      {/* buttons for useReducer function  */}
-
-      {/* <button onClick={() => dispatch({ type: "increment" })}>+</button>
-      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
-       */}
     </div>
   )
 }

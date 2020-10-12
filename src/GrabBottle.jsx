@@ -6,11 +6,9 @@ import UpdateBottle from './UpdateBottle'
 function GrabBottle(props) {
   const [data, setData] = useState([])
   const [selection, setSelection] = useState('')
-  const [searchHistory, setSearchHistory] = useState([])
-  // const searchHistory = []
+  const [updatedBottle, setUpdatedBottle] = useState(false)
 
   useEffect(() => {
-
     const getInventory = async () => {
       const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits`;
       const response = await axios.get(airtableURL, {
@@ -19,44 +17,17 @@ function GrabBottle(props) {
         },
       });
       setData(response.data.records)
-
     };
     getInventory();
-
-  }, [])
-
-  useEffect(() => {
-
-    const getInventory = async () => {
-      const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits`;
-      const response = await axios.get(airtableURL, {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        },
-      });
-      setData(response.data.records)
-
-    };
-    getInventory();
-
-  }, [selection, data])
+  }, [selection, updatedBottle])
 
   const handleChange = (e) => {
     e.preventDefault();
     setSelection(e.target.value)
-    setSearchHistory([e.target.value, ...searchHistory])
-
-    // console.log(searchHistory)
   }
-
-  // const handleBottleUpdate = (e) => {
-  //   e.preventDefault
-  // }
 
   let bottleData = (data[selection] && data[selection].fields)
   let id = (data[selection] && data[selection].id)
-  // let idArr = [(data[selection] && data[selection].id)]
-
 
   // alphabetical sorting function from StackOverflow.com
   data.sort(function (a, b) {
@@ -76,7 +47,8 @@ function GrabBottle(props) {
             )}
         </select>
         {selection ?
-          <UpdateBottle id={id} bottleData={bottleData} searchHistory={searchHistory} />
+          <UpdateBottle id={id} bottleData={bottleData}
+            updatedBottle={updatedBottle} setUpdatedBottle={setUpdatedBottle} />
           :
           null}
       </Route>
