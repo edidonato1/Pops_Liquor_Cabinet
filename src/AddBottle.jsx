@@ -69,7 +69,7 @@ function AddBottle(props) {
             className="textBar"
             type="text"
             value={price}
-            onChange={(e) => setPrice(parseInt(e.target.value))}
+            onChange={(price % 1 < 1) ? (e) => setPrice(parseInt(e.target.value)) : setPrice('')}
           />
           <br></br>
           <label htmlFor="bottleSizes">bottle size (mL) </label>
@@ -78,7 +78,7 @@ function AddBottle(props) {
             className="textBar"
             type="text"
             value={bottleSizes}
-            onChange={(e) => setBottleSizes(parseInt(e.target.value))}
+            onChange={(bottleSizes % 1 < 1) ? (e) => setBottleSizes(parseInt(e.target.value)) : setBottleSizes('')}
           />
           <br></br>
           <label htmlFor="amountFull">Amount (1 for full bottle) </label>
@@ -87,7 +87,7 @@ function AddBottle(props) {
             className="textBar"
             type="text"
             value={amountFull}
-            onChange={(e) => setAmountFull(parseInt(e.target.value))}
+            onChange={(amountFull % 1 < 1) ? (e) => setAmountFull(parseInt(e.target.value)) : setAmountFull('')}
           />
           <br></br>
           <label htmlFor="status">notes </label>
