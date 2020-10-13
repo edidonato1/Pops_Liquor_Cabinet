@@ -1,21 +1,45 @@
+* {
+  font-family: avenir;
+}
 
  body {
-  background: url(brickDoor.jpg);
-  background-size: 100vh;
-  background-position: center;
+   background: url(brickDoor.jpg);
+   background-size: 100vh;
+   background-position: center;
+  }
+  
+.title-tag {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-family: 'Sofia', cursive;
+  font-size: 40px;
+  background: none;
+  z-index: 1;
+  align-items: center;
+  position: fixed;
+  top: -35px;
+  margin-top: 20px;
+  margin-left: -10px;
+  height: 130px;
+  width: 105%;
+  transform: rotate(-3deg);
 }
 
 h1 {
+display: flex;
+flex-direction: column-reverse;
   position: fixed;
-  top: 60px;
-  background:lightgray;
+  top: -35px;
+  background:rgba(211, 211, 211, .9);
+  height: 180px;
   width: 100%;
   font-size: 25px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 h2 {
-  margin-top: 130px;
+  margin: 190px 0 20px 20px;
   font-size: 22px;
   color: white;
 }
@@ -37,18 +61,8 @@ h3 {
   align-items: center;
 }
 
-/* Inventory  */
 
-.title-tag {
-display: flex;
-align-items: center;
-background: lightgray;
-position: fixed;
-top: 0;
-margin-top: 0px;
-height: 80px;
-width: 100%;
-}
+/* Inventory  */
 
 #total-inventory {
   border: 1px solid white;
@@ -105,7 +119,7 @@ td {
 select {
 font-family: avenir;
 font-size: 16px;
-margin: 130px 0 0 20px;
+margin: 190px 0 0 20px;
 height: 30px;
 width:300px;
 border: none;
