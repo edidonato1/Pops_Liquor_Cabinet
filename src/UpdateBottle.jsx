@@ -54,7 +54,8 @@ function UpdateBottle(props) {
       {props.bottleData ?
         <div className="update-bottle">
           <h3>{props.bottleData && props.bottleData.bottle}</h3>
-          <h3> Category: {props.bottleData && props.bottleData.category}</h3>
+          <h3>{props.bottleData && props.bottleData.notes}</h3>
+          <h3>{props.bottleData && props.bottleData.category}</h3>
           <h3>{props.bottleData && props.bottleData.bottleSizes} mL</h3>
           <span className="counter-container">
             <div className="button-box">

@@ -177,12 +177,19 @@ option {
 .update-bottle {
   width: 76vw;
   display: inline-block;
-  background: rgba(211, 211, 211, 0.5);
+  /* background: rgba(211, 211, 211, 0.5); */
+  background: rgba(191, 111, 65, .7);
+  border: 5px solid rgba(215, 182, 153, 0.5);
   border-radius: 10px;
-  padding: 15px;
-  margin: 100px 30px 0 30px;
+  padding: 10px;
+  margin: 50px 30px 0 30px;
+  height: 400px;
+}
 
-
+h3 {
+  font-size: 25px;
+  /* color:#40160D; */
+  color: white;
 }
 
 .counter-container {
@@ -198,8 +205,9 @@ justify-content: flex-start;
   font-size: 70px;
   border: 2px solid white;
   border-radius: 10px;
-  color: white;
-  background: rgba(211, 211, 211, 0.5);
+  color: #40160D;
+  background: rgba(240, 241, 242, .8);
+  /* background: rgba(211, 211, 211, 0.5); */
 }
 
 .button-box {
@@ -213,8 +221,10 @@ padding-right: 10px;
   border-style: inset;
   color: white;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  outline: none;
+  object-fit: contain;
+  width: 35px;
+  height: 35px;
   margin: 3px 0 3px;
 }
 
