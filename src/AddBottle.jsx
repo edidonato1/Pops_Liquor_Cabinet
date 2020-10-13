@@ -109,6 +109,7 @@ function AddBottle(props) {
         <label htmlFor="status">notes </label>
         <br></br>
         <textarea
+          style={{ height: "110px" }}
           className="textBar"
           id="notes"
           type="text"

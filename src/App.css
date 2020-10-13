@@ -16,6 +16,7 @@ body {
   background: url(laPuerta.jpg);
   background-size: 170%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .big-pops {
@@ -57,7 +58,7 @@ h1 {
   flex-direction: column-reverse;
   position: fixed;
   top: -25px;
-  color: #e6d6b8;
+  color: #e0ba98;
   font-size: 25px;
   background: #b2482c ;
   background-position: right center ;
@@ -70,8 +71,13 @@ h1 {
 
 h2 {
   margin: 190px 0 20px 20px;
+  font-weight: normal;
   font-size: 22px;
-  color: white;
+  color: #40160D;
+  background: rgba(227, 229, 230, .5);
+  object-fit: contain;
+  padding: 10px;
+  margin-top: 180px;
 }
 
 h3 {
@@ -93,13 +99,14 @@ h3 {
 }
 
 
-/* Inventory  */
+                                            /* Inventory  */
 
 #total-inventory {
   border: 1px solid white;
   border-radius: 10px;
-  background: rgba(250, 250,250, 0.5);  
-  color: black;
+  background: rgba(227, 229, 230, .5);
+  color: #B2482C;
+  font-weight: bold;
   padding: 3px;
 }
 
@@ -132,7 +139,8 @@ h3 {
   font-family: avenir;
   width: 90vw;
   border-collapse: collapse;
-  background: rgba(255, 255, 255, 0.5);
+  /* background: rgba(255, 255, 255, 0.5); */
+  background: rgba(202, 194, 187, 0.6);
   margin-left: 20px;
   font-size: 14px;
 }
@@ -164,7 +172,7 @@ option {
 
 }
 
-/* Update Bottle */
+                                        /* Update Bottle */
 
 .update-bottle {
   width: 76vw;
@@ -216,35 +224,58 @@ padding-right: 10px;
 }
 
 
+
+
+                                            /* Add Bottle */
+
 .submit {
-  font-family: avenir;
   font-weight: bold;
-  font-size: 10px;
-  background: rgb(56, 62, 71);
-  color: white;
+  font-size: 16px;
+  background:#F0F1F2;
+  color: #40160D;
   padding: 2px 10px 2px 10px;
-  border-radius: 3px;
+  border: 1px outset #40160D;
+  border-radius:8px;
 }
+
+.submit:hover {
+  background: #dec3a5;
+}
+
 .textBar {
-  width:300px;
+  font-size: 16px;
+  color: #40160D;
+  width: 300px;
   height: 30px;
   margin-bottom: 20px;
   margin-top: 5px;
   border: none;
-  background: rgba(231, 228, 228, 0.7);
+  background: rgba(231, 228, 228, 0.5);
   border-radius: 5px;
 }
 
 .textBar:hover {
-  background: rgba(231, 228, 228, 0.4);
+  background: rgba(217, 150, 91, .7);
+}
+
+.textBar:focus {
+
+  color: white;
+  background: rgba(178, 72, 44, .7);
+  outline: none;
 }
 
 .add-bottle {
+  line-height: 10px;
   margin: 0 auto;
-  color: white;
+  color: #40160D;
   width: 300px;
   font-size: 16px;
   text-align: left;
   display: block;
+}
+
+textarea {
+height: 200px;
 }
 
