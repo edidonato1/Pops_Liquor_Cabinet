@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
 import axios from 'axios'
 import "./App.css";
 
@@ -105,14 +104,14 @@ function Inventory(props) {
         <table className="inventory-columns">
           <tbody >
             <tr className="inventory-titles">
-              <td style={featureSpirits} className="title-cell" onClick={sortBottle}>Spirit</td>
-              <td style={featureCategory} className="title-cell" onClick={sortCategory}>Category</td>
-              <td style={featurePrice} className="title-cell" onClick={sortPrice}>Price</td>
-              <td style={featureAmount} className="title-cell" onClick={sortAmount}>Amt.</td>
+              <td key={"bottle"} style={featureSpirits} className="title-cell" onClick={sortBottle}>Spirit</td>
+              <td key={"category"} style={featureCategory} className="title-cell" onClick={sortCategory}>Category</td>
+              <td key={"price"} style={featurePrice} className="title-cell" onClick={sortPrice}>Price</td>
+              <td key={"amount"} style={featureAmount} className="title-cell" onClick={sortAmount}>Amt.</td>
             </tr>
             {!spirits ? <h4>loading...</h4> : spirits.map((spirit) => (
               <tr >
-                <td style={featureSpirits} className="content-cell" key={spirit.fields.bottle}>
+                <td style={featureSpirits} className="content-cell" key={spirit.id}>
                   {spirit.fields.bottle}
                 </td>
                 <td style={featureCategory} className="content-cell" key={spirit.fields.category}>
@@ -132,7 +131,6 @@ function Inventory(props) {
 
     </div>
   )
-
 }
 
 export default Inventory; 

@@ -61,4 +61,13 @@ Sunday 10.11
     thoughout the site.  Will likely need help from Shay
   
 
-      
+Tuesday 10.13
+----- 
+
+- Add delete function to grab bottle -[x]
+  - When it reaches zero, delete bottle alert(?) shows up. 
+  - If user selects yes, delete bottle. If no, bottle stays at zero.
+- Figure a way to add visuals to the mix
+- Update README -[x]
+- With sorting function the way that it is, the inventory won't automatically update. -[x]
+  - Try to figure out a workaround if there's time. -[x]

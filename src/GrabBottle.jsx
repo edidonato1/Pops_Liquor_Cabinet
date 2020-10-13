@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
 import axios from 'axios';
 import UpdateBottle from './UpdateBottle'
 
@@ -7,6 +6,19 @@ function GrabBottle(props) {
   const [data, setData] = useState([])
   const [selection, setSelection] = useState('')
   const [updatedBottle, setUpdatedBottle] = useState(false)
+
+  // useEffect(() => {
+  //   const getInventory = async () => {
+  //     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits`;
+  //     const response = await axios.get(airtableURL, {
+  //       headers: {
+  //         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+  //       },
+  //     });
+  //     setData(response.data.records)
+  //   };
+  //   getInventory();
+  // }, [])
 
   useEffect(() => {
     const getInventory = async () => {
@@ -40,7 +52,7 @@ function GrabBottle(props) {
     <div>
       <h1 className="title-tag">Pop's Liquor Cabinet</h1>
       <h1>Grab a Bottle</h1>
-      <select classNme="grab-bottle" onChange={handleChange}>
+      <select className="grab-bottle" onChange={handleChange}>
         <option>select a bottle</option>{
           data.map((item, idx) =>
             <option key={item.id} value={idx}>{item.fields.bottle}</option>

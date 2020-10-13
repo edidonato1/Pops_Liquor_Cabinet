@@ -99,8 +99,8 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 |---|---| ---|
 |Oct 8-9| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
 |Oct 9| Project Approval | Complete
-|Oct 12| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Oct 12| Pseudocode / Actual Code | Incomplete
+|Oct 12| Core Application Structure (HTML, CSS, etc.) | Complete
+|Oct 12| Pseudocode / Actual Code | Complete
 |Oct 13| MVP | Incomplete
 |Oct 15| Post-MVP | Incomplete
 |Oct 16| Presentations | Incomplete
@@ -117,8 +117,8 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 | --- | :---: |  :---: | :---: |
 | Build Airtable API | H | 2hrs| 1hr |
 | Base Component Structure | H | 8hrs| 3hrs |
-| Establish Axios Get, Post & Delete Requests | H | 6hrs| 2hrs |
-| CSS Layout & Styling  | H | 10hrs| - - |
+| Establish Axios Get, Post & Delete Requests | H | 6hrs| 6hrs |
+| CSS Layout & Styling  | H | 10hrs| 10hrs |
 | Responsive Design  | H | 4hrs| - -  |
 | *Bring in Rolodex API* *| L | 1hr| - -  |
 | *Rolodex Form Component* *| L | 4hr| - -  |

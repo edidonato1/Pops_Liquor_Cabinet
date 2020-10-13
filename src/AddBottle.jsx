@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -69,7 +68,7 @@ function AddBottle(props) {
         >
           <option ></option>
           {categoryOptions.map((option) =>
-            <option>{option}</option>
+            <option key={option}>{option}</option>
           )}
         </select>
         <br></br>
