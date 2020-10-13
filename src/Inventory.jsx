@@ -24,11 +24,6 @@ function Inventory(props) {
       setSpirits(response.data.records)
     };
     getInventory();
-
-    // Adding spirits to the dependency array makes the inventory live-update with updated botthe
-    // data, but also automatically reverts to original page refresh when sorting functions are triggered
-    // Possible workarounds?
-    //    // Move the async function up a level to App?
   }, [props.inventoryRefresh])
 
   let price = spirits.map((spirit) => (spirit.fields.price))
@@ -103,38 +98,38 @@ function Inventory(props) {
 
   return (
     <div>
-      <Route path="/Inventory">
-        <h1 >Inventory</h1>
-        <h2>Total inventory: <span onClick={resetStyles} id="total-inventory">${Math.round(totalInventory(price, amountFull))}</span></h2>
-        <div className="inventory-table">
-          <table className="inventory-columns">
-            <tbody >
-              <tr className="inventory-titles">
-                <td style={featureSpirits} className="title-cell" onClick={sortBottle}>Spirit</td>
-                <td style={featureCategory} className="title-cell" onClick={sortCategory}>Category</td>
-                <td style={featurePrice} className="title-cell" onClick={sortPrice}>Price</td>
-                <td style={featureAmount} className="title-cell" onClick={sortAmount}>Amt.</td>
-              </tr>
-              {!spirits ? <h4>loading...</h4> : spirits.map((spirit) => (
-                <tr >
-                  <td style={featureSpirits} className="content-cell" key={spirit.fields.bottle}>
-                    {spirit.fields.bottle}
-                  </td>
-                  <td style={featureCategory} className="content-cell" key={spirit.fields.category}>
-                    {spirit.fields.category}
-                  </td>
-                  <td style={featurePrice} className="content-cell" key={spirit.fields.price}>
-                    ${spirit.fields.price}
-                  </td>
-                  <td style={featureAmount} className="content-cell" key={spirit.fields.amountFull}>
-                    {Math.round((spirit.fields.amountFull) * 100)}%
+      <h1 className="title-tag">Pop's Liquor Cabinet</h1>
+      <h1 >Inventory</h1>
+      <h2>Total inventory: <span onClick={resetStyles} id="total-inventory">${Math.round(totalInventory(price, amountFull))}</span></h2>
+      <div className="inventory-table">
+        <table className="inventory-columns">
+          <tbody >
+            <tr className="inventory-titles">
+              <td style={featureSpirits} className="title-cell" onClick={sortBottle}>Spirit</td>
+              <td style={featureCategory} className="title-cell" onClick={sortCategory}>Category</td>
+              <td style={featurePrice} className="title-cell" onClick={sortPrice}>Price</td>
+              <td style={featureAmount} className="title-cell" onClick={sortAmount}>Amt.</td>
+            </tr>
+            {!spirits ? <h4>loading...</h4> : spirits.map((spirit) => (
+              <tr >
+                <td style={featureSpirits} className="content-cell" key={spirit.fields.bottle}>
+                  {spirit.fields.bottle}
+                </td>
+                <td style={featureCategory} className="content-cell" key={spirit.fields.category}>
+                  {spirit.fields.category}
+                </td>
+                <td style={featurePrice} className="content-cell" key={spirit.fields.price}>
+                  ${spirit.fields.price}
+                </td>
+                <td style={featureAmount} className="content-cell" key={spirit.fields.amountFull}>
+                  {Math.round((spirit.fields.amountFull) * 100)}%
                     </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Route>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
     </div>
   )
 

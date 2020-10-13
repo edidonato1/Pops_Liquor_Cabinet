@@ -38,24 +38,24 @@ function GrabBottle(props) {
 
   return (
     <div>
-      <Route path="/GrabBottle">
-        <h1>Grab a Bottle</h1>
-        <select classNme="grab-bottle" onChange={handleChange}>
-          <option>select a bottle</option>{
-            data.map((item, idx) =>
-              <option key={item.id} value={idx}>{item.fields.bottle}</option>
-            )}
-        </select>
-        {selection ?
-          <UpdateBottle id={id}
-            bottleData={bottleData}
-            updatedBottle={updatedBottle}
-            setUpdatedBottle={setUpdatedBottle}
-            inventoryRefresh={props.inventoryRefresh}
-            setInventoryRefresh={props.setInventoryRefresh} />
-          :
-          null}
-      </Route>
+      <h1 className="title-tag">Pop's Liquor Cabinet</h1>
+      <h1>Grab a Bottle</h1>
+      <select classNme="grab-bottle" onChange={handleChange}>
+        <option>select a bottle</option>{
+          data.map((item, idx) =>
+            <option key={item.id} value={idx}>{item.fields.bottle}</option>
+          )}
+      </select>
+      {selection ?
+        <UpdateBottle id={id}
+          bottleData={bottleData}
+          updatedBottle={updatedBottle}
+          setUpdatedBottle={setUpdatedBottle}
+          inventoryRefresh={props.inventoryRefresh}
+          setInventoryRefresh={props.setInventoryRefresh} />
+        :
+        null}
+
     </div>
   )
 }
