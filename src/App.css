@@ -2,40 +2,70 @@
   font-family: avenir;
 }
 
- body {
-   background: url(brickDoor.jpg);
-   background-size: 100vh;
-   background-position: center;
-  }
-  
-.title-tag {
-  text-align: center;
-  display: flex;
-  justify-content: center;
+colorWheel {
+  color: #E3E5E6;
+  color: #BF6F41;
+  color: #40160D;
+  color: #B2482C;
+  color: #D6A263;
+  color: #BE8E56;
+}
+
+
+body {
+  background: url(laPuerta.jpg);
+  background-size: 170%;
+  background-repeat: no-repeat;
+}
+
+.big-pops {
+  text-align: left;
   font-family: 'Sofia', cursive;
   font-size: 40px;
+  color: #40160D;
+  text-shadow: 2px 2px #BE8E56;
   background: none;
   z-index: 1;
   align-items: center;
   position: fixed;
   top: -35px;
-  margin-top: 20px;
-  margin-left: -10px;
+  margin: 40px 0px -20px 200px;
   height: 130px;
   width: 105%;
-  transform: rotate(-3deg);
+}
+  
+.title-tag {
+  text-align: left;
+  font-family: 'Sofia', cursive;
+  font-size: 40px;
+  color: #40160D;
+  text-shadow: 2px 2px #BE8E56;
+  background: none;
+  z-index: 1;
+  align-items: center;
+  position: fixed;
+  top: -35px;
+  margin: 25px 0px 0px -60px;
+  height: 130px;
+  width: 105%;
+  transform: rotate(-10deg);
 }
 
 h1 {
-display: flex;
-flex-direction: column-reverse;
+  text-align: right;
+  display: flex;
+  flex-direction: column-reverse;
   position: fixed;
-  top: -35px;
-  background:rgba(211, 211, 211, .9);
+  top: -25px;
+  color: #e6d6b8;
+  font-size: 25px;
+  background: #b2482c ;
+  background-position: right center ;
   height: 180px;
   width: 100%;
-  font-size: 25px;
-  padding-bottom: 20px;
+  padding-bottom: 10px; 
+  padding-right: 30px;
+  margin-left: -30px;
 }
 
 h2 {
@@ -54,8 +84,9 @@ h3 {
   text-decoration: none;
   bottom: 0px;
   margin-top: 20px;
-  background: gray;
-  height: 50px;
+  /* background: #BF6F41; */
+  background: #BE8E56;
+  height: 70px;
   width: 100%;
   justify-content: space-around;
   align-items: center;

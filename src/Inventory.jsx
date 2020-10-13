@@ -96,8 +96,12 @@ function Inventory(props) {
   }
 
   return (
-    <div>
-      <h1 className="title-tag">Pop's Liquor Cabinet</h1>
+    <div >
+      <h1 className="title-tag">
+        <div
+          className="big-pops"
+          style={{ fontSize: "50px" }}>Pop's </div>
+        <br></br>Liquor Cabinet</h1>
       <h1 >Inventory</h1>
       <h2>Total inventory: <span onClick={resetStyles} id="total-inventory">${Math.round(totalInventory(price, amountFull))}</span></h2>
       <div className="inventory-table">

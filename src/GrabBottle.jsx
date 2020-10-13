@@ -49,8 +49,12 @@ function GrabBottle(props) {
   })
 
   return (
-    <div>
-      <h1 className="title-tag">Pop's Liquor Cabinet</h1>
+    <div >
+      <h1 className="title-tag">
+        <div
+          className="big-pops"
+          style={{ fontSize: "50px" }}>Pop's </div>
+        <br></br>Liquor Cabinet</h1>
       <h1>Grab a Bottle</h1>
       <select className="grab-bottle" onChange={handleChange}>
         <option>select a bottle</option>{
@@ -58,15 +62,13 @@ function GrabBottle(props) {
             <option key={item.id} value={idx}>{item.fields.bottle}</option>
           )}
       </select>
-      {selection ?
-        <UpdateBottle id={id}
-          bottleData={bottleData}
-          updatedBottle={updatedBottle}
-          setUpdatedBottle={setUpdatedBottle}
-          inventoryRefresh={props.inventoryRefresh}
-          setInventoryRefresh={props.setInventoryRefresh} />
-        :
-        null}
+      <UpdateBottle id={id}
+        bottleData={bottleData}
+        updatedBottle={updatedBottle}
+        setUpdatedBottle={setUpdatedBottle}
+        inventoryRefresh={props.inventoryRefresh}
+        setInventoryRefresh={props.setInventoryRefresh} />
+
 
     </div>
   )

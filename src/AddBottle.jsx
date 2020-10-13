@@ -45,8 +45,12 @@ function AddBottle(props) {
     'whisky - scotch', 'whiskey - other']
 
   return (
-    <div>
-      <h1 className="title-tag">Pop's Liquor Cabinet</h1>
+    <div >
+      <h1 className="title-tag">
+        <div
+          className="big-pops"
+          style={{ fontSize: "50px" }}>Pop's </div>
+        <br></br>Liquor Cabinet</h1>
       <h1>Add a Bottle</h1>
       <h2>Fill out the form below</h2>
       <form className="add-bottle" onSubmit={handleSubmit}>

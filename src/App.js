@@ -13,8 +13,7 @@ function App() {
 
   return (
 
-    <div className="App">
-
+    <div className="App" className="main-div">
       <Navbar />
       <Route exact path="/">
         <Home />
@@ -25,7 +24,6 @@ function App() {
           setInventoryRefresh={setInventoryRefresh}
         />
       </Route>
-
       <Route path="/GrabBottle">
         <GrabBottle
           inventoryRefresh={inventoryRefresh}
@@ -35,7 +33,6 @@ function App() {
       <Route path="/AddBottle">
         <AddBottle />
       </Route>
-
     </div>
   );
 }
