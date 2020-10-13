@@ -7,6 +7,10 @@ import "./App.css";
 function Inventory(props) {
   const [spirits, setSpirits] = useState([])
   const [changeSort, setChangeSort] = useState(false)
+  const [featureSpirits, setFeatureSpirits] = useState({})
+  const [featureCategory, setFeatureCategory] = useState({})
+  const [featurePrice, setFeaturePrice] = useState({})
+  const [featureAmount, setFeatureAmount] = useState({})
 
 
   useEffect(() => {
@@ -40,6 +44,10 @@ function Inventory(props) {
       return ((textA < textB) ? -1 : (textA > textB) ? 1 : 0);
     })
     setChangeSort(!changeSort)
+    setFeatureSpirits({ background: "rgba(255, 255, 255, 0.3)" })
+    setFeatureCategory({})
+    setFeaturePrice({})
+    setFeatureAmount({})
   }
 
   const sortCategory = () => {
@@ -51,7 +59,12 @@ function Inventory(props) {
       return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     })
     setChangeSort(!changeSort)
+    setFeatureCategory({ background: "rgba(255, 255, 255, 0.3)" })
+    setFeatureSpirits({})
+    setFeaturePrice({})
+    setFeatureAmount({})
   }
+
   const sortAmount = () => {
     console.log(spirits)
     spirits.sort((a, b) => {
@@ -60,7 +73,12 @@ function Inventory(props) {
       return targetA - targetB
     })
     setChangeSort(!changeSort)
+    setFeatureAmount({ background: "rgba(255, 255, 255, 0.3)" })
+    setFeatureCategory({})
+    setFeaturePrice({})
+    setFeatureSpirits({})
   }
+
   const sortPrice = () => {
     spirits.sort((a, b) => {
       let targetA = a.fields.price;
@@ -69,31 +87,12 @@ function Inventory(props) {
 
     })
     setChangeSort(!changeSort)
-  }
-
-
-  const columnStyles = {
-    fontFamily: "avenir",
-    width: "90vw",
-    borderCollapse: 'collapse',
-    background: "rgba(211, 211, 211, 0.5)",
-    marginLeft: "20px",
-    fontSize: "14px",
+    setFeaturePrice({ background: "rgba(255, 255, 255, 0.3)" })
+    setFeatureCategory({})
+    setFeatureSpirits({})
+    setFeatureAmount({})
 
   }
-
-  const titleStyles = {
-    fontWeight: "bold",
-    borderBotton: "1px solid black",
-    paddingRight: "10px"
-  }
-
-
-  //    spirits.sort(function (a, b) {
-  //   let textA = a.fields.bottle.toUpperCase();
-  //   let textB = b.fields.bottle.toUpperCase();
-  //   return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-  // }) 
 
 
   return (
@@ -103,28 +102,29 @@ function Inventory(props) {
         <h2>Total inventory: <span id="total-inventory">${Math.round(totalInventory(price, amountFull))}</span></h2>
         <div className="inventory-table">
 
-          <table style={columnStyles}>
-            <tbody style={columnStyles}>
-              <tr style={titleStyles}>
-                <td onClick={sortBottle}>Spirit</td>
-                <td onClick={sortCategory}>Category</td>
-                <td onClick={sortPrice}>Price</td>
-                <td onClick={sortAmount}>Amt.</td>
+          <table className="inventory-columns">
+            <tbody >
+              <tr className="inventory-titles">
+
+                <td className="title-cell" onClick={sortBottle}>Spirit</td>
+                <td className="title-cell" onClick={sortCategory}>Category</td>
+                <td className="title-cell" onClick={sortPrice}>Price</td>
+                <td className="title-cell" onClick={sortAmount}>Amt.</td>
               </tr>
 
               {!spirits ? <h4>loading...</h4> : spirits.map((spirit) => (
 
                 <tr>
-                  <td key={spirit.fields.bottle}>
+                  <td style={featureSpirits} className="content-cell" key={spirit.fields.bottle}>
                     {spirit.fields.bottle}
                   </td>
-                  <td key={spirit.fields.category}>
+                  <td style={featureCategory} className="content-cell" key={spirit.fields.category}>
                     {spirit.fields.category}
                   </td>
-                  <td key={spirit.fields.price}>
+                  <td style={featurePrice} className="content-cell" key={spirit.fields.price}>
                     ${spirit.fields.price}
                   </td>
-                  <td key={spirit.fields.amountFull}>
+                  <td style={featureAmount} className="content-cell" key={spirit.fields.amountFull}>
                     {Math.round((spirit.fields.amountFull) * 100)}%
                     </td>
                 </tr>
