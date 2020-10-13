@@ -40,6 +40,11 @@ function AddBottle(props) {
     setNotes('');
   };
 
+  const categoryOptions = ['agave - mezcal', 'agave - tequila', 'agave-other', 'brandy - apple', 'brandy - cognac', 'brandy - eau de vie',
+    'brandy - other', 'fortified wine', 'gin - botanical', 'gin - dry', 'gin - old tom', 'rhum - agricole', 'rum - jamaican', 'rum - spanish',
+    'rum - other', 'liqueur - amaro', 'liqueur - aperitif', 'liqueur - cordial', 'sherry', 'vermouth', 'vodka', 'whiskey - american', 'whisky - japanese',
+    'whisky - scotch', 'whiskey - other']
+
   return (
     <div>
       <Route path="/AddBottle">
@@ -59,36 +64,13 @@ function AddBottle(props) {
           <label htmlFor="category">category </label>
           <select className="textBar"
             value={category}
-
             onChange={(e) => setCategory(e.target.value)}
             style={{ marginLeft: "0" }}
           >
             <option ></option>
-            <option>agave - mezcal</option>
-            <option>agave - tequila</option>
-            <option>agave - other</option>
-            <option>brandy - apple</option>
-            <option>brandy - cognac</option>
-            <option>brandy - eau de vie</option>
-            <option>brandy - other</option>
-            <option>fortified wine</option>
-            <option>gin - botanical</option>
-            <option>gin - dry</option>
-            <option>gin - old tom</option>
-            <option>rhum - agricole</option>
-            <option>rum - jamaican</option>
-            <option>rum - spanish</option>
-            <option>rum - other</option>
-            <option>liqueur - amaro</option>
-            <option>liqueur - aperitif</option>
-            <option>liqueur - cordial</option>
-            <option>sherry</option>
-            <option>vermouth</option>
-            <option>vodka</option>
-            <option>whiskey - american</option>
-            <option>whiskey - japanese</option>
-            <option>whiskey - scotch</option>
-            <option>whiskey - other</option>
+            {categoryOptions.map((option) =>
+              <option>{option}</option>
+            )}
           </select>
           <br></br>
           <label htmlFor="price">cost</label>

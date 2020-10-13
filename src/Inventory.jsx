@@ -12,9 +12,6 @@ function Inventory(props) {
   const [featurePrice, setFeaturePrice] = useState({})
   const [featureAmount, setFeatureAmount] = useState({})
 
-
-
-
   useEffect(() => {
 
     const getInventory = async () => {
@@ -27,7 +24,12 @@ function Inventory(props) {
       setSpirits(response.data.records)
     };
     getInventory();
-  }, [])
+
+    // Adding spirits to the dependency array makes the inventory live-update with updated botthe
+    // data, but also automatically reverts to original page refresh when sorting functions are triggered
+    // Possible workarounds?
+    //    // Move the async function up a level to App?
+  }, [props.inventoryRefresh])
 
   let price = spirits.map((spirit) => (spirit.fields.price))
   let amountFull = spirits.map((spirit) => spirit.fields.amountFull)
@@ -40,7 +42,7 @@ function Inventory(props) {
   }
 
   const sortBottle = () => {
-    spirits.sort(function (a, b) {
+    spirits.sort((a, b) => {
       let textA = a.fields.bottle.toUpperCase();
       let textB = b.fields.bottle.toUpperCase();
       return ((textA < textB) ? -1 : (textA > textB) ? 1 : 0);
@@ -53,9 +55,7 @@ function Inventory(props) {
   }
 
   const sortCategory = () => {
-    console.log(spirits)
-
-    spirits.sort(function (a, b) {
+    spirits.sort((a, b) => {
       let textA = a.fields.category.toUpperCase();
       let textB = b.fields.category.toUpperCase();
       return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
@@ -86,15 +86,14 @@ function Inventory(props) {
       let targetA = a.fields.price;
       let targetB = b.fields.price;
       return targetA - targetB
-
     })
     setChangeSort(!changeSort)
     setFeaturePrice({ background: "rgba(255, 255, 255, 0.3)" })
     setFeatureCategory({})
     setFeatureSpirits({})
     setFeatureAmount({})
-
   }
+
   const resetStyles = () => {
     setFeatureSpirits({})
     setFeatureCategory({})
@@ -102,27 +101,21 @@ function Inventory(props) {
     setFeatureAmount({})
   }
 
-
-
   return (
     <div>
       <Route path="/Inventory">
         <h1 >Inventory</h1>
         <h2>Total inventory: <span onClick={resetStyles} id="total-inventory">${Math.round(totalInventory(price, amountFull))}</span></h2>
         <div className="inventory-table">
-
           <table className="inventory-columns">
             <tbody >
               <tr className="inventory-titles">
-
                 <td style={featureSpirits} className="title-cell" onClick={sortBottle}>Spirit</td>
                 <td style={featureCategory} className="title-cell" onClick={sortCategory}>Category</td>
                 <td style={featurePrice} className="title-cell" onClick={sortPrice}>Price</td>
                 <td style={featureAmount} className="title-cell" onClick={sortAmount}>Amt.</td>
               </tr>
-
               {!spirits ? <h4>loading...</h4> : spirits.map((spirit) => (
-
                 <tr >
                   <td style={featureSpirits} className="content-cell" key={spirit.fields.bottle}>
                     {spirit.fields.bottle}

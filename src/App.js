@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Inventory from './Inventory';
 import Navbar from './Navbar';
 import GrabBottle from './GrabBottle';
@@ -7,19 +7,20 @@ import './App.css';
 
 
 function App() {
-
-
-
+  const [inventoryRefresh, setInventoryRefresh] = useState(false)
 
   return (
     <div className="App">
       <h1 className="title-tag">Pop's Liquor Cabinet</h1>
-
       <Navbar />
-      <Inventory />
-      <GrabBottle />
+      <Inventory
+        inventoryRefresh={inventoryRefresh}
+        setInventoryRefresh={setInventoryRefresh} />
+      <GrabBottle
+        inventoryRefresh={inventoryRefresh}
+        setInventoryRefresh={setInventoryRefresh}
+      />
       <AddBottle />
-
     </div>
   );
 }

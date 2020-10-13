@@ -1,7 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import homeIcon from './homeIcon.png'
-
 
 
 function Navbar() {
@@ -14,11 +12,10 @@ function Navbar() {
     <div>
       <div className="nav-bar">
         <NavLink style={linkStyles} className="NavLink" to="/">home</NavLink>
-        <NavLink style={linkStyles} className="NavLink" to="/Inventory">  inv.  </NavLink>
+        <NavLink style={linkStyles} className="NavLink" to="/Inventory">inv.</NavLink>
         <NavLink style={linkStyles} className="NavLink" to="/GrabBottle">grab</NavLink>
         <NavLink style={linkStyles} className="NavLink" to="/AddBottle">add</NavLink>
       </div>
-
     </div>
   )
 }

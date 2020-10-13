@@ -30,7 +30,7 @@ function GrabBottle(props) {
   let id = (data[selection] && data[selection].id)
 
   // alphabetical sorting function from StackOverflow.com
-  data.sort(function (a, b) {
+  data.sort((a, b) => {
     let textA = a.fields.bottle.toUpperCase();
     let textB = b.fields.bottle.toUpperCase();
     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
@@ -40,15 +40,19 @@ function GrabBottle(props) {
     <div>
       <Route path="/GrabBottle">
         <h1>Grab a Bottle</h1>
-        <select onChange={handleChange}>
+        <select classNme="grab-bottle" onChange={handleChange}>
           <option>select a bottle</option>{
             data.map((item, idx) =>
               <option key={item.id} value={idx}>{item.fields.bottle}</option>
             )}
         </select>
         {selection ?
-          <UpdateBottle id={id} bottleData={bottleData}
-            updatedBottle={updatedBottle} setUpdatedBottle={setUpdatedBottle} />
+          <UpdateBottle id={id}
+            bottleData={bottleData}
+            updatedBottle={updatedBottle}
+            setUpdatedBottle={setUpdatedBottle}
+            inventoryRefresh={props.inventoryRefresh}
+            setInventoryRefresh={props.setInventoryRefresh} />
           :
           null}
       </Route>
@@ -60,3 +64,4 @@ export default GrabBottle;
 
 
 
+// inventory -- getter

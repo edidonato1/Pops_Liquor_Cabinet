@@ -3,20 +3,6 @@
   background: url(brickDoor.jpg);
   background-size: 100vh;
   background-position: center;
-
-}
-.nav-bar {
-  position: fixed; 
-  text-decoration: none;
-  bottom: 0px;
-  margin-top: 20px;
-  background: gray;
-  height: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
 }
 
 h1 {
@@ -24,24 +10,38 @@ h1 {
   top: 60px;
   background:lightgray;
   width: 100%;
-  /* margin-top: 90px; */
   font-size: 25px;
   padding-bottom: 10px;
 }
 
 h2 {
   margin-top: 130px;
-font-size: 22px;
-color: white;
+  font-size: 22px;
+  color: white;
 }
 
 h3 {
   font-size: 30px;
 }
 
-.title-tag {
+.nav-bar {
   display: flex;
+  position: fixed; 
+  text-decoration: none;
+  bottom: 0px;
+  margin-top: 20px;
+  background: gray;
+  height: 50px;
+  width: 100%;
+  justify-content: space-around;
   align-items: center;
+}
+
+/* Inventory  */
+
+.title-tag {
+display: flex;
+align-items: center;
 background: lightgray;
 position: fixed;
 top: 0;
@@ -100,21 +100,26 @@ td {
 
 }
 
-
+/* Grab Bottle */
 
 select {
-margin: 130px 0 0 20px;
-height: 30px;
 font-family: avenir;
 font-size: 16px;
-width: 75vw;
-
+margin: 130px 0 0 20px;
+height: 30px;
+width:300px;
+border: none;
+background: rgba(231, 228, 228, 0.7);
+border-radius: 5px;
 }
+
 
 option {
   font-family: avenir;
 
 }
+
+/* Update Bottle */
 
 .update-bottle {
   width: 76vw;
@@ -150,8 +155,19 @@ padding-right: 10px;
 }
 
 .plus-minus {
+  font-size: 30px;
+  background: rgba(0, 0, 0, .5);
+  border-style: inset;
+  color: white;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
+  margin: 3px 0 3px;
+}
+
+.plus-minus:hover {
+  background: rgba(95, 95, 95, 0.5);
+  border-style: outset;
 }
 
 
@@ -183,7 +199,6 @@ padding-right: 10px;
   color: white;
   width: 300px;
   font-size: 16px;
-  /* margin: 0 auto; */
   text-align: left;
   display: block;
 }
