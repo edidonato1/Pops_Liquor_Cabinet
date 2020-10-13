@@ -103,6 +103,7 @@ function Inventory(props) {
   }
 
 
+
   return (
     <div>
       <Route path="/Inventory">
@@ -114,15 +115,15 @@ function Inventory(props) {
             <tbody >
               <tr className="inventory-titles">
 
-                <td className="title-cell" onClick={sortBottle}>Spirit</td>
-                <td className="title-cell" onClick={sortCategory}>Category</td>
-                <td className="title-cell" onClick={sortPrice}>Price</td>
-                <td className="title-cell" onClick={sortAmount}>Amt.</td>
+                <td style={featureSpirits} className="title-cell" onClick={sortBottle}>Spirit</td>
+                <td style={featureCategory} className="title-cell" onClick={sortCategory}>Category</td>
+                <td style={featurePrice} className="title-cell" onClick={sortPrice}>Price</td>
+                <td style={featureAmount} className="title-cell" onClick={sortAmount}>Amt.</td>
               </tr>
 
               {!spirits ? <h4>loading...</h4> : spirits.map((spirit) => (
 
-                <tr>
+                <tr >
                   <td style={featureSpirits} className="content-cell" key={spirit.fields.bottle}>
                     {spirit.fields.bottle}
                   </td>

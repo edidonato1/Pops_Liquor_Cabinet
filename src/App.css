@@ -73,6 +73,11 @@ width: 100%;
   padding-right: 10px;
 }
 
+.content-cell:hover {
+  background: rgba(255, 255, 255, 0.3);
+  cursor: default;
+}
+
 .title-cell:hover {
   background: rgba(255, 255, 255, 0.3);
   cursor: default;
