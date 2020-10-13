@@ -58,6 +58,10 @@ width: 100%;
   padding: 3px;
 }
 
+#total-inventory:hover {
+  background: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
 
 .inventory-table {
   margin-bottom: 70px;
@@ -70,7 +74,7 @@ width: 100%;
 }
 
 .title-cell:hover {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.3);
   cursor: default;
 }
 

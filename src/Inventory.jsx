@@ -13,6 +13,8 @@ function Inventory(props) {
   const [featureAmount, setFeatureAmount] = useState({})
 
 
+
+
   useEffect(() => {
 
     const getInventory = async () => {
@@ -93,13 +95,19 @@ function Inventory(props) {
     setFeatureAmount({})
 
   }
+  const resetStyles = () => {
+    setFeatureSpirits({})
+    setFeatureCategory({})
+    setFeaturePrice({})
+    setFeatureAmount({})
+  }
 
 
   return (
     <div>
       <Route path="/Inventory">
-        <h1>Inventory</h1>
-        <h2>Total inventory: <span id="total-inventory">${Math.round(totalInventory(price, amountFull))}</span></h2>
+        <h1 >Inventory</h1>
+        <h2>Total inventory: <span onClick={resetStyles} id="total-inventory">${Math.round(totalInventory(price, amountFull))}</span></h2>
         <div className="inventory-table">
 
           <table className="inventory-columns">
