@@ -11,7 +11,7 @@
   50% {background: rgba(166, 76, 68, .2)}
   to {background: none}
 }
-
+                                              /* Home Menu */
 .menu-link {
   margin-top: 255px;
   width: 120px;
@@ -28,7 +28,6 @@
 }
 
 .scroll {
-
   margin-top: 200px;
   display: flex;
   overflow-x: scroll;
@@ -82,6 +81,8 @@ body {
   background-attachment: fixed;
 }
 
+                                              /*  Title Bar  */
+
 .big-pops {
   font-family: 'Sofia', cursive;
   font-size: 56px;
@@ -93,6 +94,8 @@ body {
   margin: 25px 10px 0px 200px;
   width: 105%;
 }
+
+
   
 .title-tag {
   text-align: left;
@@ -108,7 +111,10 @@ body {
   height: 130px;
   width: 105%;
   transform: rotate(-10deg);
+  background: none;
+
 }
+
 
 h1 {
   text-align: right;
@@ -157,6 +163,7 @@ h3 {
 }
 
 
+
                                             /* Inventory  */
 
 #total-inventory {
@@ -202,15 +209,72 @@ h3 {
   background: rgba(202, 194, 187, 0.6);
   margin-left: 20px;
   font-size: 14px;
+  margin-right: 40px;
 }
 
 td {
   border-bottom: .7px solid lightgray; 
+  padding: 17px 5px 0px 5px;
   padding-top: 17px;
   vertical-align: bottom;
   padding-right: 5px;
 
 }
+
+
+@media screen and (min-width: 500px ) and (min-height: 750px) {
+
+  .big-pops {
+    font-size: 70px;
+    margin-top: 0px;
+    margin-left: 250px;
+  }
+  
+  .title-tag {
+    font-size: 60px;
+    margin-top: 40px;
+  }
+   h1 {
+     height: 190px;
+     font-size: 28px;
+   }
+
+   h2 {
+     font-size: 25px;
+     margin-top: 220px;
+     margin-left: 60px;
+   }
+
+   .nav-bar {
+     height: 100px;
+     font-size: 25px;
+   }
+
+   #total-inventory {
+     padding: 10px;
+
+   }
+
+   .inventory-table {
+    margin-bottom: 120px;
+    margin-left: 40px;
+   }
+
+   .inventory-columns {
+    width: 85vw;
+   }
+
+   td {
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: 18px;
+  }
+  .title-cell {
+    font-size: 20px;
+  }  
+
+  
+  }
 
                                             /* Grab Bottle */
 
