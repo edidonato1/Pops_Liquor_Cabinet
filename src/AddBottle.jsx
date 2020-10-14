@@ -51,7 +51,7 @@ function AddBottle(props) {
           className="big-pops"
           style={{ fontSize: "50px" }}>Pop's </div>
         <br></br>Liquor Cabinet</h1>
-      <h1>add a bottle</h1>
+      <h1>add a bottle.</h1>
       <h2>Fill out the form below</h2>
       <form className="add-bottle" onSubmit={handleSubmit}>
         <label htmlFor="bottle">spirit </label>

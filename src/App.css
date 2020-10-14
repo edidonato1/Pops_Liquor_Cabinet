@@ -158,12 +158,14 @@ td {
 select {
 font-family: avenir;
 font-size: 16px;
-margin: 190px 0 0 20px;
+margin: 200px 0 0 20px;
+outline: none;
 height: 30px;
 width:300px;
 border: none;
 background: rgba(231, 228, 228, 0.7);
 border-radius: 5px;
+box-shadow: 2px 0px 3px 0px rgb(50, 50, 50);
 }
 
 
@@ -177,9 +179,10 @@ option {
 .update-bottle {
   width: 76vw;
   display: inline-block;
-  /* background: rgba(211, 211, 211, 0.5); */
-  background: rgba(191, 111, 65, .7);
-  border: 5px solid rgba(215, 182, 153, 0.5);
+  background: rgba(211, 211, 211, 0.6);
+  /* background: rgba(191, 111, 65, .7); */
+  border: 5px solid rgba(215, 182, 153, 0.7);
+  box-shadow: 2px 0px 3px 0px rgb(50, 50, 50);
   border-radius: 10px;
   padding: 10px;
   margin: 50px 30px 0 30px;
@@ -188,8 +191,9 @@ option {
 
 h3 {
   font-size: 25px;
+  font-weight: normal;
   /* color:#40160D; */
-  color: white;
+  color: black;
 }
 
 .counter-container {
@@ -200,37 +204,43 @@ justify-content: flex-start;
 }
 
 .percentage {
-  width: 120px;
+  text-align: right;
+  width: 95px;
   padding: 10px;
-  font-size: 70px;
+  margin-left: 10px;
+  font-size: 60px;
   border: 2px solid white;
   border-radius: 10px;
-  color: #40160D;
+  color: #BF6F41;
   background: rgba(240, 241, 242, .8);
-  /* background: rgba(211, 211, 211, 0.5); */
+  /* background: rgba(217, 150, 91, .8); */
 }
 
 .button-box {
-padding-right: 10px;
-
+padding: 10px;
+background: rgba(180, 74, 45, .9);
+border: 1.5px solid #E3E5E6;
+border-radius: 10px;
 }
 
 .plus-minus {
-  font-size: 30px;
-  background: rgba(0, 0, 0, .5);
+  font-size: 25px;
+  /* background: rgba(0, 0, 0, .5); */
+  background: rgba(227, 229, 230, .7);
   border-style: inset;
-  color: white;
+  color: black;
   border-radius: 50%;
   outline: none;
-  object-fit: contain;
-  width: 35px;
-  height: 35px;
-  margin: 3px 0 3px;
+  width: 40px;
+  height: 40px;
+  margin: 5px 0 3px;
+
 }
 
 .plus-minus:hover {
   background: rgba(95, 95, 95, 0.5);
   border-style: outset;
+  color: white;
 }
 
 
@@ -262,6 +272,7 @@ padding-right: 10px;
   border: none;
   background: rgba(231, 228, 228, 0.5);
   border-radius: 5px;
+  box-shadow: 2px 0px 3px 0px rgb(50, 50, 50);
 }
 
 .textBar:hover {

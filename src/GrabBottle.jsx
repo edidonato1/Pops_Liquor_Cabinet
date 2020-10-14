@@ -55,7 +55,7 @@ function GrabBottle(props) {
           className="big-pops"
           style={{ fontSize: "50px" }}>Pop's </div>
         <br></br>Liquor Cabinet</h1>
-      <h1>Grab a Bottle</h1>
+      <h1>grab a bottle.</h1>
       <select className="grab-bottle" onChange={handleChange}>
         <option>select a bottle</option>{
           data.map((item, idx) =>
