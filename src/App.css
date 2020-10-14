@@ -557,8 +557,45 @@ h3 {
    
   }
 
-  @media screen and (min-width: 700 ) and (min-height: 900px) {
+  @media screen and (min-width: 900px ) {
 
+    body {
+      background-size: 102%;
+      background-position: center;
+    }
 
+    .big-pops {
+      font-size: 90px;
+      width: 200px;
+      /* background: yellow; */
+    }
+
+    .title-tag {
+      font-size: 80px;
+      margin-top: 40px;
+      /* background: green; */
+    }
+
+    .nav-bar {
+      flex-direction: column;
+      justify-content: flex-start;
+      bottom: initial;
+      left: 0;
+      margin-top: 180px;
+      padding-top: 100px;
+      line-height: 15vh;
+      height: 100%;
+      width: 20vw;
+      z-index: 0;
+    }
+
+    .menu-link {
+      width: 150px;
+      margin-right: 40px;
+    }
+    .link-box {
+      display: flex;
+      justify-content: flex-end;
+    }
 
   }
