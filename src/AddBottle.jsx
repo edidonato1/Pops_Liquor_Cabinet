@@ -7,11 +7,12 @@ function AddBottle(props) {
   const [category, setCategory] = useState('');
   const [price, setPrice] = useState();
   const [bottleSizes, setBottleSizes] = useState();
-  const [amountFull, setAmountFull] = useState();
+  const [amountFull, setAmountFull] = useState(1);
   const [notes, setNotes] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setAmountFull(parseInt(1))
     const fields = {
       bottle,
       category,
@@ -35,7 +36,6 @@ function AddBottle(props) {
     setCategory('');
     setPrice('');
     setBottleSizes('');
-    setAmountFull('');
     setNotes('');
   };
 
@@ -48,8 +48,7 @@ function AddBottle(props) {
     <div >
       <h1 className="title-tag">
         <div
-          className="big-pops"
-          style={{ fontSize: "50px" }}>Pop's </div>
+          className="big-pops">Pop's </div>
         <br></br>Liquor Cabinet</h1>
       <h1>add a bottle.</h1>
       <h2>Fill out the form below</h2>
@@ -59,7 +58,7 @@ function AddBottle(props) {
         <input
           className="textBar"
           type="text"
-          placeholder="ex: Blanton's"
+          placeholder="ex: Nikka Coffee Grain"
           value={bottle}
           onChange={(e) => setBottle(e.target.value)}
         />
@@ -98,18 +97,11 @@ function AddBottle(props) {
         <br></br>
         <label htmlFor="amountFull">Amount (1 for full bottle) </label>
         <br></br>
-        <input
-          className="textBar"
-          type="text"
-          placeholder="ex: 1"
-          value={amountFull}
-          onChange={(amountFull % 1 < 1) ? (e) => setAmountFull(parseInt(e.target.value)) : setAmountFull('')}
-        />
-        <br></br>
         <label htmlFor="status">notes </label>
         <br></br>
         <textarea
           style={{ height: "80px" }}
+          placeholder="ex: single grain coffee still"
           className="textBar"
           id="notes"
           type="text"

@@ -52,8 +52,7 @@ function GrabBottle(props) {
     <div >
       <h1 className="title-tag">
         <div
-          className="big-pops"
-          style={{ fontSize: "50px" }}>Pop's </div>
+          className="big-pops">Pop's </div>
         <br></br>Liquor Cabinet</h1>
       <h1>grab a bottle.</h1>
       <select className="grab-bottle" onChange={handleChange}>

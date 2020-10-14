@@ -20,33 +20,28 @@ body {
 }
 
 .big-pops {
-  text-align: left;
   font-family: 'Sofia', cursive;
-  font-size: 40px;
+  font-size: 56px;
   color: #40160D;
   text-shadow: 2px 2px #BE8E56;
-  background: none;
-  z-index: 1;
   align-items: center;
   position: fixed;
   top: -35px;
-  margin: 40px 0px -20px 200px;
-  height: 130px;
+  margin: 25px 10px 0px 200px;
   width: 105%;
 }
   
 .title-tag {
   text-align: left;
   font-family: 'Sofia', cursive;
-  font-size: 40px;
+  font-size: 42px;
   color: #40160D;
   text-shadow: 2px 2px #BE8E56;
-  background: none;
   z-index: 1;
   align-items: center;
   position: fixed;
-  top: -35px;
-  margin: 25px 0px 0px -60px;
+  top: -30px;
+  margin: 30px 0px 0px -50px;
   height: 130px;
   width: 105%;
   transform: rotate(-10deg);
@@ -105,13 +100,14 @@ h3 {
   border: 1px solid white;
   border-radius: 10px;
   background: rgba(227, 229, 230, .5);
-  color: #B2482C;
+  color: #A6432D;
   font-weight: bold;
   padding: 3px;
 }
 
 #total-inventory:hover {
-  background: rgba(255, 255, 255, 0.8);
+  /* background: rgba(255, 255, 255, 0.8); */
+  background: rgba(217, 150, 91, .5);
   cursor: default;
 }
 
