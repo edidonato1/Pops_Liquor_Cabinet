@@ -6,6 +6,27 @@
   width: 0px;
 }
 
+@keyframes pulse {
+  from {background: none}
+  50% {background: rgba(166, 76, 68, .2)}
+  to {background: none}
+}
+
+.menu-link {
+  margin-top: 255px;
+  width: 120px;
+  height: 50px;
+ padding: 11px 0 0px 0;
+ border-radius: 25px;
+ text-align: center;
+  margin-left: 20px;
+  text-decoration: none;
+  animation: pulse;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
 .scroll {
 
   margin-top: 200px;

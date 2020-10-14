@@ -1,14 +1,11 @@
 import React from 'react'
-import HomeMenu from './HomeMenu'
+import { Link } from 'react-router-dom';
 
 
 
 
 function Home() {
 
-
-
-  const stuff = [<HomeMenu />, <HomeMenu />, <HomeMenu />, <HomeMenu />, <HomeMenu />, <HomeMenu />, <HomeMenu />, <HomeMenu />, <HomeMenu />,]
 
   return (
     <div >
@@ -17,12 +14,10 @@ function Home() {
           className="big-pops">Pop's </div>
         <br></br>Liquor Cabinet</h1>
       <h1>welcome home.</h1>
-
-      <div className="scroll">
-        {stuff.map(thingy => <div>{thingy}</div>)}
+      <div >
+        <Link style={{ textDecoration: "none" }} to="/HomeMenu"><h3 className="menu-link" >start here</h3></Link>
       </div>
-
-    </div>
+    </div >
   )
 
 }

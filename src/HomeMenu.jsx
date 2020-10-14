@@ -1,15 +1,29 @@
-import React from 'react';
+import React from 'react'
+import AboutPage from './AboutPage'
+
+
+
 
 function HomeMenu() {
 
-  return (
-    <div className="scroll-menu">
-      <h5 className="scroll-title">about</h5>
-      <p>Pop's Liquor Cabinet is the bar inventory management system for the home enthusiast.</p>
-      <p>Easily add and update inventory, and make tasting notes for yourself as you enjoy your collection.</p>
-    </div>
 
+
+  const stuff = [<AboutPage />, <AboutPage />, <AboutPage />, <AboutPage />, <AboutPage />, <AboutPage />]
+
+  return (
+    <div >
+      <h1 className="title-tag">
+        <div
+          className="big-pops">Pop's </div>
+        <br></br>Liquor Cabinet</h1>
+      <h1>menu.</h1>
+      <div className="scroll">
+        {stuff.map(thingy => <div>{thingy}</div>)}
+      </div>
+
+    </div>
   )
+
 }
 
-export default HomeMenu;
+export default HomeMenu

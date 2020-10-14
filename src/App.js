@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 import Navbar from './Navbar';
-import Home from './Home';
+import HomeMenu from './HomeMenu';
+import Home from './Home'
 import GrabBottle from './GrabBottle';
 import Inventory from './Inventory';
 import AddBottle from './AddBottle';
@@ -17,6 +18,9 @@ function App() {
       <Navbar />
       <Route exact path="/">
         <Home />
+      </Route>
+      <Route path="/HomeMenu">
+        <HomeMenu />
       </Route>
       <Route path="/Inventory">
         <Inventory
