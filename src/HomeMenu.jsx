@@ -15,7 +15,7 @@ function HomeMenu() {
       <h1 className="title-tag">
         <div
           className="big-pops">Pop's </div>
-        <br></br><div className="title-2">Liquor Cabinet</div></h1>
+        <br></br>Liquor Cabinet</h1>
       <h1>menu.</h1>
       <div className="scroll">
         {menuComponents.map(item => <div>{item}</div>)}

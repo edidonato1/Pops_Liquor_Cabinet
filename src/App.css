@@ -179,7 +179,6 @@ h3 {
 }
 
 #total-inventory:hover {
-  /* background: rgba(255, 255, 255, 0.8); */
   background: rgba(217, 150, 91, .5);
   cursor: default;
 }
@@ -194,6 +193,10 @@ h3 {
   padding-right: 10px;
 }
 
+.title-cell{
+border-bottom: 1px solid gray;
+}
+
 .content-cell:hover {
   background: rgba(255, 255, 255, 0.3);
   cursor: default;
@@ -204,11 +207,12 @@ h3 {
   cursor: default;
 }
 
+
 .inventory-columns {
   font-family: avenir;
   width: 90vw;
   border-collapse: collapse;
-  background: rgba(227, 229, 230, .6);
+  background: rgba(227, 229, 230, .7);
   margin-left: 20px;
   font-size: 14px;
   margin-right: 40px;
@@ -260,7 +264,7 @@ option {
   border-radius: 10px;
   padding: 10px;
   margin: 50px 30px 0 30px;
-  height: 400px;
+  height: 48vh;
 }
 
 .grab-bottle-spirit {
@@ -567,40 +571,43 @@ h3 {
       position: fixed;
       left: initial;
       top: 10px;
-      font-size: 80px;
+      font-size: 75px;
       transform: initial; 
+      z-index: 3;
     } 
     .big-pops {
 
       font-size: 90px;
-
-      /* width: 200px; */
-      /* position: absolute; */
-      /* left: 300px; */
-      /* top: -50px; */
-      /* margin: initial; */
       margin-top: -50px;
       margin-right: 100px;
 
       transform: rotate(-10deg); 
     }
 
-    .title-2 {
-
-    }
-
-
     .nav-bar {
       flex-direction: column;
       justify-content: flex-start;
       bottom: initial;
       left: 0;
+      top:0;
       margin-top: 180px;
       padding-top: 100px;
+      margin-right: 30px;
       line-height: 15vh;
       height: 100%;
       width: 20vw;
-      z-index: 0;
+      z-index: 1;
+    }
+
+    h1 {
+      z-index: 2;
+      font-size: 35px;
+      margin-right: 10vw;
+    }
+
+    h2 {
+      margin-left: 25vw;
+      font-size: 30px;
     }
 
     .menu-link {
@@ -610,6 +617,26 @@ h3 {
     .link-box {
       display: flex;
       justify-content: flex-end;
+    }
+
+    .inventory-table {
+      margin-left: 26vw;
+      margin-right: 10vw;
+    }
+
+    .inventory-columns {
+      width: 65vw;
+    }
+
+    td {
+      font-size: 20px;
+      padding-top: 25px;
+      padding-left: 20px;
+    }
+
+    .title-cell {
+      font-size: 25px;
+      line-height: 50px;
     }
 
   }
