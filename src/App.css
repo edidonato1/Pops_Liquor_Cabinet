@@ -528,14 +528,6 @@ h3 {
    align-items: center;
        }
 
-   .form-block {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    justify-content: space-evenly;
-    align-items: center;
-   }
-
    .form-block-bottom {
     display: flex;
     width: 100%;
@@ -637,6 +629,27 @@ h3 {
     .title-cell {
       font-size: 25px;
       line-height: 50px;
+    }
+
+    #select {
+      height: 45px;
+      width: 400px;
+    }
+
+    .update-bottle {
+      margin-left: 25vw;
+      width: 500px;
+      margin-top: 10vh;
+      margin-bottom: 20px;
+    }
+
+    .add-bottle {
+    width: 65vw;
+    margin-left: 25vw;
+    }
+
+    .textBar{
+      width: 25vw;
     }
 
   }
