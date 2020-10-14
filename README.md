@@ -68,16 +68,16 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 
 #### MVP
 
-- Render a multi-page application -[]
-- Synchronize Airtable API to get and post data to and from UI -[]
-  - Ability to add new bottles -[]
-  - Ability to update current inventory -[]
-  - Ability to delete inventory -[]
+- Render a multi-page application -[x]
+- Synchronize Airtable API to get and post data to and from UI -[x]
+  - Ability to add new bottles -[x]
+  - Ability to update current inventory -[x]
+  - Ability to delete inventory -[x]
 - React Router is used for nagivation between pages and components 
-- Data-dependent components are responsive to user input -[]
-- Data-dependent components render accurate information when applicable -[]
-- Application is tastefully styled with at least three query breakpoints -[]
-- Code is clean and linted to industry standards -[]
+- Data-dependent components are responsive to user input -[x]
+- Data-dependent components render accurate information when applicable -[x]
+- Application is tastefully styled with at least three query breakpoints -[x]
+- Code is clean and linted to industry standards -[x]
 - Application is delployed via Netlify -[]
 
 
@@ -85,6 +85,7 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 
 - Import component library for CSS styling -[]
 - Bottles are automatically deleted from inventory when % full reaches zero -[x] 
+- Component-based horizontal scroll menu -[x]
 - Additional form, connected to additional Airtable API for user to create a personal cocktail directory -[]
 - Graphic that reflects the amount of product in the current bottle on "grab bottle" page -[]
 - Cocktail costing sheet for professional bartenders -[]
@@ -116,14 +117,14 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
 | Build Airtable API | H | 2hrs| 1hr |
-| Base Component Structure | H | 8hrs| 3hrs |
 | Establish Axios Get, Post & Delete Requests | H | 6hrs| 6hrs |
+| Base Component Structure | H | 8hrs| 12hrs |
 | CSS Layout & Styling  | H | 10hrs| 15hrs |
-| Responsive Design  | H | 4hrs| - -  |
+| Responsive Design  | H | 4hrs| 6hrs |
 | *Bring in Rolodex API* *| L | 1hr| - -  |
 | *Rolodex Form Component* *| L | 4hr| - -  |
 | *Bottle Amount Graphic* *| L | 6hr| - -  |
-| Total | - -  | 41hrs| - -  |
+| Total | - -  | 41hrs| 40hrs  |
 
  *Post-MVP * *
 

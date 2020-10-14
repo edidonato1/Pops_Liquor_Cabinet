@@ -75,5 +75,12 @@ Tuesday 10.13
 Wednesday 10.14
 -----
 
-- Complete tablet and web media queries
+- Complete tablet and web media queries -[x]
 - work on add'l js features
+- Create component-based horizontal scroll menu 
+- fix but in AddBottle styling
+- Create tasting notes component to appear with tablet and web breakpoints
+  - display: none; for mobile
+- Conditionals for form :
+  - if certain fields are empty, don't allow submit
+- *** DEPLOY YOUR SITE
