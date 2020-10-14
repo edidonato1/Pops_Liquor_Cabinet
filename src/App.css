@@ -553,8 +553,7 @@ h3 {
   @media screen and (min-width: 1000px ) {
 
     body {
-      background-size: 100%;
-      background-repeat: no-repeat;
+      background-size: 110%;
       background-position: center;
     }
     
@@ -572,7 +571,6 @@ h3 {
       font-size: 90px;
       margin-top: -50px;
       margin-right: 100px;
-
       transform: rotate(-10deg); 
     }
 
@@ -650,6 +648,15 @@ h3 {
 
     .textBar{
       width: 25vw;
+    }
+
+    .scroll {
+      margin-left: 20vw;
+    }
+
+    .scroll-menu {
+      margin: 30px;
+      width: 500px;
     }
 
   }
