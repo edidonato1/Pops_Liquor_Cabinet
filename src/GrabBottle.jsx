@@ -42,18 +42,21 @@ function GrabBottle(props) {
           className="big-pops">Pop's </div>
         <br></br>Liquor Cabinet</h1>
       <h1>grab a bottle.</h1>
-      <select className="textBar" id="select" onChange={handleChange}>
-        <option>select a bottle</option>{
-          data.map((item, idx) =>
-            <option key={item.id} value={idx}>{item.fields.bottle}</option>
-          )}
-      </select>
+      <div className="select-bottle">
+        <select className="textBar" id="select" onChange={handleChange}>
+          <option>select a bottle</option>{
+            data.map((item, idx) =>
+              <option key={item.id} value={idx}>{item.fields.bottle}</option>
+            )}
+        </select>
+      </div>
       <UpdateBottle id={id}
         bottleData={bottleData}
         updatedBottle={updatedBottle}
         setUpdatedBottle={setUpdatedBottle}
         inventoryRefresh={props.inventoryRefresh}
         setInventoryRefresh={props.setInventoryRefresh} />
+
 
 
     </div>
