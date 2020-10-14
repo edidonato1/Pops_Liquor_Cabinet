@@ -7,19 +7,6 @@ function GrabBottle(props) {
   const [selection, setSelection] = useState('')
   const [updatedBottle, setUpdatedBottle] = useState(false)
 
-  // useEffect(() => {
-  //   const getInventory = async () => {
-  //     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits`;
-  //     const response = await axios.get(airtableURL, {
-  //       headers: {
-  //         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-  //       },
-  //     });
-  //     setData(response.data.records)
-  //   };
-  //   getInventory();
-  // }, [])
-
   useEffect(() => {
     const getInventory = async () => {
       const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits`;

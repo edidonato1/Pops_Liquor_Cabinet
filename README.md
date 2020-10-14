@@ -84,11 +84,11 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 #### PostMVP  
 
 - Import component library for CSS styling -[]
-- Bottles are automatically deleted from inventory when % full reaches zero -[] 
+- Bottles are automatically deleted from inventory when % full reaches zero -[x] 
 - Additional form, connected to additional Airtable API for user to create a personal cocktail directory -[]
 - Graphic that reflects the amount of product in the current bottle on "grab bottle" page -[]
 - Cocktail costing sheet for professional bartenders -[]
-- About page and *help* modals for certain input fields -[]
+- Get Notes modal when item is clicked in inventory -[]
 
 ---
 
@@ -101,7 +101,7 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 |Oct 9| Project Approval | Complete
 |Oct 12| Core Application Structure (HTML, CSS, etc.) | Complete
 |Oct 12| Pseudocode / Actual Code | Complete
-|Oct 13| MVP | Incomplete
+|Oct 13| MVP | Complete
 |Oct 15| Post-MVP | Incomplete
 |Oct 16| Presentations | Incomplete
 
@@ -118,7 +118,7 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 | Build Airtable API | H | 2hrs| 1hr |
 | Base Component Structure | H | 8hrs| 3hrs |
 | Establish Axios Get, Post & Delete Requests | H | 6hrs| 6hrs |
-| CSS Layout & Styling  | H | 10hrs| 10hrs |
+| CSS Layout & Styling  | H | 10hrs| 15hrs |
 | Responsive Design  | H | 4hrs| - -  |
 | *Bring in Rolodex API* *| L | 1hr| - -  |
 | *Rolodex Form Component* *| L | 4hr| - -  |
@@ -160,3 +160,9 @@ const Eddie() => isTired ? doThisLater : stayUpAllNight
 
 ## Change Log
  
+10.13 - Removed option for user to enter the amount in the bottle they're adding in the form.
+      - This frees space in the AddBottle UI and removes an unnecessary step, assuming all new bottles added to the collection are full.  User can ajust afterwards if that isn't the case.
+
+10.13 - Added horizontal scroll menu to UI.
+      - As opposed to initial wireframes mockup, gives the user full full access to the features of the app from the home menu
+

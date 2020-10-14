@@ -46,7 +46,6 @@ function AddBottle(props) {
 
   return (
     <div >
-
       <h1 className="title-tag">
         <div
           className="big-pops">Pop's </div>

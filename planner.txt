@@ -71,3 +71,9 @@ Tuesday 10.13
 - Update README -[x]
 - With sorting function the way that it is, the inventory won't automatically update. -[x]
   - Try to figure out a workaround if there's time. -[x]
+
+Wednesday 10.14
+-----
+
+- Complete tablet and web media queries
+- work on add'l js features
