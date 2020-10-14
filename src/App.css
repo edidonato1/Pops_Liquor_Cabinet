@@ -149,19 +149,21 @@ td {
 
 }
 
-/* Grab Bottle */
+                                            /* Grab Bottle */
 
-select {
-font-family: avenir;
-font-size: 16px;
-margin: 200px 0 0 20px;
-outline: none;
-height: 30px;
-width:300px;
-border: none;
-background: rgba(231, 228, 228, 0.7);
-border-radius: 5px;
-box-shadow: 2px 0px 3px 0px rgb(50, 50, 50);
+#select {
+margin: 210px 0 0 20px;
+}
+
+#select:hover {
+  background: rgba(217, 150, 91, .7);
+}
+
+#select:focus {
+
+  color: white;
+  background: rgba(178, 72, 44, .7);
+  outline: none;
 }
 
 
@@ -175,8 +177,8 @@ option {
 .update-bottle {
   width: 76vw;
   display: inline-block;
+  position: relative;
   background: rgba(211, 211, 211, 0.6);
-  /* background: rgba(191, 111, 65, .7); */
   border: 5px solid rgba(215, 182, 153, 0.7);
   box-shadow: 2px 0px 3px 0px rgb(50, 50, 50);
   border-radius: 10px;
@@ -193,6 +195,8 @@ h3 {
 }
 
 .counter-container {
+  position: absolute;
+  bottom: 20px;
 display: flex;
 flex-wrap: wrap;
 align-items: center;
@@ -244,6 +248,10 @@ border-radius: 10px;
 
                                             /* Add Bottle */
 
+.form-container {
+  margin-top: 150px;
+}
+
 .submit {
   font-weight: bold;
   font-size: 16px;
@@ -276,23 +284,19 @@ border-radius: 10px;
 }
 
 .textBar:focus {
-
   color: white;
   background: rgba(178, 72, 44, .7);
   outline: none;
 }
 
 .add-bottle {
+  position: relative;
+  top: 50px;
   line-height: 10px;
   margin: 0 auto;
   color: #40160D;
   width: 300px;
   font-size: 16px;
   text-align: left;
-  display: block;
-}
-
-textarea {
-height: 200px;
 }
 

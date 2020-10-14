@@ -46,6 +46,7 @@ function AddBottle(props) {
 
   return (
     <div >
+
       <h1 className="title-tag">
         <div
           className="big-pops">Pop's </div>
@@ -94,8 +95,6 @@ function AddBottle(props) {
           value={bottleSizes}
           onChange={(bottleSizes % 1 < 1) ? (e) => setBottleSizes(parseInt(e.target.value)) : setBottleSizes('')}
         />
-        <br></br>
-        <label htmlFor="amountFull">Amount (1 for full bottle) </label>
         <br></br>
         <label htmlFor="status">notes </label>
         <br></br>
