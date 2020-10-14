@@ -8,7 +8,7 @@ function HomeMenu() {
 
 
 
-  const stuff = [<AboutPage />, <AboutPage />, <AboutPage />, <AboutPage />, <AboutPage />, <AboutPage />]
+  const menuComponents = [<AboutPage />, <AboutPage />, <AboutPage />, <AboutPage />, <AboutPage />, <AboutPage />]
 
   return (
     <div >
@@ -18,9 +18,8 @@ function HomeMenu() {
         <br></br>Liquor Cabinet</h1>
       <h1>menu.</h1>
       <div className="scroll">
-        {stuff.map(thingy => <div>{thingy}</div>)}
+        {menuComponents.map(item => <div>{item}</div>)}
       </div>
-
     </div>
   )
 
