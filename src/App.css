@@ -101,8 +101,6 @@ body {
   width: 105%;
 }
 
-
-  
 .title-tag {
   text-align: left;
   font-family: 'Sofia', cursive;
@@ -120,7 +118,6 @@ body {
   background: none;
 
 }
-
 
 h1 {
   text-align: right;
@@ -557,24 +554,41 @@ h3 {
    
   }
 
-  @media screen and (min-width: 900px ) {
+  @media screen and (min-width: 1000px ) {
 
     body {
-      background-size: 102%;
+      background-size: 100%;
+      background-repeat: no-repeat;
       background-position: center;
     }
-
-    .big-pops {
-      font-size: 90px;
-      width: 200px;
-      /* background: yellow; */
-    }
-
+    
     .title-tag {
+      text-align: left; 
+      position: fixed;
+      left: initial;
+      top: 10px;
       font-size: 80px;
-      margin-top: 40px;
-      /* background: green; */
+      transform: initial; 
+    } 
+    .big-pops {
+
+      font-size: 90px;
+
+      /* width: 200px; */
+      /* position: absolute; */
+      /* left: 300px; */
+      /* top: -50px; */
+      /* margin: initial; */
+      margin-top: -50px;
+      margin-right: 100px;
+
+      transform: rotate(-10deg); 
     }
+
+    .title-2 {
+
+    }
+
 
     .nav-bar {
       flex-direction: column;
