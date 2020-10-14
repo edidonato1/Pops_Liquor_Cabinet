@@ -53,61 +53,81 @@ function AddBottle(props) {
       <h1>add a bottle.</h1>
       <h2>Fill out the form below</h2>
       <form className="add-bottle" onSubmit={handleSubmit}>
-        <label htmlFor="bottle">spirit </label>
+        <div className="form-block-top-container">
+          <div className="form-block">
+            <div>
+              <label htmlFor="bottle">spirit </label>
+              <br></br>
+              <input
+                className="textBar"
+                type="text"
+                placeholder="ex: Nikka Coffee Grain"
+                value={bottle}
+                onChange={(e) => setBottle(e.target.value)}
+              />
+            </div>
+            <br></br>
+            <div>
+              <label htmlFor="category">category </label><br></br>
+              <select className="textBar"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                style={{ marginLeft: "0" }}
+              >
+                <option ></option>
+                {categoryOptions.map((option) =>
+                  <option key={option}>{option}</option>
+                )}
+              </select>
+            </div>
+          </div>
+          <br></br>
+          <div className="form-block" >
+            <div>
+              <label htmlFor="price">cost</label>
+              <br></br>
+              <input
+                className="textBar"
+                type="text"
+                placeholder="ex: 51"
+                value={price}
+                onChange={(price % 1 < 1) ? (e) => setPrice(parseInt(e.target.value)) : setPrice('')}
+              />
+            </div>
+            <br></br>
+            <div>
+
+              <label htmlFor="bottleSizes">bottle size (mL) </label>
+              <br></br>
+              <input
+                className="textBar"
+                type="text"
+                placeholder="ex: 750"
+                value={bottleSizes}
+                onChange={(bottleSizes % 1 < 1) ? (e) => setBottleSizes(parseInt(e.target.value)) : setBottleSizes('')}
+              />
+              <br></br>
+            </div>
+          </div>
+        </div>
         <br></br>
-        <input
-          className="textBar"
-          type="text"
-          placeholder="ex: Nikka Coffee Grain"
-          value={bottle}
-          onChange={(e) => setBottle(e.target.value)}
-        />
-        <br></br>
-        <label htmlFor="category">category </label>
-        <select className="textBar"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          style={{ marginLeft: "0" }}
-        >
-          <option ></option>
-          {categoryOptions.map((option) =>
-            <option key={option}>{option}</option>
-          )}
-        </select>
-        <br></br>
-        <label htmlFor="price">cost</label>
-        <br></br>
-        <input
-          className="textBar"
-          type="text"
-          placeholder="ex: 51"
-          value={price}
-          onChange={(price % 1 < 1) ? (e) => setPrice(parseInt(e.target.value)) : setPrice('')}
-        />
-        <br></br>
-        <label htmlFor="bottleSizes">bottle size (mL) </label>
-        <br></br>
-        <input
-          className="textBar"
-          type="text"
-          placeholder="ex: 750"
-          value={bottleSizes}
-          onChange={(bottleSizes % 1 < 1) ? (e) => setBottleSizes(parseInt(e.target.value)) : setBottleSizes('')}
-        />
-        <br></br>
-        <label htmlFor="status">notes </label>
-        <br></br>
-        <textarea
-          style={{ height: "80px" }}
-          placeholder="ex: single grain coffee still"
-          className="textBar"
-          id="notes"
-          type="text"
-          value={notes}
-          onChange={(e) => setNotes(e.target.value)}
-        />
-        <br></br>
-        <button type="submit" className="submit">Submit</button>
+        <div className="form-block-bottom">
+          <div id="notes-form">
+            <label htmlFor="notes">notes </label>
+            <br></br>
+            <textarea
+              style={{ height: "80px" }}
+              placeholder="ex: single grain coffee still"
+              className="textBar"
+              id="notes"
+              type="text"
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+            />
+          </div>
+          <br></br>
+          <button type="submit" className="submit">Submit</button>
+        </div>
       </form>
 
     </div>
