@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios'
 
 function UpdateBottle(props) {
-  // const [deleted, setDeleted] = useState(false);
+
 
   const handleClick = async (newAmount) => {
     const fields = {
@@ -20,8 +20,10 @@ function UpdateBottle(props) {
     props.setUpdatedBottle(!props.updatedBottle)
   }
   const increment = () => {
-    handleClick(props.bottleData.amountFull + .1)
-    props.setInventoryRefresh(!props.inventoryRefresh)
+    if (props.bottleData && props.bottleData.amountFull < 1) {
+      handleClick(props.bottleData.amountFull + .1)
+      props.setInventoryRefresh(!props.inventoryRefresh)
+    }
   }
   const decrement = () => {
     handleClick(props.bottleData.amountFull - .1)
@@ -62,9 +64,7 @@ function UpdateBottle(props) {
               <button className="plus-minus" onClick={increment}>+</button><br></br>
               <button className="plus-minus" onClick={decrement}>-</button>
             </div>
-
             <div className="percentage">{Math.round((props.bottleData && props.bottleData.amountFull) * 100)}</div><h3 style={{ marginLeft: "15px" }}> % full </h3>
-
           </span>
         </div>
         : null}
