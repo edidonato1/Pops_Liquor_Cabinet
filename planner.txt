@@ -1,20 +1,4 @@
 
-
-// Button to navigate back to previous page
-// May not work in functional components
-
-constructor(props){
-   super(props);
-   this.goBack = this.goBack.bind(this); // i think you are missing this
-}
-
-goBack(){
-    this.props.history.goBack();
-}
-
-<button onClick={this.goBack}>Go Back</button>
-
-
 Friday 10.9
 -----
 
@@ -76,14 +60,30 @@ Wednesday 10.14
 -----
 
 - Complete tablet and web media queries -[x]
-- work on add'l js features
-- Create component-based horizontal scroll menu 
-- fix but in AddBottle styling
-- Create tasting notes component to appear with tablet and web breakpoints
-  - display: none; for mobile
-- Conditionals for form :
-  - if certain fields are empty, don't allow submit
-- Add keys and clean up warnings
-- Lint and DRY code
+- Create component-based horizontal scroll menu -[x]
+- fix bug in AddBottle styling -[x]
+
 - Organize file structure
 - *** DEPLOY YOUR SITE
+
+
+Thursday 10.15
+-----
+
+** Most Important 
+
+- Comment code where applicable 
+- Lint and DRY code
+ - Ability to add tasting notes from the GrabBottle component
+  - can we piggyback on the same patch request for UpdateBottle?
+- Conditionals for form :
+  - if certain fields are empty, don't allow submit
+- Add keys and clean up warnings 
+
+
+Less Important: 
+
+- Fix bug with web media query scroll bar
+- web media query weird bottom margin thing.
+- Update inventory in api with tasting notes
+

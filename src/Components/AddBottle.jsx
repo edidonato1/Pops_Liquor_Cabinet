@@ -59,7 +59,7 @@ function AddBottle(props) {
               <label htmlFor="bottle">spirit </label>
               <br></br>
               <input
-                className="textBar"
+                className="text-bar"
                 type="text"
                 placeholder="ex: Nikka Coffee Grain"
                 value={bottle}
@@ -69,7 +69,7 @@ function AddBottle(props) {
             <br></br>
             <div>
               <label htmlFor="category">category </label><br></br>
-              <select className="textBar"
+              <select className="text-bar"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
                 style={{ marginLeft: "0" }}
@@ -87,7 +87,7 @@ function AddBottle(props) {
               <label htmlFor="price">cost</label>
               <br></br>
               <input
-                className="textBar"
+                className="text-bar"
                 type="text"
                 placeholder="ex: 51"
                 value={price}
@@ -100,7 +100,7 @@ function AddBottle(props) {
               <label htmlFor="bottleSizes">bottle size (mL) </label>
               <br></br>
               <input
-                className="textBar"
+                className="text-bar"
                 type="text"
                 placeholder="ex: 750"
                 value={bottleSizes}
@@ -118,7 +118,7 @@ function AddBottle(props) {
             <textarea
               style={{ height: "80px" }}
               placeholder="ex: single grain coffee still"
-              className="textBar"
+              className="text-bar"
               id="notes"
               type="text"
               value={notes}
