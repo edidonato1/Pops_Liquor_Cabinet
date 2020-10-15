@@ -3,7 +3,8 @@ import axios from 'axios'
 
 function UpdateBottle(props) {
   const [showNotes, setShowNotes] = useState(false)
-  const [addNote, setAddNote] = useState()
+  const [addNote, setAddNote] = useState(props.bottleData && props.bottleData.notes)
+
 
 
   // Toggle showNotes, setShowNotes 
@@ -87,9 +88,9 @@ function UpdateBottle(props) {
           {showNotes === true ?
             <div className="tasting-notes">
               <button onClick={(() => setShowNotes(false))}>hide</button>
-              <form className="update-tasting-notes" onSubmit={handleClick(props.bottleData && props.bottleData.amountFull, addNote)}>
+              <form className="update-tasting-notes" onSubmit={(() => handleClick(props.bottleData && props.bottleData.amountFull, addNote))}>
                 <label htmlFor="notes"></label>
-                <input type="text-area" value={addNote} onChange={((e) => setAddNote((e.target.value)))} />
+                <input type="text" value={addNote} onChange={((e) => setAddNote((e.target.value)))} />
                 <button type="submit">add note</button>
               </form>
             </div>
