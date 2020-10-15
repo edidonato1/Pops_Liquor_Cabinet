@@ -248,6 +248,7 @@ td {
 
 .grab-bottle-spirit {
   font-weight: bold;
+  margin-top: 0;
 }
 
 .counter-container {
@@ -301,15 +302,20 @@ td {
 
 .tasting-notes {
   position: relative;
-  background: white;
-  z-index: 1;
+  background: rgba(240, 241, 242, 1);
+  border: 2px solid #b2482c;
+  border-radius: 15px;
+  padding: 5px;
+  margin: 10px auto;
   height: 20vh;
-  width: 75vw;
+  width: 73vw;
+  z-index: 1;
 }
 
 .update-tasting-notes {
   position: absolute;
-  bottom: 5px;
+  bottom: 10px;
+  right: 10px;
 }
 
                                             /* Add Bottle */

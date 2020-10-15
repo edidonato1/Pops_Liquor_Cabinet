@@ -6,14 +6,6 @@ function UpdateBottle(props) {
   const [addNote, setAddNote] = useState(props.bottleData && props.bottleData.notes)
   let prevNotes = props.bottleData && props.bottleData.notes
 
-
-
-  // Toggle showNotes, setShowNotes 
-  // If showNotes = true, display the form, if false, hide the form
-  // Piggyback notes into handleClick function
-  // Pass notes as an argument, and trigger the function with a submit button 
-  // in the form. Form has a "back" button that toggles setShowNotes to false 
-  // and hides the form.
   // In larger media queries, notes will display beside the bottle info/ increment buttons
   //  - Display: none for mobile.
 
@@ -35,7 +27,7 @@ function UpdateBottle(props) {
     props.setUpdatedBottle(!props.updatedBottle)
   }
 
-  const handleSubmit = async (e) => {
+  const handleAddNote = async (e) => {
     e.preventDefault();
     const fields = {
       notes: props.bottleData && props.bottleData.notes ? prevNotes + ", " + addNote : addNote
@@ -53,7 +45,7 @@ function UpdateBottle(props) {
     props.setUpdatedBottle(!props.updatedBottle)
   }
 
-  const handleReplace = async (e) => {
+  const handleReplaceNotes = async (e) => {
     e.preventDefault();
     const fields = {
       notes: addNote,
@@ -67,6 +59,7 @@ function UpdateBottle(props) {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       })
+    setAddNote('')
     props.setUpdatedBottle(!props.updatedBottle)
   }
 
@@ -121,11 +114,11 @@ function UpdateBottle(props) {
           {showNotes === true ?
             <div className="tasting-notes">
               <p>{prevNotes}</p>
-              <form className="update-tasting-notes" onSubmit={handleSubmit}>
+              <form className="update-tasting-notes" onSubmit={handleAddNote}>
                 <label htmlFor="notes"></label>
                 <input type="text" value={addNote} onChange={((e) => setAddNote((e.target.value).toLowerCase()))} />
                 <button type="submit">add</button>
-                <button onClick={handleReplace} >replace</button>
+                <button onClick={handleReplaceNotes} >replace</button>
               </form>
             </div>
             : null
