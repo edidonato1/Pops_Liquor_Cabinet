@@ -85,7 +85,6 @@
     }
 
     .update-parent-container {
-      background: yellow;
       margin-right: 4vw;
     }
 
@@ -96,7 +95,10 @@
       width: 400px;
     }
 
-  
+    .add-note {
+      height: 30px;
+      font-size: 18px;
+    }
 
     .tasting-notes {
       margin-top: 10vh;

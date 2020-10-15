@@ -43,7 +43,7 @@ function GrabBottle(props) {
         <br></br>Liquor Cabinet</h1>
       <h1>grab a bottle.</h1>
       <div className="select-bottle">
-        <select className="textBar" id="select" onChange={handleChange}>
+        <select className="text-bar" id="select" onChange={handleChange}>
           <option>select a bottle</option>{
             data.map((item, idx) =>
               <option key={item.id} value={idx}>{item.fields.bottle}</option>

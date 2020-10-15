@@ -236,7 +236,7 @@ td {
 .update-bottle {
   display: inline-block;
   position: relative;
-  background: rgba(211, 211, 211, 0.6);
+  background: rgba(211, 211, 211, 0.8);
   border: 3px solid rgba(215, 182, 153, 0.7);
   box-shadow: 2px 0px 3px 0px rgb(50, 50, 50);
   border-radius: 10px;
@@ -335,17 +335,52 @@ td {
 .update-tasting-notes {
   position: absolute;
   bottom: 10px;
-  right: 10px;
+  right: 10px; 
   animation-name: appear;
   animation-duration: .8s;
 }
 
+.tasting-header {
+  margin-top: 0px;
+  font-weight: bold;
+  animation-name: appear;
+  animation-duration: .8s;
+  margin-bottom: 0;
+}
+
 .prev-notes {
-  height: 15vh;
+  height: 12vh;
+  font-size: 20px;
   overflow-y: scroll;
   margin-top: 0;
+  line-height: 25px;
+  animation-name: appear;
+  animation-duration: .8s;
+}
 
+.add-note {
+text-align: left;
+height: 20px;
+width: 40vw;
+background: rgba(231, 228, 228, 0.5);
+border: .5px solid gray;
+border-radius: 5px;
+outline: none;
+}
 
+.add-replace {
+  background:#F0F1F2;
+  outline: none;
+  color: #40160D;
+  font-size: 16px;
+  padding: 3px 5px 3px 5px;
+  margin: 2px;
+  border: 1px outset #40160D;
+  border-radius:8px;
+}
+
+.add-replace:hover {
+  background: #dec3a5;
 }
 
                                             /* Add Bottle */

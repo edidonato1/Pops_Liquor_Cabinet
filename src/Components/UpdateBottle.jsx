@@ -109,7 +109,7 @@ function UpdateBottle(props) {
               <button className="plus-minus" onClick={increment}>+</button><br></br>
               <button className="plus-minus" onClick={decrement}>-</button>
             </div>
-            <div className="percentage">{Math.round((props.bottleData && props.bottleData.amountFull) * 100)}</div><h3 style={{ marginLeft: "15px" }}> % full </h3>
+            <div className="percentage">{Math.round((props.bottleData && props.bottleData.amountFull) * 100)}</div><h3 style={{ marginLeft: "15px" }}> % </h3>
           </span>
 
         </div>
@@ -117,12 +117,13 @@ function UpdateBottle(props) {
         : null}
       {showNotes === true ?
         <div className="tasting-notes">
+          <h3 className="tasting-header">notes:</h3>
           <p className="prev-notes">{prevNotes}</p>
           <form className="update-tasting-notes" onSubmit={handleAddNote}>
             <label htmlFor="notes"></label>
-            <input type="text" value={addNote} onChange={((e) => setAddNote((e.target.value).toLowerCase()))} />
-            <button type="submit">add</button>
-            <button onClick={handleReplaceNotes} >replace</button>
+            <input className="add-note" type="text" value={addNote} onChange={((e) => setAddNote((e.target.value).toLowerCase()))} />
+            <button className="add-replace" type="submit">add</button>
+            <button className="add-replace" onClick={handleReplaceNotes} >replace</button>
           </form>
         </div>
         : null

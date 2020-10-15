@@ -108,7 +108,6 @@
           width: 35vw}
     }
     
-
   .update-bottle {
     width: 40vw;
     height: 450px;
@@ -122,10 +121,21 @@
   } 
 
   .tasting-notes {
+    background: rgba(211, 211, 211, 0.8);    
     margin-top: initial;
     height: 30vh;
     width: 35vw;
     animation-duration: .8s;
+  }
+
+  .add-note {
+    width: 30vw;
+    margin: 5px;
+  }
+
+  .add-replace {
+    margin-left: 5px;
+
   }
 
   .update-tasting-notes {
