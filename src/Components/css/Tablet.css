@@ -100,9 +100,36 @@
     margin-right: 40px;
     }
 
+    @keyframes open {
+      from {height: 30vh;
+            width: 0}
+    
+      to {height: 30vh;
+          width: 35vw}
+    }
+    
+
   .update-bottle {
     width: 40vw;
     height: 450px;
+    margin-top: initial;
+  }
+  
+  .update-parent-container {
+    display: flex;
+    height: 450px;
+    margin-top: 50px;
+  } 
+
+  .tasting-notes {
+    margin-top: initial;
+    height: 30vh;
+    width: 35vw;
+    animation-duration: .8s;
+  }
+
+  .update-tasting-notes {
+    animation-duration: 1.2s;
   }
 
   .percentage  {
@@ -123,6 +150,7 @@
   label {
     font-size: 18px;
   }
+
 
   .add-bottle {
     display: flex;

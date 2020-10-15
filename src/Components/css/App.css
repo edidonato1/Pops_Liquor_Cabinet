@@ -300,6 +300,21 @@ td {
   color: white;
 }
 
+@keyframes open {
+  from {height: 0;
+        width: 0}
+
+  to {height: 20vh;
+      width: 74vw}
+}
+
+
+@keyframes appear {
+  from {opacity: 0}
+  75% {opacity: 0}
+  to {display: block}
+}
+
 .tasting-notes {
   position: relative;
   background: rgba(240, 241, 242, 1);
@@ -307,15 +322,30 @@ td {
   border-radius: 15px;
   padding: 5px;
   margin: 10px auto;
+  margin-top: -190px;
   height: 20vh;
-  width: 73vw;
+  width: 74vw;
   z-index: 1;
+  animation-name: open;
+  animation-duration: .4s;
+  animation-timing-function: linear;
+
 }
 
 .update-tasting-notes {
   position: absolute;
   bottom: 10px;
   right: 10px;
+  animation-name: appear;
+  animation-duration: .8s;
+}
+
+.prev-notes {
+  height: 15vh;
+  overflow-y: scroll;
+  margin-top: 0;
+
+
 }
 
                                             /* Add Bottle */
