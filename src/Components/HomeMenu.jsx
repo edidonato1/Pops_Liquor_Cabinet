@@ -1,5 +1,8 @@
 import React from 'react'
 import AboutPage from './AboutPage'
+import AddLink from './AddLink'
+import GrabLink from './GrabLink'
+import InvLink from './InvLink'
 
 
 
@@ -8,7 +11,7 @@ function HomeMenu() {
 
 
 
-  const menuComponents = [<AboutPage />, <AboutPage />, <AboutPage />, <AboutPage />, <AboutPage />, <AboutPage />]
+  const menuComponents = [<AboutPage />, <AddLink />, <GrabLink />, <InvLink />,]
 
   return (
     <div >
