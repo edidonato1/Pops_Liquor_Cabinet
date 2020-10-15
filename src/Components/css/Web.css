@@ -84,11 +84,24 @@
       height: 45px;
     }
 
+    .update-parent-container {
+      background: yellow;
+      margin-right: 4vw;
+    }
+
     .update-bottle {
       margin-top: 10vh;
       margin-bottom: 20px;
       margin-left: 25vw;
-      width: 500px;
+      width: 400px;
+    }
+
+  
+
+    .tasting-notes {
+      margin-top: 10vh;
+      width: 400px;
+      min-height: 350px;
     }
 
     .add-bottle {
