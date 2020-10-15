@@ -4,7 +4,7 @@ import axios from 'axios'
 function UpdateBottle(props) {
   const [showNotes, setShowNotes] = useState(false)
   const [addNote, setAddNote] = useState(props.bottleData && props.bottleData.notes)
-  let prevNotes = props.bottleData && props.bottleData.notes
+  let prevNotes = [props.bottleData && props.bottleData.notes]
 
 
 
@@ -37,8 +37,9 @@ function UpdateBottle(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // prevNotes.push(addNote)
     const fields = {
-      notes: prevNotes + addNote,
+      notes: props.bottleData && props.bottleData.notes ? prevNotes + ", " + addNote : addNote
     }
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
     await axios.patch(
@@ -49,6 +50,7 @@ function UpdateBottle(props) {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       })
+    setAddNote('')
     props.setUpdatedBottle(!props.updatedBottle)
   }
 
@@ -120,7 +122,9 @@ function UpdateBottle(props) {
           {showNotes === true ?
             <div className="tasting-notes">
               <button onClick={(() => setShowNotes(false))}>hide</button>
-              <p>{prevNotes}</p>
+              {prevNotes.map(note =>
+                <p>{note}</p>
+              )}
               <form className="update-tasting-notes" onSubmit={handleSubmit}>
                 <label htmlFor="notes"></label>
                 <input type="text" value={addNote} onChange={((e) => setAddNote((e.target.value)))} />
