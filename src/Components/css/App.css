@@ -269,6 +269,7 @@ td {
   border: 2px solid white;
   border-radius: 10px;
   color: #BF6F41;
+  z-index: 0;
 }
 
 .button-box {
@@ -289,12 +290,21 @@ td {
   margin: 5px 0 3px;
   width: 40px;
   height: 40px;
+  z-index: 0;
 }
 
 .plus-minus:hover {
   background: rgba(95, 95, 95, 0.5);
   border-style: outset;
   color: white;
+}
+
+.tasting-notes {
+  position: relative;
+  background: white;
+  z-index: 1;
+  height: 20vh;
+  width: 80vw;
 }
 
                                             /* Add Bottle */
