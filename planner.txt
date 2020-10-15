@@ -83,4 +83,7 @@ Wednesday 10.14
   - display: none; for mobile
 - Conditionals for form :
   - if certain fields are empty, don't allow submit
+- Add keys and clean up warnings
+- Lint and DRY code
+- Organize file structure
 - *** DEPLOY YOUR SITE

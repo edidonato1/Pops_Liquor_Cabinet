@@ -7,14 +7,16 @@ import GrabBottle from './GrabBottle';
 import Inventory from './Inventory';
 import AddBottle from './AddBottle';
 import { Route } from 'react-router-dom';
-import './App.css';
+import './css/App.css';
+import './css/Tablet.css';
+import './css/Web.css'
 
 function App() {
   const [inventoryRefresh, setInventoryRefresh] = useState(false)
 
   return (
 
-    <div className="App" className="main-div">
+    <div className="App">
       <Navbar />
       <Route exact path="/">
         <Home />

@@ -1,0 +1,112 @@
+                                             /* Web Breakpoint */
+
+  @media screen and (min-width: 1000px ) {
+
+    body {
+      background-size: 110%;
+      background-position: center;
+    }
+    
+    .title-tag {
+      text-align: left; 
+      position: fixed;
+      left: initial;
+      top: 10px;
+      font-size: 75px;
+      transform: initial; 
+      z-index: 3;
+    } 
+    .big-pops {
+
+      font-size: 90px;
+      margin-top: -50px;
+      margin-right: 100px;
+      transform: rotate(-10deg); 
+    }
+
+    .nav-bar {
+      flex-direction: column;
+      justify-content: flex-start;
+      bottom: initial;
+      left: 0;
+      top:0;
+      margin-top: 180px;
+      padding-top: 100px;
+      margin-right: 30px;
+      line-height: 15vh;
+      height: 100%;
+      width: 20vw;
+      z-index: 1;
+    }
+
+    h1 {
+      z-index: 2;
+      font-size: 35px;
+      margin-right: 10vw;
+    }
+
+    h2 {
+      margin-left: 25vw;
+      font-size: 30px;
+    }
+
+    .menu-link {
+      width: 150px;
+      margin-right: 40px;
+    }
+    .link-box {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .inventory-table {
+      margin-left: 26vw;
+      margin-right: 10vw;
+    }
+
+    .inventory-columns {
+      width: 65vw;
+    }
+
+    td {
+      font-size: 20px;
+      padding-top: 25px;
+      padding-left: 20px;
+    }
+
+    .title-cell {
+      font-size: 25px;
+      line-height: 50px;
+    }
+
+    #select {
+      height: 45px;
+      width: 400px;
+    }
+
+    .update-bottle {
+      margin-left: 25vw;
+      width: 500px;
+      margin-top: 10vh;
+      margin-bottom: 20px;
+    }
+
+    .add-bottle {
+    width: 65vw;
+    margin-left: 25vw;
+    }
+
+    .textBar{
+      width: 25vw;
+    }
+
+    .scroll {
+      margin-left: 20vw;
+    }
+
+    .scroll-menu {
+      margin: 30px;
+      width: 500px;
+    }
+
+  }
