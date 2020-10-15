@@ -62,7 +62,6 @@ function Inventory(props) {
   }
 
   const sortAmount = () => {
-    console.log(spirits)
     spirits.sort((a, b) => {
       let targetA = a.fields.amountFull;
       let targetB = b.fields.amountFull;
@@ -111,8 +110,8 @@ function Inventory(props) {
               <td key={"price"} style={featurePrice} className="title-cell" onClick={sortPrice}>Price</td>
               <td key={"amount"} style={featureAmount} className="title-cell" onClick={sortAmount}>Amt.</td>
             </tr>
-            {!spirits ? <h4>loading...</h4> : spirits.map((spirit) => (
-              <tr >
+            {!spirits ? <h4>loading...</h4> : spirits.map((spirit, index) => (
+              <tr key={index}>
                 <td style={featureSpirits} className="content-cell" key={spirit.id}>
                   {spirit.fields.bottle}
                 </td>

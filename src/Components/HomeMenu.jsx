@@ -11,7 +11,7 @@ function HomeMenu() {
 
 
 
-  const menuComponents = [<AboutPage />, <AddLink />, <GrabLink />, <InvLink />,]
+
 
   return (
     <div >
@@ -21,7 +21,10 @@ function HomeMenu() {
         <br></br>Liquor Cabinet</h1>
       <h1>menu.</h1>
       <div className="scroll">
-        {menuComponents.map(item => <div>{item}</div>)}
+        <div key="about"><AboutPage /></div>
+        <div key="add"><AddLink /></div>
+        <div key="grab"><GrabLink /></div>
+        <div key="inv"><InvLink /></div>
       </div>
     </div>
   )
