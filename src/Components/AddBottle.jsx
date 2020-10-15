@@ -8,7 +8,7 @@ function AddBottle(props) {
   const [price, setPrice] = useState();
   const [bottleSizes, setBottleSizes] = useState();
   const [amountFull, setAmountFull] = useState(1);
-  const [notes, setNotes] = useState('');
+  const [notes, setNotes] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

@@ -3,7 +3,8 @@ import axios from 'axios'
 
 function UpdateBottle(props) {
   const [showNotes, setShowNotes] = useState(false)
-  const [addNote, setAddNote] = useState('')
+  const [addNote, setAddNote] = useState()
+
 
   // Toggle showNotes, setShowNotes 
   // If showNotes = true, display the form, if false, hide the form
@@ -15,9 +16,11 @@ function UpdateBottle(props) {
   //  - Display: none for mobile.
 
 
-  const handleClick = async (newAmount) => {
+  const handleClick = async (newAmount, newNote) => {
+
     const fields = {
-      amountFull: newAmount
+      amountFull: newAmount,
+      notes: newNote
     }
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
     await axios.patch(
@@ -30,14 +33,18 @@ function UpdateBottle(props) {
       })
     props.setUpdatedBottle(!props.updatedBottle)
   }
+
+
+
   const increment = () => {
     if (props.bottleData.amountFull < 1) {
-      handleClick(props.bottleData.amountFull + .1)
+      handleClick((props.bottleData.amountFull + .1), addNote)
       props.setInventoryRefresh(!props.inventoryRefresh)
     }
   }
+
   const decrement = () => {
-    handleClick(props.bottleData.amountFull - .1)
+    handleClick((props.bottleData.amountFull - .1), addNote)
     props.setInventoryRefresh(!props.inventoryRefresh)
     props.bottleData.amountFull <= .2 ?
       setTimeout(function () {
@@ -66,7 +73,7 @@ function UpdateBottle(props) {
       {props.bottleData ?
         <div className="update-bottle">
           <h3 className="grab-bottle-spirit">{props.bottleData && props.bottleData.bottle}</h3>
-          <h3>{props.bottleData && props.bottleData.notes}</h3>
+          {/* <h3>{props.bottleData && props.bottleData.notes}</h3> */}
           <h3>{props.bottleData && props.bottleData.category}</h3>
           <h3>{props.bottleData && props.bottleData.bottleSizes} mL</h3>
           <button onClick={(() => setShowNotes(true))}>add tasting notes</button>
@@ -80,9 +87,10 @@ function UpdateBottle(props) {
           {showNotes === true ?
             <div className="tasting-notes">
               <button onClick={(() => setShowNotes(false))}>hide</button>
-              <form className="update-tasting-notes" onSubmit={handleClick}>
+              <form className="update-tasting-notes" onSubmit={handleClick(props.bottleData && props.bottleData.amountFull, addNote)}>
                 <label htmlFor="notes"></label>
-                <input type="text-area" value={addNote} onChange={((e) => setAddNote(e.target.value))} />
+                <input type="text-area" value={addNote} onChange={((e) => setAddNote((e.target.value)))} />
+                <button type="submit">add note</button>
               </form>
             </div>
             : null
