@@ -4,7 +4,7 @@ import axios from 'axios'
 function UpdateBottle(props) {
   const [showNotes, setShowNotes] = useState(false)
   const [addNote, setAddNote] = useState(props.bottleData && props.bottleData.notes)
-  let prevNotes = [props.bottleData && props.bottleData.notes]
+  let prevNotes = props.bottleData && props.bottleData.notes
 
 
 
@@ -37,7 +37,6 @@ function UpdateBottle(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // prevNotes.push(addNote)
     const fields = {
       notes: props.bottleData && props.bottleData.notes ? prevNotes + ", " + addNote : addNote
     }
@@ -111,7 +110,7 @@ function UpdateBottle(props) {
           {/* <h3>{props.bottleData && props.bottleData.notes}</h3> */}
           <h3>{props.bottleData && props.bottleData.category}</h3>
           <h3>{props.bottleData && props.bottleData.bottleSizes} mL</h3>
-          <button onClick={(() => setShowNotes(true))}>add tasting notes</button>
+          <button onClick={(() => setShowNotes(!showNotes))}>{showNotes === false ? "show tasting notes" : "hide tasting notes"}</button>
           <span className="counter-container">
             <div className="button-box">
               <button className="plus-minus" onClick={increment}>+</button><br></br>
@@ -121,13 +120,10 @@ function UpdateBottle(props) {
           </span>
           {showNotes === true ?
             <div className="tasting-notes">
-              <button onClick={(() => setShowNotes(false))}>hide</button>
-              {prevNotes.map(note =>
-                <p>{note}</p>
-              )}
+              <p>{prevNotes}</p>
               <form className="update-tasting-notes" onSubmit={handleSubmit}>
                 <label htmlFor="notes"></label>
-                <input type="text" value={addNote} onChange={((e) => setAddNote((e.target.value)))} />
+                <input type="text" value={addNote} onChange={((e) => setAddNote((e.target.value).toLowerCase()))} />
                 <button type="submit">add</button>
                 <button onClick={handleReplace} >replace</button>
               </form>
