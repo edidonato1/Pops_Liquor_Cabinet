@@ -15,7 +15,12 @@ function GrabBottle(props) {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       });
-      setData(response.data.records);
+      // alphabetical sorting function from StackOverflow.com
+      setData(response.data.records.sort((a, b) => {
+        let textA = a.fields.bottle.toUpperCase();
+        let textB = b.fields.bottle.toUpperCase();
+        return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+      }));
     };
     getInventory();
   }, [selection, updatedBottle]);
@@ -28,12 +33,8 @@ function GrabBottle(props) {
   let bottleData = (data[selection] && data[selection].fields);
   let id = (data[selection] && data[selection].id);
 
-  // alphabetical sorting function from StackOverflow.com
-  data.sort((a, b) => {
-    let textA = a.fields.bottle.toUpperCase();
-    let textB = b.fields.bottle.toUpperCase();
-    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-  });
+
+
 
   return (
 
