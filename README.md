@@ -78,7 +78,7 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 - Data-dependent components render accurate information when applicable -[x]
 - Application is tastefully styled with at least three query breakpoints -[x]
 - Code is clean and linted to industry standards -[x]
-- Application is delployed via Netlify -[]
+- Application is delployed via Netlify -[x]
 
 
 #### PostMVP  
@@ -89,7 +89,8 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 - Additional form, connected to additional Airtable API for user to create a personal cocktail directory -[]
 - Graphic that reflects the amount of product in the current bottle on "grab bottle" page -[]
 - Cocktail costing sheet for professional bartenders -[]
-- Get Notes modal when item is clicked in inventory -[]
+- Get Notes modal when item is clicked in inventory -[]*
+- Add, update, and remove tasting notes - [x]
 
 ---
 
@@ -103,7 +104,7 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 |Oct 12| Core Application Structure (HTML, CSS, etc.) | Complete
 |Oct 12| Pseudocode / Actual Code | Complete
 |Oct 13| MVP | Complete
-|Oct 15| Post-MVP | Incomplete
+|Oct 15| Post-MVP | Complete
 |Oct 16| Presentations | Incomplete
 
 ---
@@ -121,19 +122,41 @@ https://github.com/edidonato1/Pops_Liquor_Cabinet/blob/main/src/proposal-assets/
 | Base Component Structure | H | 8hrs| 12hrs |
 | CSS Layout & Styling  | H | 10hrs| 15hrs |
 | Responsive Design  | H | 4hrs| 6hrs |
-| *Bring in Rolodex API* *| L | 1hr| - -  |
-| *Rolodex Form Component* *| L | 4hr| - -  |
-| *Bottle Amount Graphic* *| L | 6hr| - -  |
-| Total | - -  | 41hrs| 40hrs  |
+| *Bring in Rolodex API* *| L | 1hr| N/A  | 
+| *Rolodex Form Component* *| L | 4hr| N/A  |
+| *Bottle Amount Graphic* *| L | 6hr| N/A  |
+| *Update Tasting Notes Component* *  | L | 4hrs| 6hrs |
+| *Horizontal Scrolling Home Menu* *  | L| 4hrs| 3hrs |
+| Misc. Troubleshooting & Functionality | M | - - | 20hrs |
+| Total | - -  | 41hrs| 69hrs  |
 
  *Post-MVP * *
 
 ---
 ## Code Snippet
 
+In general, I'm proud of this component as a whole, as it took me hours to dial down how to get the increment functions to affect the inventory itself, which was being passed down through props.  Initially I was using state, and trying to set the initial state of the amount to the current bottle selection.  State was a step behind the count in the UI, and the next selection wouldn't set a new initial state for the amount.  I spent hours down a rabbithole tracking and running the selection history and update history against each other in their respective arrays.  I got help with the solution, which funny enough, was to not use state...
 
 ```
-const Eddie() => isTired ? doThisLater : stayUpAllNight
+  const increment = () => {
+    if (props.bottleData.amountFull < 1) {
+      handleClick((props.bottleData.amountFull + .1), addNote);
+      props.setInventoryRefresh(!props.inventoryRefresh);
+    }
+  }
+
+  const decrement = () => {
+    handleClick((props.bottleData.amountFull - .1), addNote);
+    props.setInventoryRefresh(!props.inventoryRefresh);
+    props.bottleData.amountFull <= .2 ?
+      setTimeout(function () {
+        window.confirm('Remove empty bottle from inventory?') ?
+          handleDelete() :
+          alert("OK, we'll keep it in there for you");
+      }, 800) :
+      props.setInventoryRefresh(!props.inventoryRefresh);
+  }
+
 
 ```
 
@@ -166,4 +189,8 @@ const Eddie() => isTired ? doThisLater : stayUpAllNight
 
 10.13 - Added horizontal scroll menu to UI.
       - As opposed to initial wireframes mockup, gives the user full full access to the features of the app from the home menu
+
+10.15 - Added Tasting notes functionality.
+      - While bottle is selected in UpdateBottle component, user can choose to add, edit, or remove tasting notes for the current selection.  
+        - This is the one optional field in the AddBottle component, and is meant to be updated with time.
 
