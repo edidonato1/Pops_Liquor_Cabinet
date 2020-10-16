@@ -88,6 +88,14 @@
       margin-right: 4vw;
     }
 
+    @keyframes open {
+      from {height: 30vh;
+            width: 0}
+    
+      to {min-height: 350px;
+          width: 400px}
+    }
+
     .update-bottle {
       margin-top: 10vh;
       margin-bottom: 20px;
@@ -133,4 +141,11 @@
       width: 500px;
     }
 
+  }
+
+  @media screen and (min-width: 1200px ) {
+    .big-pops {
+      margin-left: 30vw;
+      font-size: 120px;
+    }
   }

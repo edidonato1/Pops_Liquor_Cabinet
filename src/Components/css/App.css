@@ -276,7 +276,6 @@ td {
 .button-box {
   border: 2px solid rgba(180, 74, 45, .7);
   padding: 10px;
-  background: ;
   background: #D6A263;
   border-radius: 10px;
 }
@@ -307,7 +306,6 @@ td {
   to {height: 20vh;
       width: 74vw}
 }
-
 
 @keyframes appear {
   from {opacity: 0}
