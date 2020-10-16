@@ -18,7 +18,7 @@ function GrabBottle(props) {
       setData(response.data.records);
     };
     getInventory();
-  }, [selection, updatedBottle, data]);
+  }, [selection, updatedBottle]);
 
   const handleChange = (e) => {
     e.preventDefault();
