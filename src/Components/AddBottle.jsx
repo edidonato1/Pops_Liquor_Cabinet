@@ -61,7 +61,7 @@ function AddBottle(props) {
               <input
                 className="text-bar"
                 type="text"
-                placeholder="ex: Nikka Coffee Grain"
+                placeholder="ex: Nikka Coffey Grain"
                 value={bottle}
                 onChange={(e) => setBottle(e.target.value)}
                 required
@@ -118,7 +118,7 @@ function AddBottle(props) {
             <br></br>
             <input
               style={{ height: "80px" }}
-              placeholder="ex: single grain coffee still"
+              placeholder="ex: single grain coffey still"
               className="text-bar"
               id="notes"
               type="text"
