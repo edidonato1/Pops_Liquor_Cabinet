@@ -7,6 +7,11 @@ Pop's Liquor Cabinet is an interactive inventory manager for the at-home bartend
 
 The application doubles as an experimental playground for your cocktail endeavors offering a cocktail recipe creator that will serve as a Rolodex for all of your cocktail recipes.
 
+## Deploy
+
+Deployed via Netlify at:
+https://eloquent-hermann-7cee2b.netlify.app/GrabBottle
+
 
 ## API and Data Sample
 
