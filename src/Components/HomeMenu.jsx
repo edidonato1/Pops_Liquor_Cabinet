@@ -9,11 +9,8 @@ import InvLink from './InvLink'
 
 function HomeMenu() {
 
-
-
-
-
   return (
+
     <div >
       <h1 className="title-tag">
         <div
@@ -27,6 +24,7 @@ function HomeMenu() {
         <div key="inv"><InvLink /></div>
       </div>
     </div>
+
   )
 
 }

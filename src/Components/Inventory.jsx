@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
-// import './src/css/App.css';
 
 
 function Inventory(props) {
@@ -20,20 +19,20 @@ function Inventory(props) {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       });
-      setSpirits(response.data.records)
+      setSpirits(response.data.records);
     };
     getInventory();
-  }, [props.inventoryRefresh])
+  }, [props.inventoryRefresh]);
 
-  let price = spirits.map((spirit) => (spirit.fields.price))
-  let amountFull = spirits.map((spirit) => spirit.fields.amountFull)
+  let price = spirits.map((spirit) => (spirit.fields.price));
+  let amountFull = spirits.map((spirit) => spirit.fields.amountFull);
   let totalInventory = (price, amountFull) => {
     let total = 0;
     for (let i = 0; i < spirits.length; i++) {
       total += price[i] * amountFull[i]
     }
     return total
-  }
+  };
 
   const sortBottle = () => {
     spirits.sort((a, b) => {
@@ -41,60 +40,61 @@ function Inventory(props) {
       let textB = b.fields.bottle.toUpperCase();
       return ((textA < textB) ? -1 : (textA > textB) ? 1 : 0);
     })
-    setChangeSort(!changeSort)
-    setFeatureSpirits({ background: "rgba(255, 255, 255, 0.3)" })
-    setFeatureCategory({})
-    setFeaturePrice({})
-    setFeatureAmount({})
-  }
+    setChangeSort(!changeSort);
+    setFeatureSpirits({ background: "rgba(255, 255, 255, 0.3)" });
+    setFeatureCategory({});
+    setFeaturePrice({});
+    setFeatureAmount({});
+  };
 
   const sortCategory = () => {
     spirits.sort((a, b) => {
       let textA = a.fields.category.toUpperCase();
       let textB = b.fields.category.toUpperCase();
       return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-    })
+    });
     setChangeSort(!changeSort)
-    setFeatureCategory({ background: "rgba(255, 255, 255, 0.3)" })
-    setFeatureSpirits({})
-    setFeaturePrice({})
-    setFeatureAmount({})
-  }
+    setFeatureCategory({ background: "rgba(255, 255, 255, 0.3)" });
+    setFeatureSpirits({});
+    setFeaturePrice({});
+    setFeatureAmount({});
+  };
 
   const sortAmount = () => {
     spirits.sort((a, b) => {
       let targetA = a.fields.amountFull;
       let targetB = b.fields.amountFull;
-      return targetA - targetB
-    })
-    setChangeSort(!changeSort)
-    setFeatureAmount({ background: "rgba(255, 255, 255, 0.3)" })
-    setFeatureCategory({})
-    setFeaturePrice({})
-    setFeatureSpirits({})
+      return targetA - targetB;
+    });
+    setChangeSort(!changeSort);
+    setFeatureAmount({ background: "rgba(255, 255, 255, 0.3)" });
+    setFeatureCategory({});
+    setFeaturePrice({});
+    setFeatureSpirits({});
   }
 
   const sortPrice = () => {
     spirits.sort((a, b) => {
       let targetA = a.fields.price;
       let targetB = b.fields.price;
-      return targetA - targetB
-    })
-    setChangeSort(!changeSort)
-    setFeaturePrice({ background: "rgba(255, 255, 255, 0.3)" })
-    setFeatureCategory({})
-    setFeatureSpirits({})
-    setFeatureAmount({})
+      return targetA - targetB;
+    });
+    setChangeSort(!changeSort);
+    setFeaturePrice({ background: "rgba(255, 255, 255, 0.3)" });
+    setFeatureCategory({});
+    setFeatureSpirits({});
+    setFeatureAmount({});
   }
 
   const resetStyles = () => {
-    setFeatureSpirits({})
-    setFeatureCategory({})
-    setFeaturePrice({})
-    setFeatureAmount({})
+    setFeatureSpirits({});
+    setFeatureCategory({});
+    setFeaturePrice({});
+    setFeatureAmount({});
   }
 
   return (
+
     <div >
       <h1 className="title-tag">
         <div className="big-pops" >Pop's </div>
@@ -129,8 +129,8 @@ function Inventory(props) {
           </tbody>
         </table>
       </div>
-
     </div>
+
   )
 }
 

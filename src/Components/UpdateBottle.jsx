@@ -6,10 +6,7 @@ function UpdateBottle(props) {
   const [addNote, setAddNote] = useState(props.bottleData && props.bottleData.notes)
   let prevNotes = props.bottleData && props.bottleData.notes
 
-  // In larger media queries, notes will display beside the bottle info/ increment buttons
-  //  - Display: none for mobile.
-
-
+  // Update percentage count
   const handleClick = async (newAmount) => {
 
     const fields = {
@@ -27,10 +24,11 @@ function UpdateBottle(props) {
     props.setUpdatedBottle(!props.updatedBottle)
   }
 
+  // Add additional note to previous notes
   const handleAddNote = async (e) => {
     e.preventDefault();
     const fields = {
-      notes: props.bottleData && props.bottleData.notes ? prevNotes + ", " + addNote : addNote
+      notes: props.bottleData && props.bottleData.notes ? prevNotes + ', ' + addNote : addNote
     }
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
     await axios.patch(
@@ -45,6 +43,7 @@ function UpdateBottle(props) {
     props.setUpdatedBottle(!props.updatedBottle)
   }
 
+  // Replace all existing notes with new content
   const handleReplaceNotes = async (e) => {
     e.preventDefault();
     const fields = {
@@ -63,26 +62,7 @@ function UpdateBottle(props) {
     props.setUpdatedBottle(!props.updatedBottle)
   }
 
-  const increment = () => {
-    if (props.bottleData.amountFull < 1) {
-      handleClick((props.bottleData.amountFull + .1), addNote)
-      props.setInventoryRefresh(!props.inventoryRefresh)
-    }
-  }
-
-  const decrement = () => {
-    handleClick((props.bottleData.amountFull - .1), addNote)
-    props.setInventoryRefresh(!props.inventoryRefresh)
-    props.bottleData.amountFull <= .2 ?
-      setTimeout(function () {
-        window.confirm('Remove empty bottle from inventory?') ?
-          handleDelete() :
-          alert("OK, we'll keep it in there for you");
-      }, 800) :
-      props.setInventoryRefresh(!props.inventoryRefresh)
-
-  }
-
+  // Remove bottle from inventory
   const handleDelete = async () => {
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
     await axios.delete(
@@ -95,15 +75,37 @@ function UpdateBottle(props) {
     props.setUpdatedBottle(!props.updatedBottle)
   }
 
+
+  const increment = () => {
+    if (props.bottleData.amountFull < 1) {
+      handleClick((props.bottleData.amountFull + .1), addNote);
+      props.setInventoryRefresh(!props.inventoryRefresh);
+    }
+  }
+
+  const decrement = () => {
+    handleClick((props.bottleData.amountFull - .1), addNote);
+    props.setInventoryRefresh(!props.inventoryRefresh);
+    props.bottleData.amountFull <= .2 ?
+      setTimeout(function () {
+        window.confirm('Remove empty bottle from inventory?') ?
+          handleDelete() :
+          alert("OK, we'll keep it in there for you");
+      }, 800) :
+      props.setInventoryRefresh(!props.inventoryRefresh);
+  }
+
+
   return (
+
     <div className="update-parent-container">
+
       {props.bottleData ?
         <div className="update-bottle">
           <h3 className="grab-bottle-spirit">{props.bottleData && props.bottleData.bottle}</h3>
-          {/* <h3>{props.bottleData && props.bottleData.notes}</h3> */}
           <h3>{props.bottleData && props.bottleData.category}</h3>
           <h3>{props.bottleData && props.bottleData.bottleSizes} mL</h3>
-          <button onClick={(() => setShowNotes(!showNotes))}>{showNotes === false ? "show tasting notes" : "hide tasting notes"}</button>
+          <button className="add-replace" onClick={(() => setShowNotes(!showNotes))}>{showNotes === false ? "show tasting notes" : "hide tasting notes"}</button>
           <span className="counter-container">
             <div className="button-box">
               <button className="plus-minus" onClick={increment}>+</button><br></br>
@@ -111,10 +113,10 @@ function UpdateBottle(props) {
             </div>
             <div className="percentage">{Math.round((props.bottleData && props.bottleData.amountFull) * 100)}</div><h3 style={{ marginLeft: "15px" }}> % </h3>
           </span>
-
         </div>
+        : null
+      }
 
-        : null}
       {showNotes === true ?
         <div className="tasting-notes">
           <h3 className="tasting-header">notes:</h3>
@@ -128,6 +130,7 @@ function UpdateBottle(props) {
         </div>
         : null
       }
+
     </div>
   )
 }

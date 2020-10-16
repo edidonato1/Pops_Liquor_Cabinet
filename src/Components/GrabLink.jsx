@@ -6,9 +6,10 @@ function GrabLink() {
   const LinkStyles = {
     textDecoration: "none",
     color: "white",
-  }
+  };
 
   return (
+
     <div className="scroll-menu">
       <h5 className="scroll-title"><Link style={LinkStyles} to="/GrabBottle">grab a bottle</Link></h5>
       <p>The digital experience of pouring yourself a dram.</p>

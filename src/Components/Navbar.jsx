@@ -6,9 +6,10 @@ function Navbar() {
   const linkStyles = {
     textDecoration: "none",
     color: "white",
-  }
+  };
 
   return (
+
     <div>
       <div className="nav-bar">
         <NavLink style={linkStyles} className="NavLink" to="/">home</NavLink>
@@ -17,6 +18,7 @@ function Navbar() {
         <NavLink style={linkStyles} className="NavLink" to="/AddBottle">add</NavLink>
       </div>
     </div>
+
   )
 }
 

@@ -12,7 +12,7 @@ function AddBottle(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setAmountFull(parseInt(1))
+    setAmountFull(parseInt(1));
     const fields = {
       bottle,
       category,
@@ -20,7 +20,7 @@ function AddBottle(props) {
       bottleSizes,
       amountFull,
       notes,
-    }
+    };
 
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits`;
     await axios.post(
@@ -39,10 +39,10 @@ function AddBottle(props) {
     setNotes('');
   };
 
-  const categoryOptions = ['agave - mezcal', 'agave - tequila', 'agave-other', 'brandy - apple', 'brandy - cognac', 'brandy - eau de vie',
+  const categoryOptions = ['agave - mezcal', 'agave - tequila', 'agave - other', 'brandy - apple', 'brandy - cognac', 'brandy - eau de vie',
     'brandy - other', 'fortified wine', 'gin - botanical', 'gin - dry', 'gin - old tom', 'rhum - agricole', 'rum - jamaican', 'rum - spanish',
     'rum - other', 'liqueur - amaro', 'liqueur - aperitif', 'liqueur - cordial', 'sherry', 'vermouth', 'vodka', 'whiskey - american', 'whisky - japanese',
-    'whisky - scotch', 'whiskey - other']
+    'whisky - scotch', 'whiskey - other'];
 
   return (
     <div >

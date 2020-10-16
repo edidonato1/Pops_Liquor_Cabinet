@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 function Home() {
 
-
   return (
+
     <div >
       <h1 className="title-tag">
         <div
@@ -18,6 +18,7 @@ function Home() {
         <Link style={{ textDecoration: "none" }} to="/HomeMenu"><h3 className="menu-link" >start here</h3></Link>
       </div>
     </div >
+
   )
 
 }

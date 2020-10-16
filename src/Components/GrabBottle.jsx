@@ -3,9 +3,9 @@ import axios from 'axios';
 import UpdateBottle from './UpdateBottle'
 
 function GrabBottle(props) {
-  const [data, setData] = useState([])
-  const [selection, setSelection] = useState('')
-  const [updatedBottle, setUpdatedBottle] = useState(false)
+  const [data, setData] = useState([]);
+  const [selection, setSelection] = useState('');
+  const [updatedBottle, setUpdatedBottle] = useState(false);
 
   useEffect(() => {
     const getInventory = async () => {
@@ -15,31 +15,31 @@ function GrabBottle(props) {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       });
-      setData(response.data.records)
+      setData(response.data.records);
     };
     getInventory();
-  }, [selection, updatedBottle, data])
+  }, [selection, updatedBottle, data]);
 
   const handleChange = (e) => {
     e.preventDefault();
-    setSelection(e.target.value)
-  }
+    setSelection(e.target.value);
+  };
 
-  let bottleData = (data[selection] && data[selection].fields)
-  let id = (data[selection] && data[selection].id)
+  let bottleData = (data[selection] && data[selection].fields);
+  let id = (data[selection] && data[selection].id);
 
   // alphabetical sorting function from StackOverflow.com
   data.sort((a, b) => {
     let textA = a.fields.bottle.toUpperCase();
     let textB = b.fields.bottle.toUpperCase();
     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-  })
+  });
 
   return (
+
     <div >
       <h1 className="title-tag">
-        <div
-          className="big-pops">Pop's </div>
+        <div className="big-pops">Pop's </div>
         <br></br>Liquor Cabinet</h1>
       <h1>grab a bottle.</h1>
       <div className="select-bottle">
@@ -55,9 +55,8 @@ function GrabBottle(props) {
         updatedBottle={updatedBottle}
         setUpdatedBottle={setUpdatedBottle}
         inventoryRefresh={props.inventoryRefresh}
-        setInventoryRefresh={props.setInventoryRefresh} />
-
-
+        setInventoryRefresh={props.setInventoryRefresh}
+      />
 
     </div>
   )
