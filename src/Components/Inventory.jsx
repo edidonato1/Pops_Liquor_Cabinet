@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Header from './Header';
 import axios from 'axios'
 
 
@@ -9,6 +10,25 @@ function Inventory(props) {
   const [featureCategory, setFeatureCategory] = useState({})
   const [featurePrice, setFeaturePrice] = useState({})
   const [featureAmount, setFeatureAmount] = useState({})
+  const [removeMargin, setRemoveMargin] = useState(false)
+  const [heading, setHeading] = useState()
+
+  const handler = () => {
+    if (window.innerWidth <= 500) {
+      setHeading(<h2 className="page-title-mobile">inventory.</h2>)
+      setRemoveMargin(true);
+    }
+    else {
+      setHeading(<Header title="inventory." />)
+      setRemoveMargin(false);
+    }
+  }
+
+  useEffect(() => {
+    handler();
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler)
+  }, [])
 
   useEffect(() => {
 
@@ -95,12 +115,9 @@ function Inventory(props) {
 
   return (
 
-    <div >
-      <h1 className="title-tag">
-        <div className="big-pops" >Pop's </div>
-        <br></br>Liquor Cabinet</h1>
-      <h1 >inventory.</h1>
-      <h2>Total inventory: <span onClick={resetStyles} id="total-inventory">${Math.round(totalInventory(price, amountFull))}</span></h2>
+    <div className="main-component-div">
+      {heading}
+      <h3 style={removeMargin ? {} : {marginTop: "190px"}}>Total inventory: <span onClick={resetStyles} id="total-inventory">${Math.round(totalInventory(price, amountFull))}</span></h3>
       <div className="inventory-table">
         <table className="inventory-columns">
           <tbody >

@@ -102,9 +102,9 @@ function UpdateBottle(props) {
 
       {props.bottleData ?
         <div className="update-bottle">
-          <h3 className="grab-bottle-spirit">{props.bottleData && props.bottleData.bottle}</h3>
-          <h3>{props.bottleData && props.bottleData.category}</h3>
-          <h3>{props.bottleData && props.bottleData.bottleSizes} mL</h3>
+          <h4 className="grab-bottle-spirit">{props.bottleData && props.bottleData.bottle}</h4>
+          <h4>{props.bottleData && props.bottleData.category}</h4>
+          <h4>{props.bottleData && props.bottleData.bottleSizes} mL</h4>
           <button className="add-replace" onClick={(() => setShowNotes(!showNotes))}>{showNotes === false ? "show tasting notes" : "hide tasting notes"}</button>
           <span className="counter-container">
             <div className="button-box">
@@ -119,7 +119,8 @@ function UpdateBottle(props) {
 
       {showNotes === true ?
         <div className="tasting-notes">
-          <h3 className="tasting-header">notes:</h3>
+          <p id="hide" onClick={() => setShowNotes(false)}>hide</p>
+          <h4 className="tasting-header">notes:</h4>
           <p className="prev-notes">{prevNotes}</p>
           <form className="update-tasting-notes" onSubmit={handleAddNote}>
             <label htmlFor="notes"></label>

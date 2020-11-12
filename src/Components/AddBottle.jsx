@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Header from './Header';
 import axios from 'axios';
 
 
@@ -9,6 +10,24 @@ function AddBottle(props) {
   const [bottleSizes, setBottleSizes] = useState();
   const [amountFull, setAmountFull] = useState(1);
   const [notes, setNotes] = useState([]);
+  const [removeMargin, setRemoveMargin] = useState(false)
+  const [heading, setHeading] = useState()
+
+  const handler = () => {
+    if (window.innerWidth <= 500) {
+      setHeading(<h2 className="page-title-mobile">add a bottle.</h2>);
+      setRemoveMargin(true);
+    } else {      
+      setHeading(<Header title="add a bottle." />)
+      setRemoveMargin(false);
+     }
+  }
+
+  useEffect(() => {
+    handler("grab a bottle");
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler)
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -45,13 +64,9 @@ function AddBottle(props) {
     'whisky - scotch', 'whiskey - other'];
 
   return (
-    <div >
-      <h1 className="title-tag">
-        <div
-          className="big-pops">Pop's </div>
-        <br></br>Liquor Cabinet</h1>
-      <h1>add a bottle.</h1>
-      <h2>Fill out the form below</h2>
+    <div className="main-component-div" >
+      {heading}
+      <h3 style={removeMargin ? {} : {marginTop: "180px"}}>Fill out the form below</h3>
       <form className="add-bottle" onSubmit={handleSubmit}>
         <div className="form-block-top-container">
           <div className="form-block">
@@ -65,6 +80,7 @@ function AddBottle(props) {
                 value={bottle}
                 onChange={(e) => setBottle(e.target.value)}
                 required
+                autoFocus
               />
             </div>
             <br></br>

@@ -1,4 +1,6 @@
 import React from 'react'
+import Header from './Header';
+import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 
 
@@ -8,12 +10,8 @@ function Home() {
 
   return (
 
-    <div >
-      <h1 className="title-tag">
-        <div
-          className="big-pops">Pop's </div>
-        <br></br>Liquor Cabinet</h1>
-      <h1>welcome home.</h1>
+    <div className="main-component-div">
+      <Header title="welcome home" />
       <div className="link-box">
         <Link style={{ textDecoration: "none" }} to="/HomeMenu"><h3 className="menu-link" >start here</h3></Link>
       </div>

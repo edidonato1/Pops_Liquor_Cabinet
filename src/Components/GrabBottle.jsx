@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Header from './Header';
 import axios from 'axios';
 import UpdateBottle from './UpdateBottle'
 
@@ -6,6 +7,24 @@ function GrabBottle(props) {
   const [data, setData] = useState([]);
   const [selection, setSelection] = useState('');
   const [updatedBottle, setUpdatedBottle] = useState(false);
+  const [removeMargin, setRemoveMargin] = useState(false)
+  const [heading, setHeading] = useState()
+
+  const handler = () => {
+    if (window.innerWidth <= 500) {
+      setHeading(<h2 className="page-title-mobile">grab a bottle.</h2>);
+      setRemoveMargin(true);
+    } else {      
+      setHeading(<Header title="grab a bottle." />)
+      setRemoveMargin(false);
+     }
+  }
+
+  useEffect(() => {
+    handler("grab a bottle");
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler)
+  }, [])
 
   useEffect(() => {
     const getInventory = async () => {
@@ -15,7 +34,6 @@ function GrabBottle(props) {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       });
-      // alphabetical sorting function from StackOverflow.com
       setData(response.data.records.sort((a, b) => {
         let textA = a.fields.bottle.toUpperCase();
         let textB = b.fields.bottle.toUpperCase();
@@ -33,17 +51,11 @@ function GrabBottle(props) {
   let bottleData = (data[selection] && data[selection].fields);
   let id = (data[selection] && data[selection].id);
 
-
-
-
   return (
 
-    <div >
-      <h1 className="title-tag">
-        <div className="big-pops">Pop's </div>
-        <br></br>Liquor Cabinet</h1>
-      <h1>grab a bottle.</h1>
-      <div className="select-bottle">
+    <div className="main-component-div" >
+      {heading}
+      <div style={removeMargin ? {} : { marginTop: "210px" }} className="select-bottle">
         <select className="text-bar" id="select" onChange={handleChange}>
           <option>select a bottle</option>{
             data.map((item, idx) =>

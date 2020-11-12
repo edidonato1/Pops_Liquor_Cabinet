@@ -15,38 +15,23 @@ p {
   margin: 15px;
 }
 
-h1 {
-  background: #b2482c ;
-  background-position: right center ;
-  color: #e0ba98;
-  display: flex;
-  flex-direction: column-reverse;
-  font-size: 25px;
-  height: 180px;
-  margin-left: -30px;
-  padding-bottom: 10px; 
-  padding-right: 30px;
-  position: fixed;
-  text-align: right;
-  top: -25px;
-  width: 100%;
-  z-index: 1;
-}
-
-h2 {
+h3 {
   background: rgba(227, 229, 230, .5);
   font-size: 22px;
   font-weight: normal;
   color: #40160D;
-  margin: 190px 0 20px 20px;
-  margin-top: 180px;
+  margin: 0 20px 20px;
   padding: 10px;
 }
 
-h3 {
+h4 {
   font-size: 25px;
   font-weight: normal;
   color: black;
+}
+
+.main-component-div {
+margin-bottom: 80px;
 }
 
 /*                                              Nav Bar / Home Link Animation */
@@ -62,6 +47,7 @@ h3 {
   position: fixed; 
   height: 70px;
   width: 100%;
+  z-index: 2;
 }
 
 ::-webkit-scrollbar {
@@ -128,33 +114,71 @@ h3 {
 
                                               /*  Title Bar  */
 
-.big-pops {
+#pops-container {
+  /* display: flex; */
+  max-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px 10px;
+}
+
+#big-pops {
+  width: fit-content;
+  background: none;
   font-family: 'Sofia', cursive;
   font-size: 56px;
   color: #40160D;
   text-shadow: 2px 2px #BE8E56;
-  position: fixed;
-  top: -35px;
-  margin: 25px 10px 0px 100px;
-  width: 105%;
+  z-index: 2;
+  margin-top: 0;
+  margin-bottom: -30px;
+  transform: rotate(-20deg);
+}
+
+#secondary-title {
+  transform: rotate(-20deg);
+  margin-top: 0;
+  width: fit-content;
+  font-family: 'Sofia', cursive;
+  font-size: 42px;
+  color: #40160D;
+  text-shadow: 2px 2px #BE8E56;
   z-index: 2;
 }
 
 .title-tag {
   position: fixed;
-  top: -30px;
-  align-items: center;
-  text-align: left;
-  transform: rotate(-10deg);
-  font-family: 'Sofia', cursive;
-  font-size: 42px;
-  color: #40160D;
-  text-shadow: 2px 2px #BE8E56;
-  margin: 30px 0px 0px -50px;
-  height: 130px;
-  width: 105%;
-  background: none;
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  background: #b2482c ;
+  color: #e0ba98;
+  font-size: 25px;
+  height: 180px;
+  width: 100%;
+  z-index: 1;
+}
+
+.page-title {
+  background-position: right center ;
+  color: #e0ba98;
+  font-size: 25px;
+  margin-top: -20px;
+  margin-right: 10px;
+  text-align: right;
+  z-index: 1;
+}
+
+.page-title-mobile {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  background: #b2482c ;
+  color: #e0ba98;
+  height: 50px;
+  margin-top: 0;
+  text-align: right;
+  padding: 10px;
 }
 
 
@@ -219,8 +243,10 @@ td {
 
                                             /* Grab Bottle */
 
-#select {
-  margin: 210px 0 0 20px;
+.select-bottle {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 20px;
 }
 
 #select:hover {
@@ -238,16 +264,17 @@ td {
                                         /* Update Bottle */
 
 .update-bottle {
-  display: inline-block;
+  display: block;
   position: relative;
   background: rgba(211, 211, 211, 0.8);
   border: 3px solid rgba(215, 182, 153, 0.7);
   box-shadow: 2px 0px 3px 0px rgb(50, 50, 50);
   border-radius: 10px;
   padding: 10px;
-  margin: 50px 30px 0 30px;
+  margin: 30px 30px 0 30px;
   width: 76vw;
-  height: 48vh;
+  height: 50vh;
+  line-height: 15px;
 }
 
 .grab-bottle-spirit {
@@ -265,35 +292,55 @@ td {
 }
 
 .percentage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgba(240, 241, 242, .8);
+  object-fit: contain;
   text-align: right;
   width: 95px;
+  height: 95px;
   padding: 10px;
   margin-left: 10px;
   font-size: 60px;
   border: 2px solid white;
   border-radius: 10px;
   color: #BF6F41;
-  z-index: 0;
+  /* z-index: 0; */
 }
 
+ #hide {
+  margin: 0;
+  text-align: right;
+  color: #BF6F41;
+  font-size: 20px;
+ }
+
 .button-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 2px solid rgba(180, 74, 45, .7);
   padding: 10px;
   background: #D6A263;
   border-radius: 10px;
+  height: 130px;
 }
 
 .plus-minus {
   background: rgba(227, 229, 230, .7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-style: inset;
-  font-size: 25px;
+  font-size: 20px;
   color: black;
   border-radius: 50%;
   outline: none;
-  margin: 5px 0 3px;
-  width: 40px;
-  height: 40px;
+  /* margin: 5px 0 3px; */
+  width: 50px;
+  height: 50px;
   z-index: 0;
 }
 
@@ -318,19 +365,22 @@ td {
 }
 
 .tasting-notes {
-  position: relative;
+  position: absolute;
+  top: 155px;
+  left: 10vw;
   background: rgba(240, 241, 242, 1);
   border: 2px solid #b2482c;
   border-radius: 15px;
   padding: 5px;
   margin: 10px auto;
-  margin-top: -190px;
-  height: 20vh;
+  /* margin-top: -190px; */
+  height: 25vh;
   width: 74vw;
   z-index: 1;
   animation-name: open;
   animation-duration: .4s;
   animation-timing-function: linear;
+  transition: width 2s;
 }
 
 .update-tasting-notes {
@@ -347,6 +397,7 @@ td {
   animation-name: appear;
   animation-duration: .8s;
   margin-bottom: 0;
+  margin-top: -20px;
 }
 
 .prev-notes {
