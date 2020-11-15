@@ -31,7 +31,6 @@ function Inventory(props) {
   }, [])
 
   useEffect(() => {
-
     const getInventory = async () => {
       const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits`;
       const response = await axios.get(airtableURL, {

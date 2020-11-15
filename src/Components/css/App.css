@@ -327,13 +327,7 @@ td {
   color: #BF6F41;
 }
 
- #hide {
-  margin: 0;
-  text-align: right;
-  color: #BF6F41;
-  font-size: 20px;
-  cursor: pointer;
- }
+
 
 .button-box {
   display: flex;
@@ -384,17 +378,38 @@ td {
   to {display: block}
 }
 
+#hide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #BF6F41;
+  font-size: 20px;
+  cursor: pointer;
+  animation-name: appear;
+  animation-duration: .8s;
+  z-index: 2;
+  width: fit-content;
+ }
+
+ #hide:hover {
+   color: #b2482c;
+ }
+
 .tasting-notes {
   position: absolute;
   top: 155px;
   left: 10vw;
-  background: rgba(240, 241, 242, 1);
+  display: flex;
+  flex-direction: column;
+  background: rgb(240, 241, 242);
   border: 2px solid #b2482c;
   border-radius: 15px;
-  padding: 5px;
+  padding: 10px;
   margin: 10px auto;
   height: 25vh;
+  min-height: 150px;
   width: 74vw;
+  max-width: 375px;
   z-index: 1;
   animation-name: open;
   animation-duration: .4s;
@@ -403,12 +418,10 @@ td {
 }
 
 .update-tasting-notes {
-  /* position: absolute; */
-  bottom: 10px;
-  right: 10px; 
   width: 100%;
   animation-name: appear;
   animation-duration: .8s;
+  height: 100%;
 }
 
 .tasting-header {
@@ -416,31 +429,28 @@ td {
   animation-name: appear;
   animation-duration: .8s;
   margin-bottom: 0;
-  margin-top: -30px;
+  margin-top: 10px;
 
 }
 
-
-.prev-notes {
-  height: 12vh;
-  font-size: 20px;
-  overflow-y: scroll;
-  margin-top: 0;
-  line-height: 25px;
-  animation-name: appear;
-  animation-duration: .8s;
-}
 
 .add-note {
 text-align: left;
 font-size: 18px;
-height: 100px;
-width:80%;
+height: 60%;
+width:90%;
+
 border: none;
 background: none;
-
 outline: none;
 resize: none;
+}
+
+#edit-save {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  width: 50px;
 }
 
 .add-replace {
@@ -464,12 +474,16 @@ resize: none;
 
 .add-bottle {
   position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   text-align: left;
   color: #40160D;
   font-size: 16px;
   line-height: 10px;
+  border-radius: 10px;
   margin: 0 auto;
-  width: 300px;
+  width: 350px;
 }
 
 .submit {

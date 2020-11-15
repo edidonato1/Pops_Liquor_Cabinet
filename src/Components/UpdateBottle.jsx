@@ -134,9 +134,9 @@ function UpdateBottle(props) {
               value={data.notes}
               onChange={editNotes ? handleChange : null} /><br></br>
             {editNotes ?
-              <button className="add-replace" type="submit" onClick={() => setEditNotes(!editNotes)} >save</button>
+              <button className="add-replace" id="edit-save" type="submit" onClick={() => setEditNotes(!editNotes)} >save</button>
               :
-              <button className="add-replace" onClick={() => setEditNotes(!editNotes)}>edit</button>
+              <button className="add-replace" id="edit-save" onClick={() => setEditNotes(!editNotes)}>edit</button>
             }
           </form>
         </div>

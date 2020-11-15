@@ -48,7 +48,7 @@
   }
 
    .nav-bar {
-     height: 100px;
+     height: 70px;
      font-size: 25px;
    }
 
@@ -113,29 +113,44 @@
       to {height: 30vh;
           width: 35vw}
     }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
     
   .update-bottle {
     width: 40vw;
-    height: 450px;
-    margin-top: initial;
+    height: 40vh;
+    /* height: 450px; */
+    margin-top: 2vh;
+    margin-left: 5vw;
   }
   
   .update-parent-container {
     display: flex;
-    height: 450px;
-    margin-top: 50px;
+    justify-content: flex-start;
+    /* height: 450px; */
+    /* margin-top: 50px; */
   } 
 
   .tasting-notes {
+    position: initial;
     background: rgba(211, 211, 211, 0.8);    
     margin-top: initial;
     height: 30vh;
     width: 35vw;
+    animation-name: appear;
     animation-duration: .8s;
   }
 
   .add-note {
     width: 30vw;
+    height: 15vh;
     margin: 5px;
   }
 
@@ -145,7 +160,7 @@
   }
 
   .update-tasting-notes {
-    animation-duration: 1.2s;
+    animation-duration: .8s;
   }
 
   .percentage  {
@@ -167,53 +182,59 @@
     font-size: 18px;
   }
 
-
   .add-bottle {
-    display: flex;
-    flex-wrap: wrap;
-    top: 50px;
-    justify-content: space-between;
     background: rgba(227, 229, 230, .7);
-    border: 3px solid rgba(215, 182, 153, 0.7);
-    border-radius: 10px;
-    padding: 30px;
-    width: 85vw;
-   }
-
-   .form-block-top-container {
-     display: flex;
-     justify-content: space-between;
-     width: 100%;
-     height: 200px;
-   }
-
-   .form-block{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-    width: 50%;
-    }
-
-   .form-block-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-   }
-  
-   #notes {
-    width: 90%;
+    padding: 10px 0;
   }
-
-   #notes-form {
-     width: 80%;
-   }
-
-   .submit {
-     font-size: 18px;
-     padding: 5px 15px 5px 15px;
-   }
    
   }
 
+  @media screen and (min-width: 750px) {
+    .add-bottle {
+      display: flex;
+      flex-wrap: wrap;
+      top: 50px;
+      justify-content: space-between;
+      background: rgba(227, 229, 230, .7);
+      border: 3px solid rgba(215, 182, 153, 0.7);
+      border-radius: 10px;
+      padding: 30px;
+      width: 85vw;
+     }
+  
+     .form-block-top-container {
+       display: flex;
+       justify-content: space-between;
+       width: 100%;
+       height: 200px;
+     }
+  
+     .form-block{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 50%;
+      }
+  
+     .form-block-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+     }
+    
+     #notes {
+      width: 90%;
+    }
+  
+     #notes-form {
+       width: 80%;
+     }
+  
+     .submit {
+       font-size: 18px;
+       padding: 5px 15px 5px 15px;
+     }
+  }
