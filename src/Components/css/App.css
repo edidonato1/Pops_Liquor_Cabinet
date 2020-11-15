@@ -263,32 +263,52 @@ td {
 
                                         /* Update Bottle */
 
+.update-parent-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .update-bottle {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
   background: rgba(211, 211, 211, 0.8);
   border: 3px solid rgba(215, 182, 153, 0.7);
   box-shadow: 2px 0px 3px 0px rgb(50, 50, 50);
   border-radius: 10px;
   padding: 10px;
-  margin: 30px 30px 0 30px;
   width: 76vw;
+  min-width: 280px;
+  max-width: 300px;
   height: 50vh;
-  line-height: 15px;
+  line-height: 5px;
+  min-height: 375px;
+  height: 375px;
 }
 
 .grab-bottle-spirit {
   font-weight: bold;
-  margin-top: 0;
+  line-height: 30px;
+  margin: 0;
+  /* background: cyan; */
+}
+
+.update-bottle-info {
+
 }
 
 .counter-container {
-  position: absolute;
-  bottom: 20px;
+  /* position: absolute; */
+  /* background: yellow; */
+  min-height: 130px;
+  height: 130px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
+
 }
 
 .percentage {
@@ -325,7 +345,8 @@ td {
   padding: 10px;
   background: #D6A263;
   border-radius: 10px;
-  height: 130px;
+  /* height: 130px; */
+
 }
 
 .plus-minus {
@@ -373,7 +394,6 @@ td {
   border-radius: 15px;
   padding: 5px;
   margin: 10px auto;
-  /* margin-top: -190px; */
   height: 25vh;
   width: 74vw;
   z-index: 1;
@@ -392,13 +412,14 @@ td {
 }
 
 .tasting-header {
-  margin-top: 0px;
   font-weight: bold;
   animation-name: appear;
   animation-duration: .8s;
   margin-bottom: 0;
-  margin-top: -20px;
+  margin-top: -30px;
+
 }
+
 
 .prev-notes {
   height: 12vh;
@@ -426,7 +447,9 @@ outline: none;
   color: #40160D;
   font-size: 16px;
   padding: 3px 5px 3px 5px;
-  margin: 2px;
+  margin: 5px;
+  width: fit-content;
+  min-height: fit-content;
   border: 1px outset #40160D;
   border-radius:8px;
 }
