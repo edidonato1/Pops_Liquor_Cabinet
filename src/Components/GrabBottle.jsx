@@ -24,7 +24,7 @@ function GrabBottle(props) {
     handler("grab a bottle");
     window.addEventListener("resize", handler);
     return () => window.removeEventListener("resize", handler)
-  }, [])
+  }, [data])
 
   useEffect(() => {
     const getInventory = async () => {

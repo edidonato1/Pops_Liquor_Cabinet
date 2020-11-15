@@ -1,18 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 
 function UpdateBottle(props) {
   const [showNotes, setShowNotes] = useState(false)
   const [addNote, setAddNote] = useState(props.bottleData && props.bottleData.notes)
   let prevNotes = props.bottleData && props.bottleData.notes
+  const [data, setData] = useState({})
+  const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
+
+  useEffect(() => {
+    const getBottleData = async () => {
+      // e.preventDefault();
+      const response = await axios.get(
+        airtableURL,
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          }
+        }
+      )
+      // setData(response.data.records)
+      setData(response.data.fields)
+    }
+    getBottleData()
+  }, [props.bottleData])
+
+  
 
   // Update percentage count
   const handleClick = async (newAmount) => {
-
+    
     const fields = {
       amountFull: newAmount,
     }
-    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
     await axios.patch(
       airtableURL,
       { fields },
@@ -123,7 +143,7 @@ function UpdateBottle(props) {
           <p className="prev-notes">{prevNotes}</p>
           <form className="update-tasting-notes" onSubmit={handleAddNote}>
             <label htmlFor="notes"></label>
-            <input className="add-note" type="text" value={addNote} onChange={((e) => setAddNote((e.target.value).toLowerCase()))} />
+            <input className="add-note" type="text" value={props.bottleData && props.bottleData.notes} onChange={((e) => setAddNote((e.target.value).toLowerCase()))} />
             <button className="add-replace" type="submit">add</button>
             <button className="add-replace" onClick={handleReplaceNotes} >replace</button>
           </form>
