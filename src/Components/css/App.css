@@ -213,12 +213,12 @@ margin-bottom: 80px;
 }
 
 .content-cell:hover {
-  background: rgba(255, 255, 255, 0.3);
   cursor: default;
 }
 
 .title-cell:hover {
-  background: rgba(255, 255, 255, 0.3);
+  /* background: rgba(255, 255, 255, 0.4); */
+  background: rgba(217, 150, 91, .5);
   cursor: default;
 }
 
@@ -258,7 +258,6 @@ td {
   color: white;
   outline: none;
 }
-
 
 
                                         /* Update Bottle */

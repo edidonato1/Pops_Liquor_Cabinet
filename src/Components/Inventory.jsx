@@ -61,7 +61,7 @@ function Inventory(props) {
       return ((textA < textB) ? -1 : (textA > textB) ? 1 : 0);
     })
     setChangeSort(!changeSort);
-    setFeatureSpirits({ background: "rgba(255, 255, 255, 0.3)" });
+    setFeatureSpirits({ background: "rgba(217, 150, 91, .5)" });
     setFeatureCategory({});
     setFeaturePrice({});
     setFeatureAmount({});
@@ -74,7 +74,7 @@ function Inventory(props) {
       return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     });
     setChangeSort(!changeSort)
-    setFeatureCategory({ background: "rgba(255, 255, 255, 0.3)" });
+    setFeatureCategory({ background: "rgba(217, 150, 91, .5)"  });
     setFeatureSpirits({});
     setFeaturePrice({});
     setFeatureAmount({});
@@ -87,7 +87,7 @@ function Inventory(props) {
       return targetA - targetB;
     });
     setChangeSort(!changeSort);
-    setFeatureAmount({ background: "rgba(255, 255, 255, 0.3)" });
+    setFeatureAmount({ background: "rgba(217, 150, 91, .5)"  });
     setFeatureCategory({});
     setFeaturePrice({});
     setFeatureSpirits({});
@@ -100,7 +100,7 @@ function Inventory(props) {
       return targetA - targetB;
     });
     setChangeSort(!changeSort);
-    setFeaturePrice({ background: "rgba(255, 255, 255, 0.3)" });
+    setFeaturePrice({ background: "rgba(217, 150, 91, .5)"  });
     setFeatureCategory({});
     setFeatureSpirits({});
     setFeatureAmount({});
@@ -117,7 +117,8 @@ function Inventory(props) {
 
     <div className="main-component-div">
       {heading}
-      <h3 style={removeMargin ? {} : {marginTop: "190px"}}>Total inventory: <span onClick={resetStyles} id="total-inventory">${Math.round(totalInventory(price, amountFull))}</span></h3>
+      <h3 style={removeMargin ? {} : { marginTop: "190px" }}>Total inventory: <span onClick={resetStyles} id="total-inventory">${Math.round(totalInventory(price, amountFull))}</span></h3>
+      <small style={{marginLeft: "8vw"}}>(select category to sort)</small><br></br>
       <div className="inventory-table">
         <table className="inventory-columns">
           <tbody >
