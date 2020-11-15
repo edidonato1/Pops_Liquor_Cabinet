@@ -9,7 +9,7 @@ function AddBottle(props) {
   const [price, setPrice] = useState();
   const [bottleSizes, setBottleSizes] = useState();
   const [amountFull, setAmountFull] = useState(1);
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState('');
   const [removeMargin, setRemoveMargin] = useState(false)
   const [heading, setHeading] = useState()
 
@@ -18,7 +18,7 @@ function AddBottle(props) {
       setHeading(<h2 className="page-title-mobile">add a bottle.</h2>);
       setRemoveMargin(true);
     } else {      
-      setHeading(<Header title="add a bottle." />)
+      setHeading(<Header title="add a bottle." />);
       setRemoveMargin(false);
      }
   }
@@ -26,8 +26,8 @@ function AddBottle(props) {
   useEffect(() => {
     handler("grab a bottle");
     window.addEventListener("resize", handler);
-    return () => window.removeEventListener("resize", handler)
-  }, [])
+    return () => window.removeEventListener("resize", handler);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -66,7 +66,7 @@ function AddBottle(props) {
   return (
     <div className="main-component-div" >
       {heading}
-      <h3 style={removeMargin ? {} : {marginTop: "180px"}}>Fill out the form below</h3>
+      <h3 style={removeMargin ? {marginTop: "100px"}  : {marginTop: "180px"}}>Fill out the form below</h3>
       <form className="add-bottle" onSubmit={handleSubmit}>
         <div className="form-block-top-container">
           <div className="form-block">
@@ -76,11 +76,10 @@ function AddBottle(props) {
               <input
                 className="text-bar"
                 type="text"
-                placeholder="ex: Nikka Coffey Grain"
+                placeholder='ex: "Nikka Coffey Grain"'
                 value={bottle}
                 onChange={(e) => setBottle(e.target.value)}
                 required
-                autoFocus
               />
             </div>
             <br></br>
@@ -106,9 +105,9 @@ function AddBottle(props) {
               <input
                 className="text-bar"
                 type="text"
-                placeholder="ex: 51"
                 value={price}
                 onChange={(price % 1 < 1) ? (e) => setPrice(parseInt(e.target.value)) : setPrice('')}
+                required
               />
             </div>
             <br></br>
@@ -116,13 +115,22 @@ function AddBottle(props) {
 
               <label htmlFor="bottleSizes">bottle size (mL) </label>
               <br></br>
-              <input
+              <select
                 className="text-bar"
                 type="text"
-                placeholder="ex: 750"
+                placeholder='ex: "750"'
                 value={bottleSizes}
-                onChange={(bottleSizes % 1 < 1) ? (e) => setBottleSizes(parseInt(e.target.value)) : setBottleSizes('')}
-              />
+                onChange={(e) => setBottleSizes(parseInt(e.target.value))}
+                required
+              >
+                <option></option>
+                <option value="1750">1.75L</option>
+                <option value="1000">1L</option>
+                <option value="750">750mL</option>
+                <option value="500">500mL</option>
+                <option value="375">375mL</option>
+                <option value="187">187mL</option>
+              </select>
               <br></br>
             </div>
           </div>
@@ -134,7 +142,7 @@ function AddBottle(props) {
             <br></br>
             <input
               style={{ height: "80px" }}
-              placeholder="ex: single grain coffey still"
+              placeholder='ex: "single grain coffey still"'
               className="text-bar"
               id="notes"
               type="text"

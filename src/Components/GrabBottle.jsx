@@ -7,24 +7,24 @@ function GrabBottle(props) {
   const [data, setData] = useState([]);
   const [selection, setSelection] = useState('');
   const [updatedBottle, setUpdatedBottle] = useState(false);
-  const [removeMargin, setRemoveMargin] = useState(false)
-  const [heading, setHeading] = useState()
+  const [removeMargin, setRemoveMargin] = useState(false);
+  const [heading, setHeading] = useState();
 
   const handler = () => {
     if (window.innerWidth <= 500) {
       setHeading(<h2 className="page-title-mobile">grab a bottle.</h2>);
       setRemoveMargin(true);
-    } else {      
+    } else {
       setHeading(<Header title="grab a bottle." />)
       setRemoveMargin(false);
-     }
-  }
+    };
+  };
 
   useEffect(() => {
     handler("grab a bottle");
     window.addEventListener("resize", handler);
-    return () => window.removeEventListener("resize", handler)
-  }, [data])
+    return () => window.removeEventListener("resize", handler);
+  }, [data]);
 
   useEffect(() => {
     const getInventory = async () => {
@@ -55,28 +55,27 @@ function GrabBottle(props) {
 
     <div className="main-component-div" id="grab-bottle">
       {heading}
-      <div style={removeMargin ? {} : { marginTop: "210px" }} className="select-bottle">
+      <div style={removeMargin ? { marginTop: "100px" } : { marginTop: "210px" }} className="select-bottle">
         <select className="text-bar" id="select" onChange={handleChange}>
           <option>select a bottle</option>{
             data.map((item, idx) =>
               <option key={item.id} value={idx}>{item.fields.bottle}</option>
-            )}
+            )};
         </select>
       </div>
-      <UpdateBottle id={id}
-        bottleData={bottleData}
-        updatedBottle={updatedBottle}
-        setUpdatedBottle={setUpdatedBottle}
-        inventoryRefresh={props.inventoryRefresh}
-        setInventoryRefresh={props.setInventoryRefresh}
-      />
-
+      {selection ?
+        <UpdateBottle id={id}
+          bottleData={bottleData}
+          updatedBottle={updatedBottle}
+          setUpdatedBottle={setUpdatedBottle}
+          inventoryRefresh={props.inventoryRefresh}
+          setInventoryRefresh={props.setInventoryRefresh}
+        />
+        :
+        <> </>
+      };
     </div>
-  )
-}
+  );
+};
 
 export default GrabBottle;
-
-
-
-// inventory -- getter

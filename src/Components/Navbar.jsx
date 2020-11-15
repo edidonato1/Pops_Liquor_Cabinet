@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
+
 function Navbar() {
   const linkStyles = {
     textDecoration: "none",
@@ -19,7 +20,7 @@ function Navbar() {
       </div>
     </div>
 
-  )
-}
+  );
+};
 
 export default Navbar;

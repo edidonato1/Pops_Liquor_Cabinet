@@ -9,10 +9,10 @@ import AddBottle from './AddBottle';
 import { Route } from 'react-router-dom';
 import './css/App.css';
 import './css/Tablet.css';
-import './css/Web.css'
+import './css/Web.css';
 
 function App() {
-  const [inventoryRefresh, setInventoryRefresh] = useState(false)
+  const [inventoryRefresh, setInventoryRefresh] = useState(false);
 
   return (
 
@@ -42,6 +42,6 @@ function App() {
     </div>
     
   );
-}
+};
 
 export default App;

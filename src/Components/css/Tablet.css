@@ -4,11 +4,10 @@
 
   body {
     background-size: 102%;
-    background-position: bottom;
+    background-position: top;
   }
 
-  h1 {
-    /* height: 190px; */
+  h1, h3{
     font-size: 28px;
   }
 
@@ -17,10 +16,7 @@
     margin-top: 240px;
     margin-left: 60px;
   }
-  
-  h3 {
-    font-size: 28px;
-  }
+
   
   p {
     line-height: 45px;
@@ -36,13 +32,17 @@
     justify-content: flex-end;
   }
 
-  .big-pops {
-    font-size: 70px;
-    margin-top: 0px;
+  #big-pops, #secondary-title {
+    margin-left: 40px;
   }
   
   .title-tag {
     font-size: 60px;
+
+  }
+
+  .page-title {
+    margin-right: 30px;
   }
 
    .nav-bar {
@@ -79,6 +79,14 @@
     width: 85vw;
    }
 
+   #bottle-logo {
+     display: block;
+     position: absolute;
+     right: 30px;
+     top: 20px;
+     transform: rotate(20deg);
+   }
+
    td {
     padding-top: 20px;
     padding-left: 10px;
@@ -90,6 +98,9 @@
   }  
 
   #select {
+    position: fixed;
+    top: 200px;
+    right: 50px;
     background: rgba(217, 150, 91, .7);
     color: white;
     height: 35px;
@@ -127,8 +138,6 @@
   .update-parent-container {
     justify-content: flex-start;
     overflow-y: scroll;
-    /* height: 450px; */
-    /* margin-top: 50px; */
   } 
 
   .tasting-notes {
@@ -145,10 +154,6 @@
 
   .add-note {
     margin: 5px;
-  }
-
-  .add-replace {
-    /* margin-left: 5px; */
   }
 
   .update-tasting-notes {

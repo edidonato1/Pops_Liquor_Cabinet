@@ -21,7 +21,7 @@ function UpdateBottle(props) {
       setData(response.data.fields)
     }
     getBottleData()
-  }, [props.bottleData])
+  }, [props.bottleData, airtableURL])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -132,7 +132,7 @@ function UpdateBottle(props) {
               style={editNotes ? editStyle : null}
               name="notes"
               value={data.notes}
-              onChange={editNotes ? handleChange : null} /><br></br>
+              onChange={editNotes ? handleChange : () => console.log('select "edit" to make changes')} /><br></br>
             {editNotes ?
               <button className="add-replace" id="edit-save" type="submit" onClick={() => setEditNotes(!editNotes)} >save</button>
               :

@@ -1,10 +1,9 @@
-import React from 'react'
-import Header from './Header'
-import AboutPage from './AboutPage'
-import AddLink from './AddLink'
-import GrabLink from './GrabLink'
-import InvLink from './InvLink'
-
+import React from 'react';
+import Header from './Header';
+import AboutPage from './AboutPage';
+import AddLink from './AddLink';
+import GrabLink from './GrabLink';
+import InvLink from './InvLink';
 
 
 
@@ -13,7 +12,7 @@ function HomeMenu() {
   return (
 
     <div >
-      <Header title="menu" />
+      <Header title="menu." />
       <div className="scroll">
         <div key="about"><AboutPage /></div>
         <div key="add"><AddLink /></div>
@@ -22,8 +21,8 @@ function HomeMenu() {
       </div>
     </div>
 
-  )
+  );
 
-}
+};
 
-export default HomeMenu
+export default HomeMenu;

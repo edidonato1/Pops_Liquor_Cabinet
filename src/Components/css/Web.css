@@ -1,14 +1,12 @@
-                                             /* Web Breakpoint */
+
 
   @media screen and (min-width: 1000px ) {
 
     body {
-      /* background-size: 110%; */
       background-position-y: 22% ;
     }
     
     h1 {
-      z-index: 2;
       font-size: 35px;
     }
 
@@ -18,11 +16,8 @@
     }
 
     h3 {
-      /* margin-left: 25vw; */
       text-align: center;
-
     }
-
 
     .scroll {
       overflow-x: initial;
@@ -36,7 +31,6 @@
     .title-tag {
       font-size: 75px;
       z-index: 3;
-      
     } 
 
     #pops-container {
@@ -44,6 +38,12 @@
       align-items: center;
       justify-content: center;
 
+    }
+
+    #bottle-logo {
+      left: 40px;
+      top: 40px;
+      transform: rotate(-25deg);
     }
 
     #big-pops {
@@ -106,9 +106,6 @@
     }
 
     #select {
-      position: fixed;
-      top: 200px;
-      right: 50px;
       width: 400px;
       height: 45px;
     }
@@ -117,13 +114,6 @@
       margin-right: 4vw;
     }
 
-    /* @keyframes open {
-      from {height: 30vh;
-            width: 0}
-    
-      to {min-height: 350px;
-          width: 400px}
-    } */
 
     .update-bottle {
       margin-top: 10vh;
@@ -134,12 +124,10 @@
 
     .add-note {
       font-size: 18px;
-      /* width: 340px; */
     }
 
     .tasting-notes {
       margin-left: 20px;
-      /* width: 400px; */
     }
 
     .add-bottle {
