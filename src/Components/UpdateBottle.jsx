@@ -116,8 +116,22 @@ function UpdateBottle(props) {
             </div>
             <div className="percentage">{Math.round((props.bottleData && props.bottleData.amountFull) * 100)}</div><p style={{ marginLeft: "15px" }}> % </p>
           </div>
-        </div>
-        : <></>
+        </div> 
+        : 
+        <></>
+      //   :         <div className="update-bottle">
+      //     <h4 className="grab-bottle-spirit" style={{ color: "gray"}}>bottle info will load here</h4>
+      //   <h4 className="update-bottle-info"></h4>
+      //   <h4 className="update-bottle-info"></h4>
+      //   <button className="add-replace" >show tasting notes</button>
+      //   <div className="counter-container">
+      //     <div className="button-box">
+      //       <button className="plus-minus" onClick={increment}>+</button><br></br>
+      //       <button className="plus-minus" onClick={decrement}>-</button>
+      //     </div>
+      //     <div className="percentage"></div><p style={{ marginLeft: "15px" }}> % </p>
+      //   </div>
+      // </div>
       }
 
       {showNotes === true ?
