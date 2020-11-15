@@ -39,12 +39,10 @@
   .big-pops {
     font-size: 70px;
     margin-top: 0px;
-    /* margin-left: 250px; */
   }
   
   .title-tag {
     font-size: 60px;
-    /* margin-top: 40px; */
   }
 
    .nav-bar {
@@ -69,7 +67,7 @@
   }
 
    #total-inventory {
-     padding: 10px;
+     padding: 5px;
    }
 
    .inventory-table {
@@ -90,11 +88,6 @@
   .title-cell {
     font-size: 20px;
   }  
-
-  #grab-bottle {
-    margin-bottom: initial;
-
-  }
 
   #select {
     background: rgba(217, 150, 91, .7);
@@ -127,20 +120,21 @@
   .update-bottle {
     width: 40vw;
     height: 40vh;
-    /* height: 450px; */
     margin-top: 2vh;
     margin-left: 5vw;
   }
   
   .update-parent-container {
-    display: flex;
     justify-content: flex-start;
+    overflow-y: scroll;
     /* height: 450px; */
     /* margin-top: 50px; */
   } 
 
   .tasting-notes {
-    position: initial;
+    position: relative;
+    top: initial;
+    left: initial;
     background: rgba(211, 211, 211, 0.8);    
     margin-top: initial;
     height: 30vh;
@@ -150,14 +144,11 @@
   }
 
   .add-note {
-    width: 30vw;
-    height: 15vh;
     margin: 5px;
   }
 
   .add-replace {
-    margin-left: 5px;
-
+    /* margin-left: 5px; */
   }
 
   .update-tasting-notes {

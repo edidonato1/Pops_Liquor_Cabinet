@@ -117,7 +117,7 @@ function Inventory(props) {
     <div className="main-component-div">
       {heading}
       <h3 style={removeMargin ? {} : { marginTop: "190px" }}>Total inventory: <span onClick={resetStyles} id="total-inventory">${Math.round(totalInventory(price, amountFull))}</span></h3>
-      <small style={{marginLeft: "8vw"}}>(select category to sort)</small><br></br>
+      <small >(select category to sort)</small><br></br>
       <div className="inventory-table">
         <table className="inventory-columns">
           <tbody >

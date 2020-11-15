@@ -3,14 +3,13 @@
   @media screen and (min-width: 1000px ) {
 
     body {
-      background-size: 110%;
-      background-position: center;
+      /* background-size: 110%; */
+      background-position-y: 22% ;
     }
     
     h1 {
       z-index: 2;
       font-size: 35px;
-      margin-right: 10vw;
     }
 
     h2 {
@@ -18,21 +17,48 @@
       font-size: 30px;
     }
 
+    h3 {
+      /* margin-left: 25vw; */
+      text-align: center;
+
+    }
+
+
+    .scroll {
+      overflow-x: initial;
+    }
+
+    small  {
+      margin-left: 30vw;
+      background: rgba(227, 229, 230, .5);
+    }
+
     .title-tag {
-      transform: initial; 
-      left: initial;
-      position: fixed;
-      text-align: left; 
-      top: 10px;
       font-size: 75px;
       z-index: 3;
+      
     } 
 
-    .big-pops {
+    #pops-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    #big-pops {
       font-size: 90px;
-      margin-top: -50px;
-      margin-right: 100px;
-      transform: rotate(-10deg); 
+      transform: rotate(-10deg);
+      margin-bottom: initial;
+      margin-right: 40px;
+      
+    }
+
+    #secondary-title {
+      transform: initial;
+      margin-block-end: 0;
+      transform: rotate(-10deg);
+
     }
 
     .nav-bar {
@@ -46,7 +72,7 @@
       margin-right: 30px;
       line-height: 15vh;
       height: 100%;
-      width: 20vw;
+      width: 200px;
       z-index: 1;
     }
 
@@ -80,6 +106,9 @@
     }
 
     #select {
+      position: fixed;
+      top: 200px;
+      right: 50px;
       width: 400px;
       height: 45px;
     }
@@ -88,13 +117,13 @@
       margin-right: 4vw;
     }
 
-    @keyframes open {
+    /* @keyframes open {
       from {height: 30vh;
             width: 0}
     
       to {min-height: 350px;
           width: 400px}
-    }
+    } */
 
     .update-bottle {
       margin-top: 10vh;
@@ -104,15 +133,13 @@
     }
 
     .add-note {
-      height: 30px;
       font-size: 18px;
-      width: 340px;
+      /* width: 340px; */
     }
 
     .tasting-notes {
-      margin-top: 10vh;
-      width: 400px;
-      min-height: 350px;
+      margin-left: 20px;
+      /* width: 400px; */
     }
 
     .add-bottle {

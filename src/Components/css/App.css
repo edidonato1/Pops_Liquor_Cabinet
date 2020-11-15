@@ -20,6 +20,10 @@ br {
   margin: 10px 0;
 }
 
+small {
+  margin-left: 8vw;
+}
+
 h3 {
   background: rgba(227, 229, 230, .5);
   font-size: 22px;
@@ -133,8 +137,8 @@ margin-bottom: 80px;
 #pops-container {
   /* display: flex; */
   max-height: 100%;
-  flex-direction: column;
-  justify-content: center;
+  /* flex-direction: column; */
+  /* justify-content: center; */
   padding: 5px 10px;
 }
 
@@ -222,20 +226,25 @@ margin-bottom: 80px;
   font-weight: bold;
   font-size: 16px;
   padding-right: 10px;
+  
 }
 
 .title-cell{
   border-bottom: 1px solid gray;
+  
 }
 
 .content-cell:hover {
   cursor: default;
+  
 }
 
 .title-cell:hover {
   /* background: rgba(255, 255, 255, 0.4); */
-  background: rgba(217, 150, 91, .5);
-  cursor: default;
+  /* background: rgba(217, 150, 91, .5); */
+  background: rgba(178, 72, 44, .7);
+
+  cursor: s-resize;
 }
 
 .inventory-columns {
@@ -307,7 +316,6 @@ td {
   font-weight: bold;
   line-height: 30px;
   margin: 0;
-  /* background: cyan; */
 }
 
 .update-bottle-info {
@@ -315,15 +323,12 @@ td {
 }
 
 .counter-container {
-  /* position: absolute; */
-  /* background: yellow; */
   min-height: 130px;
   height: 130px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-
 }
 
 .percentage {
@@ -455,7 +460,6 @@ text-align: left;
 font-size: 18px;
 height: 60%;
 width:90%;
-
 border: none;
 background: none;
 outline: none;
