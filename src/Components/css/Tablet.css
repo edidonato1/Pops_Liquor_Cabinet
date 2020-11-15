@@ -1,6 +1,6 @@
                                               /*  Tablet Breakpoint */
 
-@media screen and (min-width: 500px ) and (min-height: 750px) {
+@media screen and (min-width: 500px ) and (min-height: 650px) {
 
   body {
     background-size: 102%;
@@ -53,7 +53,8 @@
    }
 
   .scroll {
-    margin-top: 270px;
+    margin-top:28vh;
+    height: 60vh;
   }
 
   .scroll-title {
@@ -63,7 +64,7 @@
 
   .scroll-menu {
     width: 400px;
-    height: 500px;
+    height: 400px;
     margin: 20px;
   }
 

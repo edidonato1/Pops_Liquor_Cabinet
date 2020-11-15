@@ -14,7 +14,7 @@ function GrabLink() {
       <h5 className="scroll-title"><Link style={LinkStyles} to="/GrabBottle">grab a bottle</Link></h5>
       <p>The digital experience of pouring yourself a dram.</p>
       <p>Have a drink? Mark it down.</p>
-      <p>No judgment <Link to="/GrabBottle">here.</Link></p>
+      <p>No judgment <Link className="scroll-link" to="/GrabBottle">here</Link>.</p>
     </div>
 
   )
