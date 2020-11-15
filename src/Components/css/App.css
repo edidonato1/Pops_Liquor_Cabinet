@@ -404,9 +404,10 @@ td {
 }
 
 .update-tasting-notes {
-  position: absolute;
+  /* position: absolute; */
   bottom: 10px;
   right: 10px; 
+  width: 100%;
   animation-name: appear;
   animation-duration: .8s;
 }
@@ -433,12 +434,14 @@ td {
 
 .add-note {
 text-align: left;
-height: 20px;
-width: 40vw;
-background: rgba(231, 228, 228, 0.5);
-border: .5px solid gray;
-border-radius: 5px;
+font-size: 18px;
+height: 100px;
+width:80%;
+border: none;
+background: none;
+
 outline: none;
+resize: none;
 }
 
 .add-replace {

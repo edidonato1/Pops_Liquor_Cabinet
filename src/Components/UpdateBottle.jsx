@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 
 function UpdateBottle(props) {
-  const [showNotes, setShowNotes] = useState(false)
   const [data, setData] = useState({})
+  const [showNotes, setShowNotes] = useState(false)
+  const [editNotes, setEditNotes] = useState(false)
+
   const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
 
   useEffect(() => {
@@ -29,30 +31,6 @@ function UpdateBottle(props) {
     })
   }
 
-  // Update percentage count
-  const handleClick = async (newAmount) => {
-    
-    const fields = {
-      amountFull: newAmount,
-    }
-    await axios.patch(
-      airtableURL,
-      { fields },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        },
-      })
-    props.setUpdatedBottle(!props.updatedBottle)
-  }
-
-
-
-
-
-
-
-  // Add additional note to previous notes
   const handleAddNote = async (e) => {
     e.preventDefault();
     const fields = {
@@ -68,15 +46,28 @@ function UpdateBottle(props) {
         },
       })
     props.setUpdatedBottle(!props.updatedBottle)
+
   }
 
-  // Replace all existing notes with new content
-
-  // Remove bottle from inventory
   const handleDelete = async () => {
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
     await axios.delete(
       airtableURL,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+        },
+      })
+    props.setUpdatedBottle(!props.updatedBottle)
+  }
+
+  const handleClick = async (newAmount) => {
+    const fields = {
+      amountFull: newAmount,
+    }
+    await axios.patch(
+      airtableURL,
+      { fields },
       {
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
@@ -100,15 +91,18 @@ function UpdateBottle(props) {
         window.confirm('Remove empty bottle from inventory?') ?
           handleDelete() :
           alert("OK, we'll keep it in there for you");
-      }, 800) :
+      }, 500) :
       props.setInventoryRefresh(!props.inventoryRefresh);
   }
 
+  const editStyle = {
+    border: ".5px solid gray",
+    borderRadius: "5px",
+    background: "rgba(231, 228, 228, 0.5)"
+  }
 
   return (
-
     <div className="update-parent-container">
-
       {props.bottleData ?
         <div className="update-bottle">
           <h4 className="grab-bottle-spirit">{props.bottleData && props.bottleData.bottle}</h4>
@@ -123,20 +117,29 @@ function UpdateBottle(props) {
             <div className="percentage">{Math.round((props.bottleData && props.bottleData.amountFull) * 100)}</div><p style={{ marginLeft: "15px" }}> % </p>
           </div>
         </div>
-        : null
+        : <></>
       }
 
       {showNotes === true ?
         <div className="tasting-notes">
-          <p id="hide" onClick={() => setShowNotes(false)}>hide</p>
+          <p id="hide" onClick={() => { setShowNotes(false); setEditNotes(false) }}>hide</p>
           <h4 className="tasting-header">notes:</h4>
           <form className="update-tasting-notes" onSubmit={handleAddNote}>
             <label htmlFor="notes"></label>
-            <input className="add-note" name="notes" type="text" value={data.notes} onChange={handleChange} />
-            <button className="add-replace" type="submit">add</button>
+            <textarea
+              className="add-note"
+              style={editNotes ? editStyle : null}
+              name="notes"
+              value={data.notes}
+              onChange={editNotes ? handleChange : null} /><br></br>
+            {editNotes ?
+              <button className="add-replace" type="submit" onClick={() => setEditNotes(!editNotes)} >save</button>
+              :
+              <button className="add-replace" onClick={() => setEditNotes(!editNotes)}>edit</button>
+            }
           </form>
         </div>
-        : null
+        : <></>
       }
 
     </div>
