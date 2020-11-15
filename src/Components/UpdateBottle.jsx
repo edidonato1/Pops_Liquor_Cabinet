@@ -105,9 +105,9 @@ function UpdateBottle(props) {
     <div className="update-parent-container">
       {props.bottleData ?
         <div className="update-bottle">
-          <h4 className="grab-bottle-spirit">{props.bottleData && props.bottleData.bottle}</h4>
-          <h4 className="update-bottle-info">{props.bottleData && props.bottleData.category}</h4>
-          <h4 className="update-bottle-info">{props.bottleData && props.bottleData.bottleSizes} mL</h4>
+          <h4 className="grab-bottle-spirit">{data.bottle}</h4>
+          <h4 className="update-bottle-info">{data.category}</h4>
+          <h4 className="update-bottle-info">{data.bottleSizees} mL</h4>
           <button className="add-replace" onClick={(() => setShowNotes(!showNotes))}>{showNotes === false ? "show tasting notes" : "hide tasting notes"}</button>
           <div className="counter-container">
             <div className="button-box">
@@ -119,22 +119,9 @@ function UpdateBottle(props) {
         </div> 
         : 
         <></>
-      //   :         <div className="update-bottle">
-      //     <h4 className="grab-bottle-spirit" style={{ color: "gray"}}>bottle info will load here</h4>
-      //   <h4 className="update-bottle-info"></h4>
-      //   <h4 className="update-bottle-info"></h4>
-      //   <button className="add-replace" >show tasting notes</button>
-      //   <div className="counter-container">
-      //     <div className="button-box">
-      //       <button className="plus-minus" onClick={increment}>+</button><br></br>
-      //       <button className="plus-minus" onClick={decrement}>-</button>
-      //     </div>
-      //     <div className="percentage"></div><p style={{ marginLeft: "15px" }}> % </p>
-      //   </div>
-      // </div>
       }
 
-      {showNotes === true ?
+      {showNotes  ?
         <div className="tasting-notes">
           <p id="hide" onClick={() => { setShowNotes(false); setEditNotes(false) }}>hide</p>
           <h4 className="tasting-header">notes:</h4>
@@ -155,7 +142,6 @@ function UpdateBottle(props) {
         </div>
         : <></>
       }
-
     </div>
   )
 }

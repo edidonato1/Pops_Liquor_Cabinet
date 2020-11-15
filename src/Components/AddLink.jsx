@@ -11,7 +11,7 @@ function AddLink() {
   return (
     <div className="scroll-menu">
       <h5 className="scroll-title"><Link style={LinkStyles} to="/AddBottle">add a bottle</Link></h5>
-      <p>The first step to a healthy home bar is knowing your products</p>
+      <p>The first step to a healthy home bar is knowing your products.</p>
       <p>Before it hits the shelf, log it into inventory.</p>
       <p>Get started <Link to="/AddBottle">here.</Link></p>
     </div>

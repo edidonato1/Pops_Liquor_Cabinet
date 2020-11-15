@@ -326,7 +326,6 @@ td {
   border: 2px solid white;
   border-radius: 10px;
   color: #BF6F41;
-  /* z-index: 0; */
 }
 
  #hide {
@@ -334,6 +333,7 @@ td {
   text-align: right;
   color: #BF6F41;
   font-size: 20px;
+  cursor: pointer;
  }
 
 .button-box {
