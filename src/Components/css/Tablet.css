@@ -8,7 +8,7 @@
   }
 
   h1 {
-    height: 190px;
+    /* height: 190px; */
     font-size: 28px;
   }
 
@@ -39,12 +39,12 @@
   .big-pops {
     font-size: 70px;
     margin-top: 0px;
-    margin-left: 250px;
+    /* margin-left: 250px; */
   }
   
   .title-tag {
     font-size: 60px;
-    margin-top: 40px;
+    /* margin-top: 40px; */
   }
 
    .nav-bar {
@@ -90,12 +90,20 @@
     font-size: 20px;
   }  
 
+  #grab-bottle {
+    margin-bottom: initial;
+
+  }
+
   #select {
-    margin: 260px 0 0 20px;
+    /* margin: 260px 0 0 20px; */
+    /* font-size: 22px; */
+    background: rgba(217, 150, 91, .7);
+    color: white;
     height: 35px;
     }
 
-  .select-bottle {
+  .select-bottle { 
     text-align: right; 
     margin-right: 40px;
     }

@@ -53,7 +53,7 @@ function GrabBottle(props) {
 
   return (
 
-    <div className="main-component-div" >
+    <div className="main-component-div" id="grab-bottle">
       {heading}
       <div style={removeMargin ? {} : { marginTop: "210px" }} className="select-bottle">
         <select className="text-bar" id="select" onChange={handleChange}>
