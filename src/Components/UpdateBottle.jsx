@@ -3,14 +3,11 @@ import axios from 'axios'
 
 function UpdateBottle(props) {
   const [showNotes, setShowNotes] = useState(false)
-  const [addNote, setAddNote] = useState(props.bottleData && props.bottleData.notes)
-  let prevNotes = props.bottleData && props.bottleData.notes
   const [data, setData] = useState({})
   const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
 
   useEffect(() => {
     const getBottleData = async () => {
-      // e.preventDefault();
       const response = await axios.get(
         airtableURL,
         {
@@ -19,13 +16,18 @@ function UpdateBottle(props) {
           }
         }
       )
-      // setData(response.data.records)
       setData(response.data.fields)
     }
     getBottleData()
   }, [props.bottleData])
 
-  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value
+    })
+  }
 
   // Update percentage count
   const handleClick = async (newAmount) => {
@@ -44,11 +46,17 @@ function UpdateBottle(props) {
     props.setUpdatedBottle(!props.updatedBottle)
   }
 
+
+
+
+
+
+
   // Add additional note to previous notes
   const handleAddNote = async (e) => {
     e.preventDefault();
     const fields = {
-      notes: props.bottleData && props.bottleData.notes ? prevNotes + ', ' + addNote : addNote
+      notes: data.notes
     }
     const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
     await axios.patch(
@@ -59,28 +67,10 @@ function UpdateBottle(props) {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       })
-    setAddNote('')
     props.setUpdatedBottle(!props.updatedBottle)
   }
 
   // Replace all existing notes with new content
-  const handleReplaceNotes = async (e) => {
-    e.preventDefault();
-    const fields = {
-      notes: addNote,
-    }
-    const airtableURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/spirits/${props.id}`;
-    await axios.patch(
-      airtableURL,
-      { fields },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        },
-      })
-    setAddNote('')
-    props.setUpdatedBottle(!props.updatedBottle)
-  }
 
   // Remove bottle from inventory
   const handleDelete = async () => {
@@ -96,16 +86,16 @@ function UpdateBottle(props) {
   }
 
   const increment = () => {
-    if (props.bottleData.amountFull < 1) {
-      handleClick((props.bottleData.amountFull + .1), addNote);
+    if (data.amountFull < 1) {
+      handleClick((data.amountFull + .1));
       props.setInventoryRefresh(!props.inventoryRefresh);
     }
   }
 
   const decrement = () => {
-    handleClick((props.bottleData.amountFull - .1), addNote);
+    handleClick((data.amountFull - .1));
     props.setInventoryRefresh(!props.inventoryRefresh);
-    props.bottleData.amountFull <= .2 ?
+    data.amountFull <= .2 ?
       setTimeout(function () {
         window.confirm('Remove empty bottle from inventory?') ?
           handleDelete() :
@@ -140,12 +130,10 @@ function UpdateBottle(props) {
         <div className="tasting-notes">
           <p id="hide" onClick={() => setShowNotes(false)}>hide</p>
           <h4 className="tasting-header">notes:</h4>
-          <p className="prev-notes">{prevNotes}</p>
           <form className="update-tasting-notes" onSubmit={handleAddNote}>
             <label htmlFor="notes"></label>
-            <input className="add-note" type="text" value={props.bottleData && props.bottleData.notes} onChange={((e) => setAddNote((e.target.value).toLowerCase()))} />
+            <input className="add-note" name="notes" type="text" value={data.notes} onChange={handleChange} />
             <button className="add-replace" type="submit">add</button>
-            <button className="add-replace" onClick={handleReplaceNotes} >replace</button>
           </form>
         </div>
         : null
