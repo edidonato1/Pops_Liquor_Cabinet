@@ -107,7 +107,7 @@ function UpdateBottle(props) {
         <div className="update-bottle">
           <h4 className="grab-bottle-spirit">{data.bottle}</h4>
           <h4 className="update-bottle-info">{data.category}</h4>
-          <h4 className="update-bottle-info">{data.bottleSizees} mL</h4>
+          <h4 className="update-bottle-info">{data.bottleSizes} mL</h4>
           <button className="add-replace" onClick={(() => setShowNotes(!showNotes))}>{showNotes === false ? "show tasting notes" : "hide tasting notes"}</button>
           <div className="counter-container">
             <div className="button-box">
