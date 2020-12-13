@@ -103,7 +103,7 @@ function UpdateBottle(props) {
 
   return (
     <div className="update-parent-container">
-      {props.bottleData ?
+      {props.bottleData ? // only display component if bottle has been selected
         <div className="update-bottle">
           <h4 className="grab-bottle-spirit">{data.bottle}</h4>
           <h4 className="update-bottle-info">{data.category}</h4>
@@ -121,7 +121,7 @@ function UpdateBottle(props) {
         <></>
       }
 
-      {showNotes  ?
+      {showNotes  ?  // notes displayed as styled form, while editNotes toggles styling when form is active
         <div className="tasting-notes">
           <p id="hide" onClick={() => { setShowNotes(false); setEditNotes(false) }}>hide</p>
           <h4 className="tasting-header">notes:</h4>
@@ -133,7 +133,7 @@ function UpdateBottle(props) {
               name="notes"
               value={data.notes}
               onChange={editNotes ? handleChange : () => console.log('select "edit" to make changes')} /><br></br>
-            {editNotes ?
+            {editNotes ?  // toggle form
               <button className="add-replace" id="edit-save" type="submit" onClick={() => setEditNotes(!editNotes)} >save</button>
               :
               <button className="add-replace" id="edit-save" onClick={() => setEditNotes(!editNotes)}>edit</button>

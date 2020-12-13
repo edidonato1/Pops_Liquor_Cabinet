@@ -34,6 +34,7 @@ function GrabBottle(props) {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       });
+      // alphabetize bottles in <select> menu
       setData(response.data.records.sort((a, b) => {
         let textA = a.fields.bottle.toUpperCase();
         let textB = b.fields.bottle.toUpperCase();
@@ -45,9 +46,10 @@ function GrabBottle(props) {
 
   const handleChange = (e) => {
     e.preventDefault();
-    setSelection(e.target.value);
+    setSelection(e.target.value); // selection used to grab index for bottle to be updated
   };
 
+  // use index from selection to find bottle
   let bottleData = (data[selection] && data[selection].fields);
   let id = (data[selection] && data[selection].id);
 

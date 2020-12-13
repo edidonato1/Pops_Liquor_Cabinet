@@ -11,6 +11,8 @@ function HomeMenu() {
 
   return (
 
+    // horizontal scroll home menu
+
     <div >
       <Header title="menu." />
       <div className="scroll">

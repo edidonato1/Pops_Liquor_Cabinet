@@ -50,62 +50,62 @@ function Inventory(props) {
     for (let i = 0; i < spirits.length; i++) {
       total += price[i] * amountFull[i]
     }
-    return total
+    return total // calculate total inventory cost 
   };
 
-  const sortBottle = () => {
+  const sortBottle = () => {  // sort alphabetically by bottle
     spirits.sort((a, b) => {
       let textA = a.fields.bottle.toUpperCase();
       let textB = b.fields.bottle.toUpperCase();
       return ((textA < textB) ? -1 : (textA > textB) ? 1 : 0);
     })
     setChangeSort(!changeSort);
-    setFeatureSpirits({ background: "rgba(217, 150, 91, .5)" });
+    setFeatureSpirits({ background: "rgba(217, 150, 91, .5)" }); // highlight bottle column
     setFeatureCategory({});
     setFeaturePrice({});
     setFeatureAmount({});
   };
 
-  const sortCategory = () => {
+  const sortCategory = () => { // sort alphabetically by category
     spirits.sort((a, b) => {
       let textA = a.fields.category.toUpperCase();
       let textB = b.fields.category.toUpperCase();
       return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
     });
     setChangeSort(!changeSort)
-    setFeatureCategory({ background: "rgba(217, 150, 91, .5)"  });
+    setFeatureCategory({ background: "rgba(217, 150, 91, .5)" }); // highlight category column
     setFeatureSpirits({});
     setFeaturePrice({});
     setFeatureAmount({});
   };
 
-  const sortAmount = () => {
+  const sortAmount = () => { // sort by amount in bottle, ascending
     spirits.sort((a, b) => {
       let targetA = a.fields.amountFull;
       let targetB = b.fields.amountFull;
       return targetA - targetB;
     });
     setChangeSort(!changeSort);
-    setFeatureAmount({ background: "rgba(217, 150, 91, .5)"  });
+    setFeatureAmount({ background: "rgba(217, 150, 91, .5)" }); // hightlight amount column
     setFeatureCategory({});
     setFeaturePrice({});
     setFeatureSpirits({});
   }
 
-  const sortPrice = () => {
+  const sortPrice = () => { // sort by price, ascending
     spirits.sort((a, b) => {
       let targetA = a.fields.price;
       let targetB = b.fields.price;
       return targetA - targetB;
     });
     setChangeSort(!changeSort);
-    setFeaturePrice({ background: "rgba(217, 150, 91, .5)"  });
+    setFeaturePrice({ background: "rgba(217, 150, 91, .5)" }); // highlight price column
     setFeatureCategory({});
     setFeatureSpirits({});
     setFeatureAmount({});
   }
 
-  const resetStyles = () => {
+  const resetStyles = () => { // hidden feature resets sort styling of all fields
     setFeatureSpirits({});
     setFeatureCategory({});
     setFeaturePrice({});
@@ -116,7 +116,13 @@ function Inventory(props) {
 
     <div className="main-component-div">
       {heading}
-      <h3 style={removeMargin ? {marginTop: "100px",  zIndex: "5"} : { marginTop: "190px" }}>Total inventory: <span onClick={resetStyles} id="total-inventory">${Math.round(totalInventory(price, amountFull))}</span></h3>
+      <h3
+        style={removeMargin ? { marginTop: "100px", zIndex: "5" } : { marginTop: "190px" }}>Total inventory:
+        <span
+          onClick={resetStyles}
+          id="total-inventory">${Math.round(totalInventory(price, amountFull))}
+        </span>
+      </h3>
       <small >(select category to sort)</small><br></br>
       <div className="inventory-table">
         <table className="inventory-columns">
@@ -127,6 +133,8 @@ function Inventory(props) {
               <td key={"price"} style={featurePrice} className="title-cell" onClick={sortPrice}>Price</td>
               <td key={"amount"} style={featureAmount} className="title-cell" onClick={sortAmount}>Amt.</td>
             </tr>
+
+            {/*  build table for all inventory  */}
             {!spirits ? <h4>loading...</h4> : spirits.map((spirit, index) => (
               <tr key={index}>
                 <td style={featureSpirits} className="content-cell" key={spirit.id}>
